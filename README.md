@@ -1,6 +1,6 @@
 # Bioinformatics and Programming
 
-This repository contains the teaching material required to teach a practical 14 week undergraduate course in bioinformatics and programming.
+This repository contains the teaching material required to teach a practical 14 week undergraduate course in bioinformatics and programming. It is put here to be available to anyone setting up such a course.
 
 ## Course description of Qualifications
 The participants will after the course have basic knowledge of computer methods and applications for the analysis of biological sequence data as well as insight into principles and techniques for construction of simple programs. Participants will aquire practical experience with analysis of problems in bioinformatics and related fields and with implementation of programs solving such problems using the Python programming language.
