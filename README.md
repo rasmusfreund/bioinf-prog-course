@@ -19,3 +19,20 @@ The course introduces programming and its practical applications in bioinformati
 
 ## 14 Week outline
 
+Week | First lecture | Second lecture | Exercise | Third lecture
+--- | --- | --- | ---
+1 | Introduction | Python, “arrow of exe.”, values, operators, math, variables | Up and running, Basic exercises | substitution, reduction logic, types |
+2 |  |  |   | 
+3 |  |  |   | 
+4 |  |  |   | 
+5 |  |  |   | 
+6 |  |  |   | 
+7 |  |  |   | 
+8 |  |  |   | 
+9 |  |  |   | 
+10 |  |  |   | 
+11 |  |  |   | 
+12 |  |  |   | 
+13 |  |  |   | 
+14 |  |  |   | 
+  
