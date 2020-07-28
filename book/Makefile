@@ -24,7 +24,7 @@ general_exercises.md \
 unleash_your_functions.md \
 building_lists_on_the_fly.md \
 your_own_types_of_objects.md \
-python_modules.md \
+on_the_shoulders_of_giants.md \
 biopython.md \
 references.md
 SOURCE_CHAPTERS := $(foreach chapter,$(CHAPTERS),chapters/$(chapter))
