@@ -1,0 +1,15 @@
+---
+title:
+  Programming and Bioinformatics
+
+author:
+  - Rory Jansen
+
+bibliography:
+  chapters/bibliography.bib
+
+secPrefix:
+  - "exercise"
+  - "exercises"
+---
+
