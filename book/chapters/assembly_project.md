@@ -15,20 +15,20 @@ produces the following genomic sequence:
 Real genome assembly is, of course, more sophisticated than what we do here, but the idea is the same. To limit the complexity of the problem we make two simplifying assumptions:
 
 1. There are no sequencing errors, implying that true overlaps between reads can be identified as perfectly matching overlaps.
-2. No reads are nested in other reads.
+2. No reads are nested in other reads. I.e.  They are never a smaller part of another read.
 
 The second assumption implies that overlaps are always of this type:
 
 ```
-  XXXXXXXXXX
-       XXXXXXXXXXX
+    CGTAGAGCTGGGAG
+             GGGAGGTTGAAA
 ```
 
 and never of this type:
 
 ```
-  XXXXXXXXXXXXXX
-     XXXXXXXX
+    CGTAGAGCTGGGAG
+       AGAGCTG
 ```
 
 In this project, you will be asked to write functions that together solve the problem of assembling a genomic sequence. Each function each solve a small problem, and you may need to call these functions inside other functions, to put together solutions to larger subproblems.
