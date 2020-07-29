@@ -35,4 +35,15 @@ Week | First lecture | Second lecture | Exercise | Third lecture
 12 |  |  |   | 
 13 |  |  |   | 
 14 |  |  |   | 
+
+
+# conda environment
+
+To create the `bp2019` conda environment with the libraries required to run evaluation of exam assignments you create it like this:
+
+	conda create -c conda-forge -c farrajota --name bp2019 jupyter matplotlib seaborn pandas numpy pyyaml scipy yaml pypdf2 patool jupyterlab pandoc pandoc-crossref cryptography
+
+
+# Encrypted solutions
+
   
