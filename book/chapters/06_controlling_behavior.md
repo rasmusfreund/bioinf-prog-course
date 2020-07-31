@@ -1,4 +1,4 @@
-# Controlling execution {-}
+# Controlling behavior {-}
 
 > This chapter is about how you make your program do different things under different circumstances. Making functionality dependent on data is what makes programs useful.
 

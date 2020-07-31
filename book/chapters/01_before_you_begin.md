@@ -2,6 +2,8 @@
 
 > This chapter serves to get the practicalities out of the way so you can start programming.
 
+TODO: Update install description
+
 ## Install Python {-}
 
 In this course, we use a distribution of Python called *Anaconda*. Anaconda is simply an easy way of installing Python on Windows, macOS (Mac), and Linux.
