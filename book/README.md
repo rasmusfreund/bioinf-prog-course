@@ -1,7 +1,3 @@
-# genetics-book
+# Lecture notes
 
-Popular science population genetics book
-
-![Mock-up cover](cover.png)
-
-![Current progress](progress.png)
+This directory contains the lecture notes for the course.

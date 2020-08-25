@@ -1,10 +1,10 @@
 # Writing a program {-}
 
-> **Heads up:** Before you head into this chapter and the rest of the book, it is essential that you have installed Python 3.7 (not Python 2.9), that you have installed the *Sublime Text* editor, and acquainted yourself with navigating a terminal. If not, go back to the previous chapter for instructions.
+> **Heads up:** Before you head into this chapter and the rest of the book, it is essential that you have installed Python as described, that you have installed the *Sublime Text* editor, and acquainted yourself with navigating a terminal. If not, go back to the previous chapter for instructions.
 
 ## Hello World {-}
 
-Dive in and make your first program. Start by creating a new file in your editor (*Sublime Text*) and save it as `hello.py`. The `.py` file suffix tells your editor that this file contains Python code. As you will see, this makes your life a whole lot easier. Such a file with Python code is usually called a *script*, but we also call it a program.
+Dive in and make your first program. Start by creating a new file in your editor (*Sublime Text*) and save it as `hello.py`. The `.py` suffix tells your editor that this file contains Python code. As you will see, this makes your life a whole lot easier. Such a file with Python code is usually called a *script*, but we can also call it a program.
 
 Now write *exactly* this in the file (`hello.py`):
 
@@ -12,10 +12,10 @@ Now write *exactly* this in the file (`hello.py`):
 print("Hello world")
 ```
 
-The editor colors your code a little differently, but that is not important. Save your file with the added code, and you have your first program! Of course, there is not much point in having a program if it just sits there on your computer. To run your program, do the following:
+Your editor will color your code a little differently, but that is not important. Save your file with the added code, and you have your first program! Of course, there is not much point in having a program if it just sits there on your computer. To run your program, do the following:
 
-1. Open the terminal and navigate to the folder (directory) where you saved `hello.py` using the `cd` command. If you do not know how to do that, go back and read the previous chapter again.
-2. Type `python hello.py` in the terminal and hit enter.
+1. Open the terminal and navigate to the folder (directory) where you saved `hello.py`. Use the `cd` command to do so. If you do not know how, go back and read the previous chapter again.
+2. Type `python hello.py` in the terminal and hit Enter.
 
 You should see something like [@fig:figure0].
 
@@ -25,7 +25,7 @@ This is where you shout "it's alive!", toss your head back and do the insane sci
 
 Okay, what just happened? You wrote a program by creating a file and writing one line of code in it. Then you ran the program using Python and it wrote (printed) `Hello world` in the terminal. Do not worry about the parentheses and quotes for now and just enjoy your new life as a programmer.
 
-Maybe you wonder why we write `print` and not `write` or something else? That actually goes all the way back to the days when computers were big clunky things with no screens attached. They could only interact with the user by *printing* out things on a real physical paper printer. Back then, the output you see on the screen was printed onto a piece of paper that the programmer could then look at. These days print shows up in the terminal, but the story should help you remember that print sends text *out* of your program.
+Maybe you wonder why we write `print` and not `write` or something else? That actually goes all the way back to the days when computers were big clunky things with no screens attached. They could only interact with the user by *printing* out things on a real physical paper printer. Back then, the output you see on the screen was printed onto a piece of paper that the programmer could then look at. These days print shows up in the terminal, but the story should help you remember that print sends text *out of your program*.
 
 Now try to add another line of code like this:
 
@@ -39,16 +39,15 @@ Save the file and run it again by typing `python hello.py` in your terminal and 
 You should see this:
 
 ```
-$ python hello.py
 Hello world
 I am your first program
 ```
 
-Now your program first prints `Hello world` and *then* it prints `I am your first program`. The *then*-part is important. That is how a Python program works. Python (the `python` you write in front of `hello.py`) reads your `hello.py` file and then executes the code, one line after the other until it reaches the end of the file.
+Now your program first prints `Hello world` and *then* it prints `I am your first program`. The *then*-part is important. That is how a Python program works. Python (the `python` you write in front of `hello.py`) reads your `hello.py` file and then executes the code, one line after another until it reaches the end of the file.
 
 This is essential, so read that paragraph again. Now read it once more. It may seem trivial, but it is absolutely fundamental always to remember that this is how Python runs your code. So here is oath 2:
 
-> **Oath 2:** I swear always to remember that each line of code in my script is executed one after the other, starting from the first line in the script and ending at the last line.
+> **Oath 2:** I swear always to remember that each line of code in my script is executed one after another, starting from the first line in the script and ending at the last line.
 
 When you write Python code, you always follow this workflow:
 
@@ -62,13 +61,12 @@ Make sure you get the hang of this in the following exercises.
 **Important:** The examples and exercises in this course are designed to work if you execute your scripts from the folder they are stored in. So you must navigate into the relevant folder before you execute your script. If your script is called `hello.py`, you must *always* execute it exactly like this: `python hello.py`. On some computers it is possible to just type `hello.py` without `python` in front of it. Do *not* do that. Do *not* "drag" the script file into the Terminal either.
 
 #### Exercise
-Try to swap the two lines of code in the file and run the program again. What does it show now?
+Try to swap the two lines of code in the file and run the program again. What does it print now?
 
 #### Exercise
 Try to make the program print a greeting to yourself. Something like this:
 
 ```
-$ python hello.py
 Hello Sarah!
 ```
 
@@ -88,7 +86,6 @@ print("Hello world"))
   -- and then got an error like this:
 
 ```
-$ python hello.py
   File "hello.py", line 1
     print('Hello world'))
                         ^
@@ -97,12 +94,31 @@ SyntaxError: invalid syntax
 
 This is Python's way of telling you that the `hello.py` script has an error in line 1. If you write something that does not conform to the proper syntax for Python code then you will get a `SyntaxError`. Python will do its best to figure out where the problem is and point to it with a `^` character.
 
-You will see many such error messages in your new life as a programmer, and it is important that you practice how to read them. At first, they will be hard to decipher, but once you get used to them, they will help you quickly identify where the problem is. If there is an error message that you do not understand the internet is your friend. Just paste the error message into Googles search field, and you will see that you are not the only one out there getting started on Python programming.
+You will see many such error messages in your new life as a programmer, and it is important that you practice how to read them. At first, they will be hard to decipher, but once you get used to them, they will help you quickly identify where the problem is. If there is an error message that you do not understand the internet is your friend. Just paste the error message into Google's search field, and you will see that you are not the only one out there getting started on Python programming.
 
 It is okay if you do not know how to fix the problem right now, but it is essential to remember that these error messages are Pythons way of helping you understand what you did wrong. You are entering a world of pain if you do not try to read and understand them every time.
 
 #### Exercise
-Try to break your new shiny program and make it give an error message when you run it. An easy way of doing this is to remove or change random characters from the program. Which error messages do you see? Do you see the same error message every time, or are they different? Try googling the error messages you get. Can you figure out why the change you made broke the program? How many different error messages can you produce?
+Try to break your new shiny program and make it give an error message when you run it. An easy way of doing this is to remove or change random characters from the program. If you run this (with a missing end quote):
+
+```python
+print("Hello world"
+print("I am your first program")
+```
+
+You will get this error
+
+```
+  File "hello.py", line 2
+    print("I am your first program")
+        ^
+SyntaxError: invalid syntax
+````
+
+The `^` character tells you when it stopped making sense to Python. Some times that is a bit after where you made your mistake. 
+
+Try to make other kinds of errors. Which error messages do you see? Do you see the same error message every time, or are they different? Try googling the error messages you get. Can you figure out why the change you made broke the program? How many different error messages can you produce?
+
 
 ## Strings {-}
 
@@ -139,6 +155,8 @@ Can you see why, and how it is handy to have both single and double quotes? Well
 SyntaxError: EOL while scanning string literal
 ```
 
+It is Python's way of saying: "I got to the end of the line (EOL) without finding an matching end quote".
+
 ## Comments {-}
 You have already seen that Python reads and executes one line of code at a time until your program has no more lines of code.
 
@@ -161,7 +179,7 @@ This is useful in two ways:
 1. It lets you disable certain lines of your code, by keeping Python from reading them. For example, you may want to see what happens if that line of code was not executed to understand how your program works.
 2. It allows you to write notes in your code Python to help you remember how your code works.
 
-Lines with a `#` in front are called "comments" because we normally use them to write comments about the code we write. If you ask for help about some problem, you will often hear your instructor say: try to "comment out" line 2. When your instructor says that, it simply means that you should add a `#` in front of line two to see what then happens.
+Lines with a `#` in front are called "comments" because we normally use them to write comments about the code we write. If you ask for help about some problem, you will often hear your instructor say: try to "comment out" line two. When your instructor says that, it simply means that you should add a `#` in front of line two to see what then happens.
 
 #### Exercise
 What happens if I put a `#` in the middle of a line of code?

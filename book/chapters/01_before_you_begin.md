@@ -2,26 +2,21 @@
 
 > This chapter serves to get the practicalities out of the way so you can start programming.
 
-TODO: Update install description
-
 ## Install Python {-}
 
 In this course, we use a distribution of Python called *Anaconda*. Anaconda is simply an easy way of installing Python on Windows, macOS (Mac), and Linux.
 
-To install Anaconda, head to [this](https://www.anaconda.com/products/individual) site. Click "Download" And select the graphical installer for your platform. Make sure to select **Python 3.7 version** (do *not* download version 2.7).
+To install Anaconda, head to [this](https://www.anaconda.com/products/individual) site. Click "Download" And select the graphical installer for your platform. Pick a 64-bit version unless you know that your computer is 32-bit.
 
-When the download has completed, you should follow the platform specific instructions:
-
-* **For Windows:** Double-click the file you just downloaded and follow the instructions on the screen. Make a default installation. The installer will also ask you if you want to download and install a program called Visual Studio Code. Do that too.
-* **For OSX:** Double-click the file you just downloaded and follow the instructions on the screen. Make a default installation. The installer will also ask you if you want to download and install a program called Visual Studio Code. Do that too.
+When the download has completed, double-click the file you just downloaded and follow the instructions on the screen. It is important that you complete the default installation by accepting the suggested settings. 
 
 ## Install the text editor {-}
 
-You will also need a *text editor*. A text editor is where you write your Python code and for this course, we will use one called *Sublime Text*. To install *Sublime Text*, go to
+You will also need a *text editor*. A text editor is where you write your Python code. For this course, we will use one called *Sublime Text*. To install *Sublime Text*, go to
 [this](https://www.sublimetext.com/3) site. Again, you'll have to download the version of Sublime Text that fits your platform. At the top of the page, click **Windows 64 bit** if you're running Windows and **OSX** if you are on a Mac.
 
-* **For Windows:** Double-click the `.exe` file you just downloaded and follow the instructions on the screen.
-* **For OSX:** Double click the `.dmg` file you just downloaded. A small window should open showing you two icons: *Applications* and *Sublime Text*. Drag the *Sublime Text* icon onto the *Applications* icon. You can now close the window.
+* **On Windows:** Double-click the `.exe` file you just downloaded and follow the instructions on the screen.
+* **On OSX:** Double click the `.dmg` file you just downloaded. A small window should open showing you two icons: *Applications* and *Sublime Text*. Drag the *Sublime Text* icon onto the *Applications* icon. You can now close the window.
 
 You should now have *Sublime Text* installed. If you open *Sublime Text*, you should see something like [@fig:figure0]:
 
@@ -39,9 +34,9 @@ If you open *Anaconda Prompt* you should see something like @fig:powershell. The
 
 ![Screenshot of Terminal](./images/terminal.png){#fig:terminal}
 
-The terminal is a very useful tool. However, to use it you need to know a few basics. First of all, a terminal lets you execute commands on your computer. You simply type the command you want and then hit enter. The place where you type is called a prompt and it may look a little different depending on which terminal emulator you use. In this book we represent the prompt with the character `$`.
+The terminal is a very useful tool. To use it, howevever, you need to know a few basics. First of all, a terminal lets you execute commands on your computer. You simply type the command you want and then hit enter. The place where you type is called a prompt (or command promt) and it may look a little different depending on which terminal emulator you use. In this book we represent the prompt with the character `$`.
 
-When you open the terminal you'll be located in a folder. You can see which folder you are in by typing `pwd` on OSX and `cd` on windows, and then press `Enter` on the keyboard. When you press `Enter` you tell the terminal to execute the command you just wrote. In this case, the command you typed simply tells you the path of the folder we are in. If I do it I get:
+When you open the terminal you'll be located in a folder. You can see which folder you are in by typing `pwd` on OSX and `cd` on windows, and then press `Enter` on the keyboard. When you press `Enter` you tell the terminal to execute the command you just wrote. In this case, the command you typed simply tells you the path to the folder we are in. If I do it I get:
 
 ```
 $ pwd
@@ -55,7 +50,7 @@ $ cd
 C:\Users\kasper\programming
 ```
 
-So right now I am in the folder `programming`. `/Users/kasper/programming` is the "full address" of the folder with dashes (or backslashes on windows) separating folders. So `programming` is a subfolder of `kasper` which is a subfolder of `Users`. That way you not only know which folder you are in but also where that folder is. Let us see what is in this folder. On OSX you type the `ls` command (l as in Lima and s as in Sierra). On windows you type `dir`. When I do that and press `Enter` I get:
+So right now I am in the folder `programming`. `/Users/kasper/programming` is the path or "full address" of the folder with dashes (or backslashes on windows) separating folders. So `programming` is a subfolder of `kasper` which is a subfolder of `Users`. That way you not only know which folder you are in but also where that folder is. Let us see what is in this folder. On OSX you type the `ls` command (l as in Lima and s as in Sierra). On windows you type `dir`. When I do that and press `Enter` I get:
 
 ```
 $ ls
@@ -113,13 +108,13 @@ Hopefully, you are now able to use navigate your folders and see what is in them
 
 ## You are all set {-}
 
-Well done! You are all set to start the course. Have a cup of coffee and look forward to your first program. While you sip your coffee I need to you take an oath (one of three related to this course). Raise your right hand! (put your coffee in the left).
+Well done! You are all set to start the course. Have a cup of coffee and look forward to your first program. While you sip your coffee I need to you take an oath (one of three you will take during this course). Raise your right hand! (put the coffee in your left).
 
-> **Oath 1:** I swear never to copy and paste examples from this book into *Sublime Text*. I will *always* read the examples in the book and and *type* them into my editor.
+> **Oath 1:** I swear *never* to copy and paste examples from this book into *Sublime Text*. I will *always* read the examples in the book and and *type* them into my editor.
 
 This serves three purposes (as if one was not enough):
 
-1. You will be fully aware of each and every bits of each example.
+1. You will be fully aware of each and every bit of each example.
 2. You will learn to write code correctly and without omissions and mistakes.
 3. You will get Python “into your fingers”. It sounds silly, but it *will* get into your fingers.
 

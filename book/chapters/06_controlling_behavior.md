@@ -6,7 +6,7 @@
 
 The small programs you have written so far all run the exact same sequence of statements (lines). Imagine if you could control which statements were run depending on the circumstances. Then you would be able to write more flexible and useful programs. Cue the music - and let me introduce: the "if-statement".
 
-Write the following carefully into a file. It is a small program to monitor bus passenger status. Notice the colon ending the if-statements. Also, note that the lines below each if-statement are indented with exactly four spaces. While you write the, try to figure out what the if-statement does. Then run the code and see what happens.
+Write the following carefully into a file. It is a small program to monitor bus passenger status. Notice the colon ending the if-statements. Also, note that the lines below each if-statement are indented with exactly four spaces. While you write the program, try to figure out what the if-statement does. Then run the code and see what happens.
 
 ```python
 bus_seats = 32
@@ -25,12 +25,14 @@ if bus_seats >= passengers + bags:
     print("Smiles, everyone has room for bags")
     
 if bus_seats < passengers / 3:
-    print("General dissatisfaction, some swearing")
+    print("General dissatisfaction, some swearing too")
 ```
 
-Try to change the values of `bus_seats`, `passengers` and `bags` and see how the program adapts.
+Try to change the values of `bus_seats`, `passengers` and `bags` and see how execution of the program changes.
 
-You have probably realized that the if-statements control which print statements that are evaluated. A statement nested under an if-statement is only evaluated if the expression between the `if` keyword and the `:` reduces to `True`. If the expression between the `if` and `:` reduces to a value other than `True` or `False` then Python will interpret zero and empty values (like `0` and `''`) as `False` and all other non-zero and non-empty values as `True`.
+You have probably realized that the if-statements control which print-statements that are evaluated. A statement nested under an if-statement is only evaluated if the expression between the `if` keyword and the `:` reduces to a value Python considers as *true*. This does not happen if the expression between the `if` and `:` reduces to a value Python considers *false*. 
+
+Remind yourself that when asked to evaluate something as true or false, Python will interpret zero and empty values (like `0` and `''`) as `False` and all other non-zero and non-empty values as `True`.
 
 #### Exercise
 Which of the following letters are printed: A, B, C, D, E, F, G. Make up your mind before you write and run the code.
@@ -93,7 +95,7 @@ else:
     print("WHO HAS TAKEN THE LAST COOKIES!?")
 ```
 
-Remember to put a `:` after the `else` keyword. Write the code and change the value of `cookies` to `0` -- if you dare.
+Remember to put a `:` after the `else` keyword. Write the code and change the value of `cookies` to `0`, I dare you.
 
 #### Exercise
 Test your understanding about which expressions that reduce to a `True` or `False` value. Write the code below and then see how it responds to different values of `x`. Try to come up with other variations yourself.
@@ -125,14 +127,14 @@ milk = False
 cookies = True
 if milk:
     if cookies:
-        status = 'good times'
+        status = 'Good times!'
     else:
-        status = 'what ever'
+        status = 'Not thirsty, thanks or asking'
 else:
     if cookies:
-        status = 'sad times'
+        status = 'How does something like this happen?'
     else:
-        status = 'desparate times'
+        status = 'What ever...'
         
 print(status)
 ```
@@ -140,11 +142,11 @@ print(status)
 
 ## Blocks of code {-}
 
-In the examples above some lines are indented more than others, and you probably already have some idea of how this is interpreted by Python. Indentation defines blocks of code. Whether each block of code is evaluated when your code runs, is controlled by the `if` and `else` statements.
+In the examples above some lines are indented more than others, and you probably already have some idea of how this is interpreted by Python. Indentation defines blocks of code. Whether each block of code is evaluated when your code runs, is controlled by the `if` and `else` statements. The following three rules define individual blocks of code:
 
-- All statements in a block of code have the same indentation. That is, they line up vertically. 
-- A block of code begins by a line that is indented more than the one before it.
-- A block ends when it is followed by a line that is less indented.
+1. All statements in a block of code have the *same indentation*. That is, they line up vertically. 
+2. A block of code *begins* at the first line of code at a line that is indented more than the one before it.
+3. A block *ends* when it is followed by a line that is less indented, or at the last line of code.
 
 This way, a block can be nested inside another block by indenting it further to the right as shown in [@fig:blocks]. Compare the example in [@fig:blocks] to the code example above. Note how a colon at the end of a statement means "this applies the block of code below". Make sure you understand which print statements that are controlled by which `if` and `else` statements.
 
@@ -184,11 +186,13 @@ else:
     print('This is guanine')
 ```
 
+Here we put an else-statement at the end to capture all cases not covered by the if-statement and the two elif-statements.
+
 #### Exercise
 You can use logical operators (`and`, `or`, `not`) in the expressions tested in an if-statement. Can you change the program from @sec:nested_if_else so that there are no nested if-statements -- in a way so the program still does exactly the same? You can use `if`, `elif` and `else` and test if e.g. both `milk` and `cookies` are true using `and`.
 
 #### Exercise
-In the snippet of code below there are three blocks with three statements in each. Which statements belong to which block?
+In the snippet of code below there are three blocks with three statements in each. Which statements belong to which block? Which statements are executed?
 
 ```python
 x = 5
@@ -203,7 +207,7 @@ z = 4
 ```
 
 #### Exercise
-Can you see four blocks of code? 
+Can you see four blocks of code? If not, read the three rules above again. Which statements are executed?
 
 ```python
 x = 5
@@ -237,7 +241,6 @@ if -1 + 16 % 5 == 0 :
     print("You are a super star!")
 ```
 
-
 #### Exercise
 Assign values to two variables `x` and `y`. Then write some code that prints `OK` if and only if `x` is smaller than five *and* `y` is larger than five. Do it using *two* `if` statements:
 
@@ -250,7 +253,7 @@ x = 7 # or someting else
 
 Now solve the same problem using only *one* `if` statement.
 
-#### Exercises
+#### Exercise
 Assign values to two variables `x` and `y`. Then write some code that prints `OK` if and only if `x` is smaller than five *or* `y` is larger than five. Do it using *two* `if` statements:
 
 ```python
@@ -262,7 +265,7 @@ x = 7 # or someting else
 
 Now solve the same problem using only *one* `if` statement and *one* `elif` statement.
 
-#### Exercises
+#### Exercise
 Assign values to two variables `x` and `y`. Then write some code that prints `OK` if either `x` or `y` is zero, but not if both are zero (this is tricky one).
 
 ```python
@@ -272,4 +275,36 @@ x = 7 # or someting else
 # rest of code here...
 ```
 
+#### Exercise
+Which value of `x` makes the code below print Banana?
 
+```python
+x = 
+s = ''
+if x**2 == 16:
+    s = s + 'Ba'
+if x + 6 == 2:
+    s = s + 'na'
+if 7 == x - 3:
+    s = 'na' * 2
+else:
+    s = s + 'na'
+print(s)
+```
+
+#### Exercise
+Say you have two values represented by the variables `x` and `y`. Now you want to assign the largest of those two values to a third value `z`. Can you see that the two pieces of code below are essentially two ways of expressing the same thing? (You will need to define `x` and `y` yourself, and print `z` to see its value.) This is a tricky one, but it trains both variables, assignment, operators, precedence, substitution, reduction, logic, control flow. Make sure you are aware of how.
+
+```python
+if x > y:
+    z = x
+else:
+    z = y
+```
+
+```python
+z = x > y and x or y
+```
+
+#### Exercise
+Make three exercises that requires the knowledge of programming so far. Have your fellow students solve them.
