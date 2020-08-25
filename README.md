@@ -37,13 +37,32 @@ Week | First lecture | Second lecture | Exercise | Third lecture
 14 |  |  |   | 
 
 
-# conda environment
+# For teachers of the course
 
-To create the `bp2019` conda environment with the libraries required to run evaluation of exam assignments you create it like this:
+## Conda environment
 
-	conda create -c conda-forge -c farrajota --name bp2019 jupyter matplotlib seaborn pandas numpy pyyaml scipy yaml pypdf2 patool jupyterlab pandoc pandoc-crossref cryptography
+To create the `bp2020` conda environment with the libraries required to run evaluation of exam assignments you create it like this:
 
+	conda create -c conda-forge -c farrajota --name bp2020 jupyter matplotlib seaborn pandas numpy pyyaml scipy yaml pypdf2 patool jupyterlab pandoc pandoc-crossref cryptography pandoc pandoc-crossref
 
-# Encrypted solutions
+## Lecture notes
+
+The [Lecture notes](book)
+
+## Bioinformatics exercises
+
+The [bioinformatics exercises](bioinf_exercises)
+
+## Programming projects
+
+The [programming projects](programming_projects)
+
+## Lectures
+
+The [lectures](lectures)
+
+## Weeklynotes
+
+The [weekly notes](weekly_notes)
 
   
