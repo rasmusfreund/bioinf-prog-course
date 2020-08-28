@@ -1,4 +1,4 @@
-# Glueing values in sequence {-}
+# Gluing values in sequence {-}
 
 ## Tuples {-}
 
