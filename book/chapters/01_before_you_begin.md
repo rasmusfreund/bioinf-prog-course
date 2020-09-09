@@ -24,7 +24,25 @@ You should now have *Sublime Text* installed. If you open *Sublime Text*, you sh
 
 ## The terminal {-}
 
-The last thing you need is a tool to make Python run the programs you write. Fortunately, that is already installed. On OSX and Linux this is a program called *Terminal*. You can find it by typing "Terminal" in Spotlight Search. On Windows it is called the *Anaconda Prompt* and was installed along with Anaconda Python. You should be able to find it from Start menu.
+The last thing you need is a tool to make Python run the programs you write. Fortunately, that is already installed. 
+
+On OSX this is a program called *Terminal*. You can find it by typing "Terminal" in Spotlight Search.
+
+> Heads up: You will see something like this when you will se something like this:
+>
+> ```
+> The default interactive shell is now zsh.
+> To update your account to use zsh, please run `chsh -s /bin/zsh`.
+> For more details, please visit https://support.apple.com/kb/HT208050.
+> ```
+> 
+> Do *not* update your account as suggested. If you do this *after* you install Anaconda, the terminal will not be able to find the Anaconda Python you just intalled. If you did so by mistake anyway, you change back using this command:
+> 
+> ```
+> `chsh -s /bin/bash`
+> ```
+
+On Windows the tool you need is called the *Anaconda Prompt* and was installed along with Anaconda Python. You should be able to find it from Start menu.
 
 What is *Anaconda Prompt* and this *Terminal* thing, you ask! Both programs are what we call *terminal emulators*. They are programs used to run other programs, such as the ones you are going to write. I will informally refer to both *Terminal* and *Anaconda Prompt* as "the terminal" So if I write something like "open the terminal" later in the book you should open *Anaconda Prompt* if you are running Windows. If you are running OS X, you should open the *Terminal* application.
 

@@ -1,4 +1,4 @@
-# On the shoulders of (other nerd) giants {-}
+# On the shoulders of giants {-}
 
 Python modules
 
@@ -7,3 +7,16 @@ Python modules
 
 
 ## Standard library modules {-}
+
+
+## BioPython {-}
+
+> A birds eye view of Biopython to give you an impression of what you can do if you know just a little bit about modules classes
+
+## A Seq class {-}
+
+
+
+## Reading and writing sequence formats {-}
+
+

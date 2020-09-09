@@ -24,7 +24,7 @@ You can see that the method call itself looks just like a function call and in m
 
 So why do we need methods? Can we not just do with functions? We can, but it turns out that it is very handy to have some relevant and ready-to-use functionality packaged together with the data it works on. You will start to appreciate that sooner than you think.
 
-When we put a method call after a *variable* like below, the variable is first substituted for its value and then the method is called on its value. Consider the second line of this example:
+When we put a method call after a *variable* like below, the variable is first substituted for its value and then the method is called on the value. Consider the second line of this example:
 
 ```python
 x = "banana"
@@ -386,5 +386,7 @@ result = enigma(5)
 print(result)
 ```
 
+<!-- TODO: More general exercises 
+-->
 
 

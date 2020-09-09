@@ -98,8 +98,8 @@ Write down the code on a piece of paper. Now mark all statements and all express
 Consider the following code:
 
 ```python
-greeting = 'Hello' + ' my'
-print(greeting, 'friend')
+greeting = 'Hello' + ' my '
+print(greeting + 'friend')
 ```
 
 How many statements are there in this piece of code? How many expressions?

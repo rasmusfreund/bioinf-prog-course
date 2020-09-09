@@ -208,7 +208,7 @@ If the value left of `or` is considered *false* by Python, then Python stil need
 Use the same rationale to explain to yourself how the two last combinations in @sec:or_rules are evaluated.
 
 #### Exercise
-Remember what you learned in {#sec:trueish_falseish} about which values are considered true and which are considered false. Combine that with what you learned in @sec:and_rules and @sec:or_rules about what logical expressions reduce to and see if you can figure out what is printed below and why. Use the rule-of-thumb from @sec:logic_rule_of_thumb. Decide what you think before you write the code and try it out. 
+Remember what you learned in @sec:trueish_falseish about which values are considered true and which are considered false. Combine that with what you learned in @sec:and_rules and @sec:or_rules about what logical expressions reduce to and see if you can figure out what is printed below and why. Use the rule-of-thumb from @sec:logic_rule_of_thumb. Decide what you think before you write the code and try it out. 
 
 ```python
 print(True and 4)
