@@ -1,32 +1,47 @@
 
 CHAPTERS := Header.yml \
-before_you_begin.md \
-appendix_conda_and_pymol.md \
-writing_a_program.md \
-dealing_with_values.md \
-the_order_of_events.md \
-controlling_execution.md \
-organizing_your_code.md \
-python_values_are_objects.md \
-structuring_data.md \
-glueing_values_in_sequence.md \
-iteration_over_values.md \
-testing_your_code.md \
-working_with_files.md \
+00_preface.md \
+01_before_you_begin.md \
+02_appendix_conda_and_pymol.md \
+03_writing_a_program.md \
+04_dealing_with_values.md \
+05_the_order_of_events.md \
+06_controlling_behavior.md \
+07_organizing_your_code.md \
+08_python_values_are_objects.md \
+09_structuring_data.md \
+10_gluing_values_in_sequence.md \
+11_iteration_over_values.md \
+12_testing_your_code.md \
+13_working_with_files.md \
 translation_project.md \
-hiv_project.md \
+your_own_types_of_objects.md \
+assembly_project.md \
+on_the_shoulders_of_giants.md \
 codonbias_project.md \
+hiv_project.md \
 alignment_project.md \
 seqdist_project.md \
-assembly_project.md \
 orf_project.md \
-general_exercises.md \
-unleash_your_functions.md \
-building_lists_on_the_fly.md \
-your_own_types_of_objects.md \
-on_the_shoulders_of_giants.md \
-biopython.md \
 references.md
+
+# CHAPTERS := Header.yml \
+# 01_before_you_begin.md \
+# 02_appendix_conda_and_pymol.md \
+# 03_writing_a_program.md \
+# 04_dealing_with_values.md \
+# 05_the_order_of_events.md \
+# 06_controlling_behavior.md \
+# 07_organizing_your_code.md \
+# 08_python_values_are_objects.md \
+# 09_structuring_data.md \
+# 10_gluing_values_in_sequence.md \
+# 11_iteration_over_values.md \
+# 12_testing_your_code.md \
+# 13_working_with_files.md \
+# translation_project.md \
+# references.md
+
 SOURCE_CHAPTERS := $(foreach chapter,$(CHAPTERS),chapters/$(chapter))
 
 PYMOL_INST := chapters/pymol.md
