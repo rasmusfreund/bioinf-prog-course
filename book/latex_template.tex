@@ -193,6 +193,7 @@ $endif$
 % \usepackage{ascii}
 
 
+
 \definecolor{myshade}{rgb}{1.0 1.0 1.0}
 \newtcolorbox{mybox}{colback=myshade!100!white, colframe=myshade!100!white, arc=0.3mm, boxrule=0.1mm, left=1mm}
 
@@ -201,6 +202,16 @@ $endif$
 \ifx \@Shaded \@empty
 
 \renewenvironment{Shaded}{\begin{mybox}}{\end{mybox}}
+% \renewenvironment{Shaded}{\begin{minipage}{\linewidth}\begin{mybox}}{\end{mybox}\end{minipage}}
+
+% \newenvironment{myminipage}
+%   {\setlength{\currentparskip}{\parskip}% save the value
+%    \begin{minipage}{\textwidth}% open the minipage
+%    \setlength{\parskip}{\currentparskip}% restore the value
+%   }
+%   {\end{minipage}}
+% \renewenvironment{Shaded}{\begin{{myminipage}}\begin{mybox}}{\end{mybox}\end{{myminipage}}}
+
 
 \definecolor{codecolor}{RGB}{0, 0, 0}
 

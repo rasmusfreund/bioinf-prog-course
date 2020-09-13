@@ -1,10 +1,10 @@
 
 
-# Project: Primer design
+# Project: Primer design {-}
 
 Say you have a short sequence that you want to use as a PCR primer. To evaluate if it a suitable primer, you need to know the melting temperature of the sequence. You also need to make sure that it will not fold up on itself so that it cannot bind to the DNA sequence you want to amplify.
 
-## Count the number of bases in your candidate primer
+## Count the number of bases in your candidate primer {-}
 
 Before you can compute the melting temperature, you need to determine how many times each base occurs in the sequence. You can assume that the only characters in the string are A, T, G, and C.
 
@@ -28,7 +28,7 @@ then it should return (not necessarily with key-value pairs in the same order):
 {"A": 1, "C": 0, "G": 2, "T": 1}
 ```
 
-## Compute the melting temperature
+## Compute the melting temperature {-}
 
 Knowing the base composition in your sequence, you can now calculate the melting temperature the double-stranded DNA that forms when your primer pairs up with the sequence to amplify. If the primer has less than 14 bases the formula for calculating melting temperature is:
 
@@ -63,9 +63,9 @@ then it should return:
 ```
 
 
-## Reverse complement the sequence
+## Reverse complement the sequence {-}
 
-It is possible that one part of the primer forms base pairs with another part of the primer to form a hairpin structure. To figure out if this can happen to your primer, you need to be able to get the reverse complement of the DNA primer. The reverse complement of a DNA string is one where the sequence of bases is first reversed, and then each base is replaced with its Watson-Crick complementary base.
+It is possible that one part of the primer forms base pairs with another part of the primer to form a hairpin structure. To figure out if this can happen to your primer, you need to be able to find the reverse complement of DNA sequence. The reverse complement of a DNA sequence is one where the sequence of bases is first reversed, and then each base is replaced with its Watson-Crick complementary base.
 
 *Write a function*, `reverse_complement`, which takes one argument:
 
@@ -87,18 +87,18 @@ then it should return:
 "GAATT"
 ```
 
-## Check for hairpins
+## Check for hairpins {-}
 
-You would like to be able to determine if your primer can fold to form a hairpin with some specified minimum number of consequtive base pairs. We assume that hairpin loops are always at least four bases long and that base pairs in the hairpin can only be Watson-Crick basepairs. Here is an example of a hairpin with five basepairs and a loop of four bases:
+You would like to be able to determine if your primer can fold to form a hairpin with some specified minimum number of consequtive base pairs. We assume that hairpin loops are always at least four bases long and that base pairs in the hairpin can only be Watson-Crick basepairs. Here is an example of a hairpin with five basepairs and a loop of four bases (four Cs):
 
 ```
-      C C
-    C     C
-     A - T
-     T - A
-     A - T
-     T - A
-     A - T
+        C C
+      C     C
+       A - T
+       T - A
+       A - T
+       T - A
+       A - T
 ```
 
 To test if a sequence can form a hairpin with at least four consequtive base pairs, you need to test if the sequence contains any subsequence of length four whose reverse complement is identical to another nonoverlapping subsequence. To take into account that the hairpin loop is at least four bases long, any such two subsequences must be separated by at least four bases.
@@ -130,14 +130,15 @@ This is a hard one, so I will give you a bit of help. Here is the function with 
 def has_hairpin(primer, k):
     looplen = 4
     for i in range(len(s)-k+1): # this produces the start indeces of all the substrings of length k
-        substr = # Hint A 
+        substr = # Hint A
         left = # Hint B 
         right = # Hint C
         revcompl = reverse_complement(substr)
-    if revcompl in left or revcompl in right:
-        return True
-    return False
+        if revcompl in left or revcompl in right:
+            return True
+        return False
 ```
+
 
 Hint A: Here you need to extract a substring of length k starting at i. Hint B: Here you need to extract all the sequence `looplen` to the left of `substr`. Hint C: Here you need to extract all the sequence `looplen` to the right of `substr`.
 

@@ -14,10 +14,9 @@ CHAPTERS := Header.yml \
 11_iteration_over_values.md \
 12_testing_your_code.md \
 13_working_with_files.md \
+folding_project.md \
 translation_project.md \
-your_own_types_of_objects.md \
 assembly_project.md \
-on_the_shoulders_of_giants.md \
 codonbias_project.md \
 hiv_project.md \
 alignment_project.md \
