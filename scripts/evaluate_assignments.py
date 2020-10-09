@@ -270,6 +270,8 @@ For digital exam assignments the script works much the same way, but also parses
 bioinformatics assignments (see README.md in exam_evaluation for details).
 """
 
+    repo_dir = '/Users/kmt/Dropbox/Teaching/Courses/BoP/bioinf-prog-course'
+
     global PROJECTS
     # The keys in PROJECTS must be the basenames of the files that the students produce.
     # I.e. the names of the modules that are imported by the test script.
@@ -279,7 +281,7 @@ bioinformatics assignments (see README.md in exam_evaluation for details).
         'translationproject': {
             'test_file': 'test_translationproject.py',
             'files': {
-                'projects/translationproject/test_translationproject.py': 'test_translationproject.py',
+                f'{repo_dir}/programming_projects/translationproject/test_translationproject.py': 'test_translationproject.py',
             }
         },
 
@@ -287,12 +289,12 @@ bioinformatics assignments (see README.md in exam_evaluation for details).
         'hivproject': { 
             'test_file': 'test_hivproject.py',
             'files': {
-                'projects/hivproject/test_hivproject.py': 'test_hivproject.py',
-                'projects/hivproject/subtypeA.txt': 'subtypeA.txt',
-                'projects/hivproject/subtypeB.txt': 'subtypeB.txt',
-                'projects/hivproject/subtypeC.txt': 'subtypeC.txt',
-                'projects/hivproject/subtypeD.txt': 'subtypeD.txt',
-                'projects/hivproject/unknown_type.txt': 'unknown_type.txt',
+                f'{repo_dir}/programming_projects/hivproject/test_hivproject.py': 'test_hivproject.py',
+                f'{repo_dir}/programming_projects/hivproject/subtypeA.txt': 'subtypeA.txt',
+                f'{repo_dir}/programming_projects/hivproject/subtypeB.txt': 'subtypeB.txt',
+                f'{repo_dir}/programming_projects/hivproject/subtypeC.txt': 'subtypeC.txt',
+                f'{repo_dir}/programming_projects/hivproject/subtypeD.txt': 'subtypeD.txt',
+                f'{repo_dir}/programming_projects/hivproject/unknown_type.txt': 'unknown_type.txt',
             }
         },
 
@@ -300,8 +302,8 @@ bioinformatics assignments (see README.md in exam_evaluation for details).
         'codonbiasproject': {
             'test_file': 'test_codonbiasproject.py',
             'files': {
-                'projects/codonbiasproject/test_codonbiasproject.py': 'test_codonbiasproject.py',
-                'projects/codonbiasproject/sample_orfs.txt': 'sample_orfs.txt',
+                f'{repo_dir}/programming_projects/codonbiasproject/test_codonbiasproject.py': 'test_codonbiasproject.py',
+                f'{repo_dir}/programming_projects/codonbiasproject/sample_orfs.txt': 'sample_orfs.txt',
             }
         },
 
@@ -309,8 +311,8 @@ bioinformatics assignments (see README.md in exam_evaluation for details).
         'assemblyproject': { 
             'test_file': 'test_assemblyproject.py',
             'files': {
-                'projects/assemblyproject/test_assemblyproject.py': 'test_assemblyproject.py',
-                'projects/assemblyproject/sequencing_reads.txt': 'sequencing_reads.txt',
+                f'{repo_dir}/programming_projects/assemblyproject/test_assemblyproject.py': 'test_assemblyproject.py',
+                f'{repo_dir}/programming_projects/assemblyproject/sequencing_reads.txt': 'sequencing_reads.txt',
             }
         },
 
@@ -318,8 +320,16 @@ bioinformatics assignments (see README.md in exam_evaluation for details).
         'orfproject': { 
             'test_file': 'test_orfproject.py',
             'files': {
-                'projects/orfproject/test_orfproject.py': 'test_orfproject.py',
-                'projects/orfproject/e_coli_O157_H157_str_Sakai.fasta': 'e_coli_O157_H157_str_Sakai.fasta',
+                f'{repo_dir}/programming_projects/orfproject/test_orfproject.py': 'test_orfproject.py',
+                f'{repo_dir}/programming_projects/orfproject/e_coli_O157_H157_str_Sakai.fasta': 'e_coli_O157_H157_str_Sakai.fasta',
+            }
+        },
+
+        # RNA folding
+        'foldingproject': { 
+            'test_file': 'test_foldingproject.py',
+            'files': {
+                f'{repo_dir}/programming_projects/foldingproject/test_foldingproject.py': 'test_foldingproject.py',
             }
         },
 
@@ -367,7 +377,7 @@ bioinformatics assignments (see README.md in exam_evaluation for details).
     args.assignment_dir = args.assignment_dir.resolve()
 
     if args.ta_classes:
-        ta_classes = yaml.load(open(str(args.ta_classes)))
+        ta_classes = yaml.load(open(str(args.ta_classes)), Loader=yaml.FullLoader)
     else:
         ta_classes = None
 

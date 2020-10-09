@@ -10,6 +10,8 @@ import argparse
 parser = argparse.ArgumentParser(description='Process some integers.')
 parser.add_argument('-d', '--decrypt', action='store_true',
                 help='Decrypt input file.')
+parser.add_argument('-o', '--overwrite', action='store_true',
+                help='Overwrite existing files.')
 parser.add_argument('encryptionkey', type=str,
                 help='Passkey for encryption.')
 parser.add_argument('inputfile', type=Path, help='Input file name')
@@ -28,15 +30,7 @@ kdf = PBKDF2HMAC(
 )
 key = base64.urlsafe_b64encode(kdf.derive(encryptionkey)) # Can only use kdf once
 
-input_file = args.inputfile
-
-if args.decrypt:
-
-    if input_file.suffix != '.encrypted':
-        print('Suffix of for file for descryption must be .encrypted')
-        sys.exit()
-
-    output_file = input_file.with_suffix('')
+def decrypt(input_file, output_file):
 
     with open(input_file, 'rb') as f:
         data = f.read()
@@ -50,7 +44,9 @@ if args.decrypt:
 
     with open(output_file, 'wb') as f:
         f.write(encrypted)
-else:
+
+def encrypt(input_file, output_file):
+
     output_file = input_file.with_suffix(input_file.suffix + '.encrypted')
     with open(input_file, 'rb') as f:
         data = f.read()
@@ -60,3 +56,27 @@ else:
 
     with open(output_file, 'wb') as f:
         f.write(encrypted)
+
+if args.inputfile.is_dir():
+    input_files = [p for p in args.inputfile.rglob("*") if p.is_file()]
+else:
+    input_files = [args.inputfile]
+
+
+if args.decrypt:
+    output_files = [p.with_suffix('') for p in input_files]
+else:
+    output_files = [p.with_suffix('.encrypted') for p in input_files]
+
+if any(p.exists() for p in output_files) and not args.overwrite:
+    print("Output files exists. Use --overwrite to overwrite existing files.")
+    sys.exit()
+
+if args.decrypt:
+    for input_file, output_file in zip(input_files, output_files):
+        if input_file.suffix == '.encrypted':
+            decrypt(input_file, output_file)
+else:
+    for input_file, output_file in zip(input_files, output_files):
+        if input_file.suffix != '.encrypted':
+            encrypt(input_file, output_file)
