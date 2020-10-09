@@ -473,6 +473,9 @@ class Test_has_hairpin(AnvProgTestCase):
         self.assertEqualNice(
             True, project.has_hairpin, 'GGGGATATCCCCATAT', 4)
 
+    def test_has_hairpin_6(self):
+        self.assertEqualNice(
+            True, project.has_hairpin, 'GGGGGGATATCCCCCCATAT', 6)
 
 if __name__ == '__main__':
     # if GRADE_MODE:
