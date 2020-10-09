@@ -42,7 +42,7 @@ You also need to download the two project files:
 - `assemblyproject.py` is an empty file where you must write your code.
 - `test_assemblyproject.py` is the test program that lets you test the code you write in `assemblyproject.py`.
 
-Put all three files in a folder dedicated to this project. On most computers you can right-click on the link and choose "Save file as..." or "Download linked file".
+Put the files in a folder dedicated to this project. On most computers you can right-click on the link and choose "Save file as..." or "Download linked file".
 
 Now open each file in *SublimeText* and have a look at what is in `sequencing_reads.txt`. (Do *not* change it in any way and do not save it after viewing. If SublimeText asks you if you want to save it before closing, say *no*.) How many sequences are there in each file?
 

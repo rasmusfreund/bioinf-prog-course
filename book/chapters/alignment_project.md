@@ -6,10 +6,12 @@ Your task is to find an optimal alignment of two sequences. If two such sequence
 
 This project is meant to train your coding abilities and consolidate your understanding of the Needleman-Wunch algorithm. The better you understand the algorithm before you begin, the easier and more rewarding the project will be. So re-read the book chapter about pairwise alignment and browse through the lecture slides.
 
-Under "Assignments" on the Blackboard course page, you will find an assignment with the same name as this chapter. There you can download the data file you need for this project. Put these files in a folder dedicated to this project:
+Under "Assignments" on the Blackboard course page, you will find an assignment with the same name as this chapter. There you can download the files you need for this project.
 
 - `alignmentproject.py` is the file where you must write your code. It already contains a function I wrote for you.
 - `test_alignmentproject.py` is the test program that lets you test the code you write in `alignmentproject.py`.
+
+Put the files in a folder dedicated to this project. On most computers you can right-click on the link and choose "Save file as..." or "Download linked file".
 
 The project is split into two parts: 
 

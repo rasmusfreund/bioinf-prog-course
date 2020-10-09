@@ -19,7 +19,7 @@ You also need to download the two project files:
 - `hivproject.py` is an empty file where you must write your code.
 - `test_hivproject.py` is the test program that lets you test the code you write in `hivproject.py`.
 
-Put all seven files in a folder dedicated to this project. On most computers you can right-click on the link and choose "Save file as..." or "Download linked file".
+Put the files in a folder dedicated to this project. On most computers you can right-click on the link and choose "Save file as..." or "Download linked file".
 
 Now open each file in *SublimeText* and have a look at what is in the data files. (Do *not* change them in any way and do not save them after viewing. If SublimeText asks you if you want to save it before closing, say *no*.) How many sequences are there in each file?
 

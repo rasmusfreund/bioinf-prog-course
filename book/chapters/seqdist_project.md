@@ -2,6 +2,13 @@
 
 > This chapter is about clustering sequence based on the evolutionary distance between them. 
 
+Under "Assignments" on the Blackboard course page, you will find an assignment with the same name as this chapter. There you can download the files you need for this project.
+
+- `seqdistproject.py` is an empty file where you must write your code.
+- `test_seqdistproject.py` is the test program that lets you test the code you write in translationproject.py.
+
+Put the files in a folder dedicated to this project. On most computers you can right-click on the link and choose "Save file as..." or "Download linked file".
+
 ## Measuring sequence distance {-}
 
 Clustering is based on the distances between all pairs of sequences. So before you can build your tree you must compute those distances and fill them into a table like that in the book. Here we break that task into three parts:

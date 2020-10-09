@@ -29,7 +29,8 @@ Given an open reading frame (ORF), you must compute the codon usage. Your goal i
 
 That data structure is a dictionary with keys corresponding to amino acids (i.e. single letter strings designating an amino acid such as `'R'` for arginine). The value associated with *each* amino acid key is also a dictionary, and the keys of *this* dictionary should be the different codons that encode the amino acid. The value associated with each codon key should be a number, representing the frequency with which that codon is used to encode that amino acid. The final data structure should only include amino acids that are found in the ORF.
 
-Under "Assignments" on the Blackboard course page, you will find an assignment with the same name as this chapter. There you can download the data file you need for this project:
+Under "Assignments" on the Blackboard course page, you will find an assignment with the same name as this chapter. There you can download the files you need for this project.
+
 
 - `sample_orfs.txt` contains open reading frame sequences you can work on.
 
@@ -38,7 +39,7 @@ You also need to download the two project files:
 - `codonbiasproject.py` is an empty file where you must write your code.
 - `test_codonbiasproject.py` is the test program that lets you test the code you write in `codonbiasproject.py`.
 
-Put all three files in a folder dedicated to this project. On most computers you can right-click on the link and choose "Save file as..." or "Download linked file".
+Put the files in a folder dedicated to this project. On most computers you can right-click on the link and choose "Save file as..." or "Download linked file".
 
 Now open each file in *SublimeText* and have a look at what is in `sample_orfs.txt`. (Do *not* change it in any way and do not save it after viewing. If SublimeText asks you if you want to save it before closing, say *no*.) How many sequences are there in each file?
 
@@ -183,7 +184,7 @@ In the above example, this count is `2`. So the task is really just to distribut
 grouped_counts[acid][codon] = codon_counts[codon]
 ```
 
-Your function should begin by defining an empty dictionary to add to. Use `count_codons` to get a dictionary of all codon counts. Then use a for-loop to run through all codon/amino-acid pairs and populate your dictionary of dictionaries.
+Your function should begin by defining an empty dictionary to add to. Then use a for-loop to run through all codon/amino-acid pairs and populate your dictionary of dictionaries.
 
 ## Turn counts into frequencies {-}
 

@@ -4,6 +4,13 @@
 
 Say you have a short sequence that you want to use as a PCR primer. To evaluate if it a suitable primer, you need to know the melting temperature of the sequence. You also need to make sure that it will not fold up on itself so that it cannot bind to the DNA sequence you want to amplify.
 
+Under "Assignments" on the Blackboard course page, you will find an assignment with the same name as this chapter. There you can download the files you need for this project.
+
+- `foldingproject.py` is an empty file where you must write your code.
+- `test_foldingproject.py` is the test program that lets you test the code you write in translationproject.py.
+
+Put the files in a folder dedicated to this project. On most computers you can right-click on the link and choose "Save file as..." or "Download linked file".
+
 ## Count the number of bases in your candidate primer {-}
 
 Before you can compute the melting temperature, you need to determine how many times each base occurs in the sequence. You can assume that the only characters in the string are A, T, G, and C.
@@ -87,6 +94,9 @@ then it should return:
 "GAATT"
 ```
 
+<!-- TODO: Add function to test if the primer can form a dimer (two different primers) -->
+
+
 ## Check for hairpins {-}
 
 You would like to be able to determine if your primer can fold to form a hairpin with some specified minimum number of consequtive base pairs. We assume that hairpin loops are always at least four bases long and that base pairs in the hairpin can only be Watson-Crick basepairs. Here is an example of a hairpin with five basepairs and a loop of four bases (four Cs):
@@ -127,23 +137,16 @@ True
 This is a hard one, so I will give you a bit of help. Here is the function with some parts missing. 
 
 ```python
-def has_hairpin(primer, k):
-    looplen = 4
-    for i in range(len(s)-k+1): # this produces the start indeces of all the substrings of length k
-        substr = # Hint A
-        left = # Hint B 
-        right = # Hint C
-        revcompl = reverse_complement(substr)
-        if revcompl in left or revcompl in right:
-            return True
-        return False
+def has_hairpin(s, k):
+	looplen = 4
+	for i in range(len(s)-k+1):
+		subs = # Hint A
+		right = # Hint B
+		revcl = reverse_complement(subs)
+		if revcl in right[looplen:]:
+			return True
+	return False
 ```
 
 
-Hint A: Here you need to extract a substring of length k starting at i. Hint B: Here you need to extract all the sequence `looplen` to the left of `substr`. Hint C: Here you need to extract all the sequence `looplen` to the right of `substr`.
-
-Example:
-
-       left        substr     right
-    ------------    i---    ---------
-    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Hint A: Here you need to extract a substring of length k starting at i. Hint B: Here you need to extract all the sequence to the right of `substr`.
