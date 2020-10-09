@@ -29,4 +29,4 @@ is a file with meta information on the student like this (like name, auID ect.).
 
 For your convenience all assignments that failed are copied to a folder for each TA in the `failed` folder. Students in the `student_status.txt` files labelled as NO-TA-ASSIGNED are found in the folder called `NO-TA-ASSIGNED`. If any uploaded assignments could not be tested at all they are copied to the `import_error` folder. So any correction and note taking can be limited to the content of these latter folders.
 
-Once you are done correcting, you must mark each student as passed (if they are) and send a harsh email to the ones that did not pass - telling them they have three days (or something) to hand in again.
+Once you are done correcting, you must mark each student as passed (if they are) and send a harsh email to the ones that did not pass - telling them they have three days (or something) to hand in again. If someone did not hand in at all, you should send them an email to ask if they are no longer following the course. If they are not, we can remove them from the list of participants for each class.

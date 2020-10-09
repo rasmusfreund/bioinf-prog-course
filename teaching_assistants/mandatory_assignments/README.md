@@ -1,3 +1,7 @@
 
-python evaluate_assignments.py --ta-classes class_participants.yaml mandatory_assignments/translationproject_AP/gradebook_BB-Cou-UUVA-77843_Translating20open20reading20frames_2018-10-01-12-04-14 translationproject > student_status.txt
+
+python ../../../scripts/evaluate_assignments.py --help
+
+python ../../../scripts/evaluate_assignments.py --ta-classes ../../class_participants.yaml gradebook_BB-Cou-UUVA-91329_Primer20design_2020-10-09-11-52-23 foldingproject | sort -k 2 > student_status.txt
+
 
