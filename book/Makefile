@@ -16,10 +16,10 @@ CHAPTERS := Header.yml \
 13_working_with_files.md \
 folding_project.md \
 translation_project.md \
-assembly_project.md \
 codonbias_project.md \
-hiv_project.md \
+assembly_project.md \
 alignment_project.md \
+hiv_project.md \
 seqdist_project.md \
 orf_project.md \
 references.md
