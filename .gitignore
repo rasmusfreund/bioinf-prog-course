@@ -106,3 +106,12 @@ venv.bak/
 
 .Rhistory
 Icon*
+
+
+teaching_assistants/mandatory_assignments/*
+
+teaching_assistants/BLACKBOARD/Slides/*.pdf
+
+hand_ins/
+
+bioinf_exercises/web_exercise_pdf_scans/*.pdf
