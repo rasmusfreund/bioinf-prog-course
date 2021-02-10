@@ -336,10 +336,10 @@ bioinformatics assignments (see README.md in exam_evaluation for details).
         'progexam': {
             'test_file': 'test_progexam.py',
             'files': {
-                '/Users/kmt/Dropbox/Teaching/BioinfOgProg/BP2019/exam/2019reexam/test_progexam.py': 'test_progexam.py',
+                os.path.abspath('../test_progexam.py'): 'test_progexam.py',
             },
-            'bioinf_facit_file': '/Users/kmt/Dropbox/Teaching/BioinfOgProg/BP2019/exam/2019reexam/bioinformatics_facit.py',
-            'bioinf_facit_script': '/Users/kmt/Dropbox/Teaching/BioinfOgProg/BP2019/exam/2019reexam/check_bioinfexam.py',
+            'bioinf_facit_file': os.path.abspath('../bioinformatics_facit.py'),
+            'bioinf_facit_script': os.path.abspath('../check_bioinfexam.py'),
         },
 
     }

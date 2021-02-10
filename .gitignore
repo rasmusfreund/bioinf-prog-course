@@ -108,10 +108,9 @@ venv.bak/
 Icon*
 
 
-teaching_assistants/mandatory_assignments/*
-
-teaching_assistants/BLACKBOARD/Slides/*.pdf
-
 hand_ins/
-
 bioinf_exercises/web_exercise_pdf_scans/*.pdf
+teaching_assistants/mandatory_assignments/*
+teaching_assistants/BLACKBOARD/Slides
+teaching_assistants/ta_presentations
+
