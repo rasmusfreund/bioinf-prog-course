@@ -1,5 +1,5 @@
 
-# Building lists on the fly {-}
+# Building lists on the fly
 
 ## List comprehensions {-}
 

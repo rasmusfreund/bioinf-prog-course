@@ -14,6 +14,8 @@ CHAPTERS := Header.yml \
 11_iteration_over_values.md \
 12_testing_your_code.md \
 13_working_with_files.md \
+unleash_your_functions.md \
+your_own_types_of_objects.md \
 folding_project.md \
 translation_project.md \
 codonbias_project.md \
@@ -53,7 +55,7 @@ PANDOC_OPTS_ALL :=  --toc \
 					--top-level-division=chapter \
 					--variable urlcolor=cyan \
 					--filter pandoc-crossref \
-					--filter pandoc-citeproc \
+					--citeproc \
 					--number-sections \
 					--toc-depth=2 \
 					--highlight-style=kate
@@ -68,8 +70,9 @@ PANDOC_OPTS_ALL :=  --toc \
 PANDOC_PDF_OPTS := $(PANDOC_OPTS_ALL) \
 					--default-image-extension=pdf \
 					--variable documentclass=scrbook \
-					--template=latex_template.tex \
+					--include-in-header=header_extra.tex \
 					--variable=geometry:a4paper
+#					--template=latex_template.tex \
 #    				--variable=fontfamily:arev
 					# --variable links-as-notes \
 

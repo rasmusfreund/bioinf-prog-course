@@ -1,5 +1,5 @@
 
-# Project: Finding genes in bacteria  {-}
+# Project: Finding genes in bacteria
 
 > This chapter is a programming project where you will find open  reading frames in the genome of a particularly virulent strain of *E. coli*.
 

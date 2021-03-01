@@ -1,4 +1,4 @@
-# Testing your code {-}
+# Testing your code
 
 > This chapter is about how you figure out if the code you wrote actually solves the problem in the way you intended. You will be surprised how often that is not the case -- even for seasoned programmers.
 

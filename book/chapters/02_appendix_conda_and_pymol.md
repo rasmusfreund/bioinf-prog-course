@@ -1,4 +1,4 @@
-# Appendix: Conda and PyMol {-}
+# Appendix: Conda and PyMol
 
 In bioinformatics, we install packages and programs so we can use them in our analyses and pipelines. Sometimes, however, the versions of packages you need for one project conflicts with the versions you need for other projects that you work on in parallel. Such conflicts seem like an unsolvable problem. Would it not be fantastic if you could create a small world, insulated from the rest of your Anaconda installation? Then that small world could only contain the packages you needed for a single project. If each project had its own isolated world, then there would be no such version conflicts. Fortunately, there is a tool that lets you do just that, and its name is Conda.
 

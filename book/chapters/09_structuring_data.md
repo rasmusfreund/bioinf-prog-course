@@ -1,4 +1,4 @@
-# Structuring data {-}
+# Structuring data
 
 > This chapter is about lists and dictionaries, which are types of Python values, which are containers for other values. Using them and combining them lets you build relationships between values, which is what data structures are.
 

@@ -1,4 +1,4 @@
-# Dealing with values {-}
+# Dealing with values
 
 > This chapter is about values and variables, the two most central concepts in programming.
 

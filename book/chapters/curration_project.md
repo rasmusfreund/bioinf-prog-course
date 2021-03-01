@@ -1,4 +1,4 @@
-# Project: Sequence Curation {-}
+# Project: Sequence Curation
 
 
 **TURN EXAM ASSIGNMENT INTO PROJECT**

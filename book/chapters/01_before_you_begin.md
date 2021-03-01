@@ -1,4 +1,4 @@
-# Before you begin {-}
+# Before you begin
 
 > This chapter serves to get the practicalities out of the way so you can start programming.
 

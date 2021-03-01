@@ -1,6 +1,6 @@
 
 
-# Preface {-}
+# Preface
 
 > There are madeup characters, and then there are madeup characters made up by madeup characters. These notes are dedicated to the memory of Rollo Tomasi (from [L.A. Confidential](https://www.imdb.com/title/tt0119488/)).
 

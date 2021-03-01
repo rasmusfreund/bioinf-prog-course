@@ -1,4 +1,4 @@
-# Writing a program {-}
+# Writing a program
 
 > **Heads up:** Before you head into this chapter and the rest of the book, it is essential that you have installed Python as described, that you have installed the *Sublime Text* editor, and acquainted yourself with navigating a terminal. If not, go back to the previous chapter for instructions.
 

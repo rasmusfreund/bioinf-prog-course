@@ -1,4 +1,4 @@
-# Your own types of objects {-}
+# Your own types of objects
 
 > Do you know that type you are? Python objects do, and as you have seen plenty of times already, that 
 
@@ -17,3 +17,5 @@ Bundle data with relevant functionality.
 ## A point class {-}
 - Other relevant classes you could make, orf, etc.
 
+
+$$f(x) = f(x-1)$$ {#eq:some_other_label}

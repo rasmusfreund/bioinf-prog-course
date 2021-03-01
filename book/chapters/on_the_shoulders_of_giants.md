@@ -1,4 +1,4 @@
-# On the shoulders of giants {-}
+# On the shoulders of giants
 
 Python modules
 
