@@ -14,16 +14,22 @@ CHAPTERS := Header.yml \
 11_iteration_over_values.md \
 12_testing_your_code.md \
 13_working_with_files.md \
-unleash_your_functions.md \
 your_own_types_of_objects.md \
-folding_project.md \
 translation_project.md \
-codonbias_project.md \
 assembly_project.md \
+pairwise_alignment.md \
 alignment_project.md \
+models_of_dna_evolution.md \
 hiv_project.md \
+protein_substitution_matrices.md \
+clustering.md \
 seqdist_project.md \
+unleash_your_functions.md \
+phylogenetics.md \
+hidden_markov_models.md \
 orf_project.md \
+folding_project.md \
+codonbias_project.md \
 references.md
 
 # CHAPTERS := Header.yml \

@@ -82,3 +82,28 @@
 }
 \makeatother
 \renewcommand\sectionformat{\enskip\thesection\autodot}
+
+
+\renewcommand*{\chapterformat}{%
+  \textcolor[rgb]{0.8, 0.8, 0.8}{\thechapter}\autodot\enskip%
+}
+% \renewcommand*{\sectionformat}{%
+%   \textcolor[rgb]{0.655, 0.498, 0.161}{\thesection}\autodot\enskip%
+% }
+% \renewcommand*{\subsectionformat}{%
+%   \textcolor[rgb]{0.655, 0.498, 0.161}{\thesubsection}\autodot\enskip%
+% }
+\renewcommand*{\subsubsectionformat}{%
+  \textcolor[rgb]{0.8, 0.8, 0.8}{\thesubsubsection}\autodot\enskip%
+}
+
+
+% % prevent latex from "floating" the figures
+% \usepackage{float}
+% \let\origfigure\figure
+% \let\endorigfigure\endfigure
+% \renewenvironment{figure}[1][2] {
+%     \expandafter\origfigure\expandafter[H]
+% } {
+%     \endorigfigure
+% }

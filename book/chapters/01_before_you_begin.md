@@ -48,9 +48,9 @@ What is *Anaconda Prompt* and this *Terminal* thing, you ask! Both programs are 
 
 If you open *Anaconda Prompt* you should see something like @fig:powershell. The OSX Terminal looks like @fig:terminal, possibly with a different background color.
 
-![Screenshot of Anaconda Prompt](./images/anaconda_prompt.jpg){#fig:prompt}
+![Anaconda Prompt](./images/anaconda_prompt.jpg){#fig:prompt width=80%}
 
-![Screenshot of Terminal](./images/terminal.png){#fig:terminal}
+![Terminal](./images/terminal.png){#fig:terminal width=80%} 
 
 The terminal is a very useful tool. To use it, howevever, you need to know a few basics. First of all, a terminal lets you execute commands on your computer. You simply type the command you want and then hit enter. The place where you type is called a prompt (or command promt) and it may look a little different depending on which terminal emulator you use. In this book we represent the prompt with the character `$`.
 
