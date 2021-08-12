@@ -33,7 +33,7 @@ and never of this type:
 
 In this project, you will be asked to write functions that together solve the problem of assembling a genomic sequence. Each function each solve a small problem, and you may need to call these functions inside other functions, to put together solutions to larger subproblems.
 
-Under "Assignments" on the Blackboard course page, you will find an assignment with the same name as this chapter. There you can download the data file you need for this project:
+On the course page you can download the files you need for this project:
 
 - `sequencing_reads.txt` contains the sequencing reads.
 
@@ -44,7 +44,7 @@ You also need to download the two project files:
 
 Put the files in a folder dedicated to this project. On most computers you can right-click on the link and choose "Save file as..." or "Download linked file".
 
-Now open each file in *SublimeText* and have a look at what is in `sequencing_reads.txt`. (Do *not* change it in any way and do not save it after viewing. If SublimeText asks you if you want to save it before closing, say *no*.) How many sequences are there in each file?
+Now open each file in your editor and have a look at what is in `sequencing_reads.txt`. (Do *not* change it in any way and do not save it after viewing. If your editor asks you if you want to save it before closing, say *no*.) How many sequences are there in each file?
 
 The project is split into four parts: 
 
@@ -193,6 +193,8 @@ should return the following dictionary of dictionaries (but not necessarily with
  'Read6': {'Read1': 0, 'Read3': 43, 'Read2': 0, 'Read5': 0, 'Read4': 1}}
 ```
 
+Hint: You can use the `get_overlap` function you just made to find the overlap between a pair of reads. To generate all combinations of reads you need two for-loops. One looping over reads in left positions and another (inside the first one) looping over reads in right position. Remember that we do *not* want the overlap of a read to itself, so there should be an if-statement in the checking of the left and right reads are the same.
+
 ### Print overlaps as a nice table {-}
 
 The dictionary returned by `get_all_overlaps` is a little messy to look at. We want to print it in a nice matrix-like format so we can better see which pairs overlap in what orientations.
@@ -242,7 +244,7 @@ Make sure you understand how it works. You can look up in the documentation what
 
 ## Find the right order of reads {-}
 
-Now that we know how the reads overlap we can chain them together pair by pair from left to right to get the order in which they represent the genomic sequence. To do this we take the first (left-most) read and identify which read has the largest overlap to its right end. Then we take that read and find the read with the largest overlap to the right end of that -- and so on until we reach the rightmost (last) read.
+Now that we know how the reads overlap we can chain them together pair by pair from left to right to get the order in which they represent the genomic sequence. To do this we take the first (left-most) read and identify which read has the largest overlap to its right end. Then we take that read and find the read with the largest overlap to the right end of that - and so on until we reach the rightmost (last) read.
 
 ### Find the first read {-}
 
@@ -318,6 +320,8 @@ The function must return
 
 * A list of strings, which are read names in the order in which they represent the genomic sequence. 
 
+Hints: You know the first read is given by the first argument to the function, you also know that you can find the next read in the chain of overlapping reads by using the `find_key_for_largest_value` function, and you know that you should keep adding on reads to the chain as long as the overlap is larger than two (you can use a for-loop with an if-statement inside to check that the overlap is larger than 2).
+
 Example usage: assuming that `overlaps` is a dictionary of dictionaries returned by `get_all_overlaps` then:
 
 ```python
@@ -361,6 +365,8 @@ TGCGAGGGAAGTGAAGTATTTGACCCTTTACCCGGAAGAGCGGGACGCTGCCCTGCGCGATT
 CCAGGCTCCCCACGGGGTACCCATAACTTGACAGTAGATCTCGTCCAGACCCCTAGCTGGTA
 CGTCTTCAGTAGAAAATTGTTTTTTTCTTCCAAGAGGTCGGAGTCGTGAACACATCAGT
 ```
+
+Hint: iterate over the reads in order and use the overlap information to extract and join the appropriate parts of the reads.
 
 ### Putting the whole thing together {-}
 

@@ -1,6 +1,6 @@
 # Working with files
 
-> This chapter covers the bare necessities of how to make your program read data from a file on your computer and how to make it create a file that it can write results to.
+*This chapter covers the bare necessities of how to make your program read data from a file on your computer and how to make it create a file that it can write results to.*
 
 ## Writing files {-}
 
@@ -16,7 +16,7 @@ f.write("Second line\n")
 f.close()
 ```
 
-Now open the `workfile.txt` in *SublimeText* and see what is in it now. It should contain:
+Now open the `workfile.txt` in *VScode* and see what is in it now. It should contain:
 
 ```zsh
 First line
@@ -33,7 +33,7 @@ Lets break down what happened:
 Note that if you open a file for writing, a file with that name is created. If a file of that name already exist, it is overwritten.
 
 #### Exercise
-Close workfile.txt in *SublimeText* again and change your program above to this (removing the `\n` characters):
+Close workfile.txt in *VScode* again and change your program above to this (removing the `\n` characters):
 
 ```python
 f = open('workfile.txt', 'w')
@@ -42,10 +42,10 @@ f.write("Second line")
 f.close()
 ```
 
-What do you think the content of workfile.txt is now? Decide before you open workfile.txt in *SublimeText* again and have a look. What do you think the `\n` character represents?
+What do you think the content of workfile.txt is now? Decide before you open workfile.txt in *VScode* again and have a look. What do you think the `\n` character represents?
 
 #### Exercise
-Close workfile.txt in *SublimeText* and change your program above to this:
+Close workfile.txt in *VScode* and change your program above to this:
 
 ```python
 f = open('workfile.txt', 'w')
@@ -53,7 +53,7 @@ f.write("First line\nSecond line\n")
 f.close()
 ```
 
-Can you see how that is equivalent to what you did before? Open workfile.txt in *SublimeText* again and have a look.
+Can you see how that is equivalent to what you did before? Open workfile.txt in *VScode* again and have a look.
 
 #### Exercise {#sec:write_to_file_with_print}
 You can also make `print` write to a file instead of the terminal. That way your output ends up in the file instead of the terminal. To make print write to a file, you need to use the `file` keyword argument to give print the file object that represents the file you want to write to (`file=f` below). Try to write the code below and run it:
@@ -135,7 +135,7 @@ for line in input_file:
     output_file.write(line)
 ```
 
-Then run it and open results.txt in *SublimeText* and see what it produced.
+Then run it and open results.txt in *VScode* and see what it produced.
 
 Were you surprised that the file object can be an iterator in a for-loop? Just like stings can iterate over characters, lists can iterate over values and dictionaries can iterate over keys, file objects can iterate over the lines in the file.
 

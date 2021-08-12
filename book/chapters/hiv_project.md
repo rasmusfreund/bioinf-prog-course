@@ -6,7 +6,7 @@ You have now been introduced to all the programming rules you will see in this c
 
 The programming project in this chapter deals with DNA sequences from HIV viruses. There are two types of HIV: HIV-1, which is by far the most common, and HIV-2, which is mostly found in West Africa. HIV-1 vira are divided into groups M, N, O, and P. The most important group M (for major) is one primarily responsible for the global epidemic. Group M is further divided into subtypes A, B, C, D, F, G, J, K, and CRFs. In this project we will look at sequences from the subtypes A, B, C, and D. You have multiple database sequences for each of these four subtypes and you have one *unknown* sequence from a patient that you need to assign to either subtype A, B, C or D. To do this you will have to write a program that *predicts* the subtype of the unknown sequence. How cool is that?
 
-Under "Assignments" on the Blackboard course page, you will find an assignment with the same name as this chapter. There you can download the data files you need for this project:
+On the course page you can download the files you need for this project:
 
 - `unknown_type.txt` contains an HIV sequence of unknown subtype
 - `subtypeA.txt` contains a database of HIV sequences of subtype A
@@ -21,7 +21,7 @@ You also need to download the two project files:
 
 Put the files in a folder dedicated to this project. On most computers you can right-click on the link and choose "Save file as..." or "Download linked file".
 
-Now open each file in *SublimeText* and have a look at what is in the data files. (Do *not* change them in any way and do not save them after viewing. If SublimeText asks you if you want to save it before closing, say *no*.) How many sequences are there in each file?
+Now open each file in *VScode* and have a look at what is in the data files. (Do *not* change them in any way and do not save them after viewing. If VScode asks you if you want to save it before closing, say *no*.) How many sequences are there in each file?
 
 The project is divided into the following parts:
 
@@ -210,6 +210,8 @@ subtypeA_similarities = get_similarities(unknown_list[0], typed_data['A'])
 subtypeA_max = max(subtypeA_similarities)
 ```
 
+<!-- TODO: Have them also compute mean similarity to each group -->
+
 
 ## Identify the HIV subtype {-}
 
@@ -235,4 +237,4 @@ The function must return:
 
 The function should use `get_max_similarities` to compute the dictionary of max similarities and then extract from that dictionary the key with the highest value (similarity). So the function must return `'A'` if the unknown sequence is most similar to a sequence of subtype A, `'B'` if the unknown sequence is most similar to a sequence of subtype B and so on.
 
-Congratulations, you are now a bioinformatician.
+

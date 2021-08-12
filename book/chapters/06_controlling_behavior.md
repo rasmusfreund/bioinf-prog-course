@@ -1,6 +1,6 @@
 # Controlling behavior
 
-> This chapter is about how you make your program do different things under different circumstances. Making functionality dependent on data is what makes programs useful.
+*This chapter is about how you make your program do different things under different circumstances. Making functionality dependent on data is what makes programs useful.*
 
 ## If-statement {-}
 
@@ -15,14 +15,14 @@ bags = 20
 
 print(passengers, "people ride the bus")
 
+if bus_seats >= passengers + bags:
+    print("Smiles, everyone has room for bags")
+
 if bus_seats >= passengers:
     print('Everyone gets to sit down, no complaints')
 
 if bus_seats < passengers:
     print('Some passengers standing, annoyed')
-
-if bus_seats >= passengers + bags:
-    print("Smiles, everyone has room for bags")
     
 if bus_seats < passengers / 3:
     print("General dissatisfaction, some swearing too")
@@ -76,26 +76,27 @@ if 4 > 2:
 print('Hi!')
 ```
 
+> **Tech note:** by now you have probably know that your text editor is intelligent when it comes to indentation. If you hit Enter after a statement ending with `:`, it will indent the next line with four spaces. Also, if you use the tab in python code, it will produce four spaces for you.
 
-### FAQ - Frequently Asked Qustions {-}
+### FAQ {-}
 
 | **Q:** Isn't "If" a poem by Rudyard Kipling?
 | **A:** [Yes.](https://www.poetryfoundation.org/poems-and-poets/poems/detail/46473)
 
 ## Else-statement {-}
 
-Sometimes you not only want your program to something if an expression reduces to `True`, you also want it to do something *else* if it is `False`. It is as simple as it looks:
+Sometimes you not only want your program to do something if an expression reduces to `True`, you also want it to do something *else* if it is `False`. It is as simple as it looks:
 
 ```python
 cookies = 3
 
 if cookies > 0:
-    print("Yum yum, I wonder if we have some milk too...")
+    print("Uh, I wonder if we have some milk too...")
 else:
-    print("WHO HAS TAKEN THE LAST COOKIES!?")
+    print("Sigh!")
 ```
 
-Remember to put a `:` after the `else` keyword. Write the code and change the value of `cookies` to `0`, I dare you.
+Remember to put a `:` after the `else` keyword. Write the code and change the value of `cookies` to `0`.
 
 #### Exercise
 Test your understanding about which expressions that reduce to a `True` or `False` value. Write the code below and then see how it responds to different values of `x`. Try to come up with other variations yourself.
@@ -114,9 +115,9 @@ else:
     print('x is substituted with False in the if-statement')
 ```
 
-### FAQ - Frequently Asked Questions {-}
+### FAQ {-}
 
-| **Q:** Is "Else" a poem by Rudyard Kipling?
+| **Q:** Isn't "Else" a poem by Rudyard Kipling?
 | **A:** No.
 
 #### Exercise {#sec:nested_if_else}
@@ -134,7 +135,7 @@ else:
     if cookies:
         status = 'How does something like this happen?'
     else:
-        status = 'What ever...'
+        status = 'Whatever...'
         
 print(status)
 ```
@@ -142,7 +143,7 @@ print(status)
 
 ## Blocks of code {-}
 
-In the examples above some lines are indented more than others, and you probably already have some idea of how this is interpreted by Python. Indentation defines blocks of code. Whether each block of code is evaluated when your code runs, is controlled by the `if` and `else` statements. The following three rules define individual blocks of code:
+In the examples above, some lines are indented more than others, and you probably already have some idea of how this is interpreted by Python. Indentation defines blocks of code. Whether each block of code is evaluated when your code runs, is controlled by the `if` and `else` statements. The following three rules define individual blocks of code:
 
 1. All statements in a block of code have the *same indentation*. That is, they line up vertically. 
 2. A block of code *begins* at the first line of code at a line that is indented more than the one before it.
@@ -189,7 +190,7 @@ else:
 Here we put an else-statement at the end to capture all cases not covered by the if-statement and the two elif-statements.
 
 #### Exercise
-You can use logical operators (`and`, `or`, `not`) in the expressions tested in an if-statement. Can you change the program from @sec:nested_if_else so that there are no nested if-statements -- in a way so the program still does exactly the same? You can use `if`, `elif` and `else` and test if e.g. both `milk` and `cookies` are true using `and`.
+You can use logical operators (`and`, `or`, `not`) in the expressions tested in an if-statement. Can you change the program from @sec:nested_if_else so that there are no nested if-statements - in a way so the program still does exactly the same? You can use `if`, `elif` and `else` and test if e.g. both `milk` and `cookies` are true using `and`.
 
 #### Exercise
 In the snippet of code below there are three blocks with three statements in each. Which statements belong to which block? Which statements are executed?

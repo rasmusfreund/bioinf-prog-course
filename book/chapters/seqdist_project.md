@@ -2,7 +2,7 @@
 
 > This chapter is about clustering sequence based on the evolutionary distance between them. 
 
-Under "Assignments" on the Blackboard course page, you will find an assignment with the same name as this chapter. There you can download the files you need for this project.
+On the course page you can download the files you need for this project:
 
 - `seqdistproject.py` is an empty file where you must write your code.
 - `test_seqdistproject.py` is the test program that lets you test the code you write in translationproject.py.

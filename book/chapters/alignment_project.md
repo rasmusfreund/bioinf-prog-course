@@ -1,6 +1,6 @@
 # Project: Pairwise global alignment
 
-> This chapter is about global pairwise alignment and you will implement your own Needleman-Wunch algorithm.
+*This chapter is about global pairwise alignment and you will implement your own Needleman-Wunch algorithm.*
 
 Your task is to find an optimal alignment of two sequences. If two such sequences are both roughly 140 bases long, there are as many different ways to align them as there are atoms in the visible universe, literally. Finding an optimal alignment among those $10^{80}$ possibilities is obviously a hard problem, but implementing the Needleman-Wunch algorithm will let you do it.
 

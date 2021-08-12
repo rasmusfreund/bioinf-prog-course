@@ -1,6 +1,6 @@
 # Dealing with values
 
-> This chapter is about values and variables, the two most central concepts in programming.
+*This chapter is about values and variables, the two most central concepts in programming.*
 
 ## Math {-}
 
@@ -16,7 +16,7 @@ Much programming is done to compute stuff. In Python the usual math operations a
 | `**`     | exponentiation     |
 | `%`      | modulo (remainder) |
 
-You are probably quite familiar with these -- except perhaps for integer division, exponentiation and modulo. Let us take some of the operators for a spin. Remember to carefully write the whole thing in an empty file in *Sublime Text*. Do *not* copy-paste. Then save the file as `mathandlogic.py` and run it from the terminal.
+You are probably quite familiar with these - except perhaps for integer division, exponentiation and modulo. Let us take some of the operators for a spin. Remember to carefully write the whole thing in an empty file in *VScode*. Do *not* copy-paste. Then save the file as `mathandlogic.py` and run it from the terminal.
 
 > Note! Do not call your file `math.py`. It may bite you later. Just trust me on that one. 
 
@@ -81,8 +81,19 @@ print("5.4 - 7 is", 5.4 - 7)
 print("Oh, that's why it's False.")
 ```
 
+#### Exercise {#sec:in_operator}
+There is even an additional comparison operator that tests if something is a part of something else. That operator is called `in`. One use of it is to to test if one string is part of another string. Try this to figure out how it works:
+
+```python
+print("Hell" in "Hello world")
+print("Hello world" in "Hello world")
+print("Hello world" in "Hell")
+print("lo wo" in "Hello world")
+print("Artichoke" in "Hello world")
+```
+
 #### Exercise {#sec:chocolatebars}
-Say the supermarket has chocolate bars for 2.80 kr. Write a small Python program (in a file called chocolate.py) that prints how many chocolate bars you can get for your 30 kr. You should run it like this;
+Say the supermarket has chocolate bars for 7 kr. Write a small Python program (in a file called chocolate.py) that prints how many chocolate bars you can get for your 30 kr. You should run it like this;
 
 For example, it could output something like this:
 
@@ -93,26 +104,30 @@ $ python chocolate.py
 to have it print something like this:
 
 ```
-I can buy 10.7142857143 chocolate bars!
+I can buy 4.285714285714286 chocolate bars!
 ```
 
 #### Exercise
 We mentioned a special operator called *modulo*. Google it you do not remember what it does. How about *integer division*. Explain both to a fellow student (or to yourself out loud).
 
 #### Exercise
-You obviously cannot go buy 10.71 chocolate bars in a store. You will have to settle for 10. Can you change the program you made in @sec:chocolatebars to print the number of bars you can actually buy, and the change you then have left? Consider using the modulo and integer division operators.
+You obviously cannot go buy 4.3 chocolate bars in a store. You will have to settle for 4. Can you change the program you made in @sec:chocolatebars to print the number of bars you can actually buy, and the change you then have left? Use the modulo and integer division operators. Somthing like:
+
+```
+I can buy 4 chocolate bars leaving me with 4 kr in change
+```
 
 #### Exercise
 What happens if you try to run the following program?
 
 ```python
-print("What happens next?", 1 / 0)
+print( 1 / 0 )
 ```
 
-If you get an error, why do you think you get that error? Does it make sense?
+If you get an error? What kind of error? Why do you think you get that error? Does it make sense?
 
 #### Exercise {#sec:pythagoras}
-You have probably heard of the Pythagorean theorem for computing the hypotenuse (the longest side) of a right-angled triangle. The Pythagorean theorem looks like this: $a^2 + b^2 = c^2$. Here $a$ is the length of the hypotenuse and $b$ and $c$ are the lengths of the two legs of the triangle. So if we have a triangle where $a = 5$ and $b = 2$ and we want to find $c^2$ we can do this in Python:
+You have probably know the Pythagorean theorem for computing the hypotenuse (the longest side) of a right-angled triangle. The Pythagorean theorem looks like this: $a^2 + b^2 = c^2$. Here $a$ is the length of the hypotenuse and $b$ and $c$ are the lengths of the two legs of the triangle. So if we have a triangle where $a = 5$ and $b = 2$ and we want to find $c^2$ we can do this in Python:
 
 ```python
 print("The squared length of the hypotenuse is:", 5**2 + 2**2)
@@ -124,7 +139,7 @@ However, we are rarely interested in the *squared* length of the hypotenuse. Can
 
 ## Logic {-}
 
-Now you have done some math and even used Python to compare two numbers. However, there are three operators left that are special. These are the logical operators: `and`, `or` and `not`. Using these operators we can express more elaborate True/False statements than with the comparison operators alone.
+Now you know how to use the comparison operstors to produce a `True` or `False` value. There are three additional operators that lets you express more elaborate “True/False” statements than with the comparison operators alone. These are the *logical* operators: `and`, `or` and `not`.
 
 #### Exercise
 Go through the code below and see if you can figure out what each line does. Then write the code into your editor and run it to see what actually happens. 
@@ -156,7 +171,7 @@ print(not "apple")
 print(not "")
 ```
 
-From the code above, try to find out which values are values Python considers true and which it considers false.
+From the code above, try to find out which values Python considers true and which it considers false. Can you come up with a rule?
 
 #### Exercise {#sec:and_rules}
 The logical operator `and` takes two values (the one to the left of the operator and the one to the right) and figures out whether *both* the left and the right expression is true. It actually boils down to this:
@@ -177,11 +192,9 @@ print(True and True)
 #### Exercise
 Python will not do any more work than absolutely necessary to find out if a logical expression is true or not. That means that, if the value left of `and` is considered false by Python, then there is no reason look at the right value, since it is already established that they are not *both* considered true. In this case the expression reduces to the *left* value. I.e. `False and True` reduces to `False`.
 
-If the value left of `and` is considered *true* by Python, then Python needs to look at the right value too to establish if they are *both* considered true. In this case the expression reduces to the value on the *right*. I.e. `True and False` reduces to `False`. A rule-of-thumb is that the whole expression reduces to the last value that Python needs to consider to decide if the whole expression is true or flase.
+If the value left of `and` is considered *true* by Python, then Python needs to look at the right value too to establish if they are *both* considered true. In this case the expression reduces to the value on the *right*. I.e. `True and False` reduces to `False`. 
 
-Use the same rationale to explain to yourself how the two last combinations in @sec:and_rules are evaluated.
-
-
+A rule-of-thumb is that the whole expression reduces to the last value that Python needs to consider to decide if the whole expression is true or flase. Use that rationale to explain to yourself how the two last combinations in @sec:and_rules are evaluated.
 
 
 #### Exercise {#sec:or_rules}
@@ -205,7 +218,7 @@ As with the `and` operator, Python will not do any more work than absolutely nec
 
 If the value left of `or` is considered *false* by Python, then Python stil needs to look at the right value to establish if at least one of them are considered true. In this case the expression reduces to the *right* value. I.e. `False or True` reduces to `True`.
 
-Use the same rationale to explain to yourself how the two last combinations in @sec:or_rules are evaluated.
+Again, the whole expression reduces to the last value that Python needs to consider to decide if the whole expression is true or flase. Use that same rationale to explain to yourself how the two last combinations in @sec:or_rules are evaluated.
 
 #### Exercise
 Remember what you learned in @sec:trueish_falseish about which values are considered true and which are considered false. Combine that with what you learned in @sec:and_rules and @sec:or_rules about what logical expressions reduce to and see if you can figure out what is printed below and why. Use the rule-of-thumb from @sec:logic_rule_of_thumb. Decide what you think before you write the code and try it out. 
@@ -225,23 +238,12 @@ print("apple" or "")
 If you where surprised what was printed, maybe go back and have a look at @sec:and_rules and @sec:or_rules again.
 
 #### Exercise
-As you can see, logic also works on strings. There is even an additional comparison operator that tests if something is a part of something else. That operator is called `in`. You can use it with strings to test if one string is part of another string. Try this to figure out how it works:
-
-```python
-print("Hell" in "Hello world")
-print("Hello world" in "Hello world")
-print("Hello world" in "Hell")
-print("lo wo" in "Hello world")
-print("Artichoke" in "Hello world")
-```
-
-#### Exercise
-There is also an operator called `not in`. I guess you can imagine what that tests. Try it out.
+Recall the `in` operator from @sec:in_operator? There is also an operator called `not in`. I guess you can imagine what that tests. Try it out.
 
 
 ## Variables {-}
 
-> **Heads up:** By now you probably feel the first signs of brain-overload. If you do not take breaks between chapters your brain may overheat and explode -- we have seen that happen. One of the nice things about the brain is that it works when you rest. Archiving and understanding a lot of new information takes time, and force-feeding your brain will not help. The last part of this chapter is very important so now might be a good time for a good long break.
+> **Heads up:** By now you probably feel the first signs of brain-overload. If you do not take breaks, your brain may overheat and explode - we have seen that happen. One of the nice things about the brain is that it works when you rest. Archiving and understanding a lot of new information takes time, and force-feeding your brain will not help. The last part of this chapter is very important so now might be a good time for a good long break.
 
 This section is about *variables* and this is where the fun begins. A variable is basically a way of assigning a name to a value. `8700000` is just a value, but if we assign a name to it then it gets a special meaning:
 
@@ -254,10 +256,10 @@ In this case, the variable `number_of_species` represents the [estimated number 
 
 As you can see in the small program above, one of two different things happens when a variable name appears in Python code:
 
-- **Assignment:** A value is assigned to the variable. This is what happens in the first line where `number_of_species` is *assigned* the value `8700000`.
-- **Substitution:** The variable is substituted for its value. This is what happens in the second line where Python *substitutes* the variable name `number_of_species` for its value `8700000` and then prints that.
+- **Assignment:** When a variable name appears to the left of an equals sign, then a value is assigned to the variable. This is what happens in the first line where `number_of_species` is *assigned* the value `8700000`.
+- **Substitution:** In all other contexts, the variable is substituted for its value. This is what happens in the second line where Python *substitutes* the variable name `number_of_species` for its value `8700000` and then prints that.
 
-That is basically it, but let us take the example a bit further and create another variable that we assign the value `1200000` to. That is the number of species discovered so far. Now, lets add this to the program and use it to compute the number of species we have yet to identify. Start by reading the code below super carefully. Remember that a variable is *either* assigned a value or replaced with the value it represents. For each occurrence of the variables below, determine if they are being assigned a value or if they are substituted for their value.
+That is basically it, but let us take the example a bit further and create another variable that we assign the value `1200000` to. That is the number of species discovered so far. Now, lets add this to the program and use it to compute the number of species we have yet to identify. Start by reading the code below super carefully. Remember that a variable is *either* assigned a value or substituted for the value it represents. For each occurrence of the variables below, determine if they are being assigned a value or if they are substituted for their value.
 
 ```python
 number_of_species = 8700000
@@ -332,16 +334,6 @@ NameError: name 'tax_percentage' is not defined
 
 It says that the error is on line 3. Can you figure out what is wrong? Hopefully, you will now appreciate how much attention to detail is required when programming. Every tiny, little symbol or character in your code is *essential*.
 
-#### Exercise
-With a correlation coefficient 0.99, the number of divorces per 1000 people in Maine USA can be almost completely explained by the US per capita consumption of margarine. Not related to programming at all, but worth thinking about.
-
-| Year | 2000 | 2001 | 2002 | 2003 | 2004 | 2005 | 2006 | 2007 | 2008 | 2009 |
-|---|---|---|---|---|---|---|---|---|---|---|
-| Divorce rate\
-per 1000 | 5 | 4.7 | 4.6 | 4.4 | 4.3 | 4.1 | 4.2 | 4.2 | 4.2 | 4.1 |    
-| Margarine\
-consumption | 8.2 | 7 | 6.5 | 5.3 |  5.2 | 4 | 4.6  | 4.5 | 4.2 | 3.7 | 
-
 ## Different types of values {-}
 
 By now you probably have a pretty good idea about what a value in Python is. So far you have seen text like `'Banana'`, integers like `7` and numbers with a fractional part like `4.25`.
@@ -360,7 +352,7 @@ So the different *types* of values we know so far are:
 | Boolean        | `bool`         | `True`, `False`    |             
 | None           | `NoneType`     | `None`             |         
 
-> In case you did not notice, I added a special type at the end that can only have the value `None`. I may sound a little weird, but in programming, we sometimes need a value that is nothing, or `None`. More about that later.
+> In case you did not notice, I added a special type at the end that can only have the value `None`. I may sound a little weird, but in programming, we sometimes need a value that represents nothing, or `None`. For now, just make a mental note that `None` is also a Python value.
 
 When you do computations in Python it is no problem to mix integers and floating-point numbers. Try this:
 
@@ -369,38 +361,14 @@ print("What is 0.5 * 2?", 0.5 * 2)
 print("What is 3 / 2?", 3 / 2)
 ```
 
-As you can see we can also make computations using only integers that result in floating-point numbers. Some of the math operators not only work on numbers, they also work on strings. That way you can add two strings together. It is no longer math of course -- but quite handy.
+As you can see we can also make computations using only integers that result in floating-point numbers. 
+
+Some of the math operators not only work on numbers, they also work on strings. That way you can add two strings together. It is no longer math of course - but quite handy.
 
 ```python
 fruit = 'Ba' + 'na' + 'na'
 print(fruit)
 ```
-
-#### Exercise
-What do you think is printed here?
-
-```python
-main_course = 'Duck a la Banana\n'
-dessert = 'Banana split\n'
-menu = main_course + dessert
-print(menu)
-```
-
-Can you figure out what the special character `\n` represents?
-
-#### Exercise
-What do you think is printed here?
-
-```python
-
-dish_one = 'Banana\t\tsplit'
-dish_two = 'Chocolate\tcake'
-print(dish_one)
-print(dish_two)
-```
-
-Can you figure out what the special character `\t` represents?
-
 
 #### Exercise
 If you try to combine different types of values in ways that are not allowed in Python, you will get an error. Try each of the following weird calculations in turn, and read the each error message carefully.
@@ -466,9 +434,36 @@ Having completed the above exercises you should take note of the following four 
 4. You can change the type of a value. E.g `'4'` to `4` or `1` to `1.0`.
 4. Python will throw a `TypeError` if you try to combine types values of values in ways that are not allowed.
 
-## General exercises {-}
+> **Escape characters:** An escape character is a backslash `\` followed by a single character. In Python, the most commonly used ones are `\n` and `\t`.
 
-Each chapter in the book ends with a set of general exercises that are ment to give you an opportunity to combine what you have learned so far. In this case, they are meant to train your familiarity with the following topics:
+#### Exercise
+What do you think is printed here?
+
+```python
+main_course = 'Duck a la Banana\n'
+dessert = 'Banana split\n'
+menu = main_course + dessert
+print(menu)
+```
+
+Can you figure out what the special character `\n` represents?
+
+#### Exercise
+What do you think is printed here?
+
+```python
+
+dish_one = 'Banana\t\tsplit'
+dish_two = 'Chocolate\tcake'
+print(dish_one)
+print(dish_two)
+```
+
+Can you figure out what the special character `\t` represents?
+
+## Mixed exercises {-}
+
+Each chapter in the book ends with a set of mixed exercises that are ment to give you an opportunity to combine what you have learned so far. In this case, they are meant to train your familiarity with the following topics:
 
 - Strings
 - Math
@@ -508,7 +503,7 @@ print(x)
 Then figure out what is printed and why (remember oath 2). What value does `x` represent at each occurrence in the code?
 
 #### Exercise
-Comparison operators also work with strings. Consider this code:
+Some comparison operators also work with strings. Consider this code:
 
 ```python
 print("apples" == "pears")

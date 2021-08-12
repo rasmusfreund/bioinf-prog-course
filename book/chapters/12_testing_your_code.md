@@ -1,6 +1,6 @@
-# Testing your code
+# Testing your code {#sec:testing_your_code}
 
-> This chapter is about how you figure out if the code you wrote actually solves the problem in the way you intended. You will be surprised how often that is not the case -- even for seasoned programmers.
+*This chapter is about how you figure out if the code you wrote actually solves the problem in the way you intended. You will be surprised how often that is not the case -- even for seasoned programmers.*
 
 ## Why test your code? {-}
 
@@ -33,9 +33,9 @@ print(is_palindome('A') == True) # single char
 
 ## The project testing utility {-}
 
-To keep you focused on the programming part, each programming project comes with a ready-made suite of tests of the functions you are asked to implement. So for each function, you can run tests to make sure it implements the behaviour it is supposed to.
+To keep you focused on the programming part, each of the programming projects that you will do in this course comes with a ready-made suite of tests of the functions you are asked to implement. So for each function, you can run tests to make sure it implements the behaviour it is supposed to.
 
-Each project comes with two files. They have their names for a good reason, so do not change them. In the project about translating DNA that you will do, they are called `translationproject.py` and `test_translationproject.py`.  
+Each project comes with two files that you download from the course page. They have their names for a good reason, so do not change them. In the first project about translating DNA, they are called `translationproject.py` and `test_translationproject.py`.  
 
 To be able to test your functions, you *must* write your code in the file called `translationproject.py`. To run your code you type this in the Terminal as usual:
 
@@ -54,8 +54,21 @@ The code in `test_translationproject.py` reads your code in `translationproject.
 **Case 1:** If you did not yet implement all the functions, the test script will remind you (once for each test) that you did not implement the functions with the names required.
 
 ```
-ATTENTION! A test of "translate_codon" was skipped because this function was not defined.
-Functions not correctly defined are marked as FAILED. Please make sure this is what you intended!
+*********************************************************
+ATTENTION! The following functions are not defined:
+
+	translate_codon
+	split_codons
+	translate_orf
+
+These functions are either not correctly named (spelled)
+or not defined at all. They will be marked as FAILED.
+Check your spelling if this is not what you intend.
+*********************************************************
+
+Ran 16 tests in 0.000s
+
+OK (skipped=14)
 ```
 
 If you have implemented a function but misspelled its name, you will also get this type of reminder. The reminders are meant as a safeguard to ensure that you do not hand in the assignment with missing or misspelled function definitions.
@@ -99,20 +112,5 @@ It is now left to you to figure out why your function returns the wrong value wh
 Ran 14 tests in 0.140s
 
 OK
-```
-
-
-## General exercises {-}
-
-#### Exercise
-Inspect the code below and figure out why it does not print that you are a super star. Test the function using various input and figure out the mistake.
-
-```python
-def even_number(x):
-    if x % 2:
-        return False
-
-if even_number(4):
-    print('You are a super star!')
 ```
 

@@ -1,11 +1,12 @@
 # Appendix: Conda and PyMol
 
-In bioinformatics, we install packages and programs so we can use them in our analyses and pipelines. Sometimes, however, the versions of packages you need for one project conflicts with the versions you need for other projects that you work on in parallel. Such conflicts seem like an unsolvable problem. Would it not be fantastic if you could create a small world, insulated from the rest of your Anaconda installation? Then that small world could only contain the packages you needed for a single project. If each project had its own isolated world, then there would be no such version conflicts. Fortunately, there is a tool that lets you do just that, and its name is Conda.
+*This chapter is only relevant to students also following the course Biomolekylær Struktur og Funktion.*
+
+In bioinformatics, we install packages and programs so we can use them in our analyses and pipelines. Sometimes, however, the versions of packages you need for one project conflicts with the versions you need for other projects that you work on in parallel. Such conflicts seem like an unsolvable problem. Would it not be fantastic if you could create a small insulated world for each project, which then only contained the packages you needed for that particular project?. If each project had its own isolated world, then there would be no such version conflicts. Fortunately, there is a tool that lets you do just that, and its name is Conda.
 
 > Conda is an open source package management system and environment management system for installing multiple versions of software packages and their dependencies and switching easily between them.
 
-The small worlds that Conda creates are called "environments". You can create as many environments as you like, and then use each one for a separate bioinformatics project, course, bachelor project, or whatever you would like to insulate from everything else. Conda also downloads and installs the packages for you and it makes sure that the software packages you install in each environment are compatible. It even makes sure that packages needed by packages (dependencies) are installed. Conda is truly awesome.
-
+The small worlds that Conda creates are called "environments". You can create as many environments as you like, and then use each one for a separate bioinformatics project, a course, a bachelor project, or whatever you would like to insulate from everything else. Conda also downloads and installs the packages for you and it makes sure that the software packages you install in each environment are compatible. It even makes sure that packages needed by packages (dependencies) are also installed. Conda is truly awesome.
 
 ## Creating an environment with PyMol {-}
 
@@ -17,7 +18,7 @@ Many of you take the course "Biomolecular Structure and Function" (let us call t
 conda create -n BSF -c schrodinger pymol
 ```
 
-This command runs the Conda program and tells it to create a new environment with name "BSF" and to install pymol and python in that environment. Once you hit enter Conda works for some time and then writes a long list of packages in your terminal. These are all the packages and dependencies required by python and PyMol in versions that all fit together. The end of the list looks something like this:
+This command runs the Conda program and tells it to create a new environment with name "BSF" and to install pymol and python in that environment. Once you hit enter, Conda works for some time and then writes a long list of packages in your terminal. These are all the packages and dependencies required by python and PyMol in versions that all fit together. The end of the list looks something like this:
 
 ```
   pymol              schrodinger/osx-64::pymol-2.4.0-py38h4268d49_0

@@ -29,8 +29,7 @@ Given an open reading frame (ORF), you must compute the codon usage. Your goal i
 
 That data structure is a dictionary with keys corresponding to amino acids (i.e. single letter strings designating an amino acid such as `'R'` for arginine). The value associated with *each* amino acid key is also a dictionary, and the keys of *this* dictionary should be the different codons that encode the amino acid. The value associated with each codon key should be a number, representing the frequency with which that codon is used to encode that amino acid. The final data structure should only include amino acids that are found in the ORF.
 
-Under "Assignments" on the Blackboard course page, you will find an assignment with the same name as this chapter. There you can download the files you need for this project.
-
+On the course page you can download the files you need for this project:
 
 - `sample_orfs.txt` contains open reading frame sequences you can work on.
 
@@ -41,7 +40,7 @@ You also need to download the two project files:
 
 Put the files in a folder dedicated to this project. On most computers you can right-click on the link and choose "Save file as..." or "Download linked file".
 
-Now open each file in *SublimeText* and have a look at what is in `sample_orfs.txt`. (Do *not* change it in any way and do not save it after viewing. If SublimeText asks you if you want to save it before closing, say *no*.) How many sequences are there in each file?
+Now open each file in *VScode* and have a look at what is in `sample_orfs.txt`. (Do *not* change it in any way and do not save it after viewing. If VScode asks you if you want to save it before closing, say *no*.) How many sequences are there in each file?
 
 As in the translation project, you will need a data structure that pairs each codon to the amino acid it encodes. This is an obvious use of a dictionary and at the top of `codonbiasproject.py` I have defined such a dictionary you can use. Defining it outside the functions means that it is visible inside all your functions (unless you define *another* variable called `codon_map` inside a function). Defining variables globally like this sometimes make sense if some value can be considered a *constant* in your program and is *never* changed.
 

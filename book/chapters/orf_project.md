@@ -5,7 +5,7 @@
 
 In this project, you will analyze DNA to identify the open reading frames (ORFs) and the proteins they encode. 
 
-Under "Assignments" on the Blackboard course page, you will find an assignment with the same name as this chapter. There you can download the data file you need for this project:
+On the course page you can download the files you need for this project:
 
 - `e_coli_O157_H157_str_Sakai.fasta` contains the full genome of the *Escherichia coli* O157:H7 Sakai strain (yes the full genome).
 

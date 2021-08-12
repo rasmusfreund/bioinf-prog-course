@@ -95,4 +95,4 @@ b = temp
 Can you come up with a simple and pretty way of swapping `a` and `b` in one statement, using what you have learned in this chapter? Maybe it occurs to you before you realize how it works, so make sure you can connect your solution to the rules of tuples and tuple assignment.
 
 
-
+<!-- TODO: Find annother example than Donald Trump -->

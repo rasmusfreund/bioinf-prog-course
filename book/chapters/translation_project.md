@@ -4,12 +4,12 @@
 
 In this project you will write the code needed to translate an open reading frame (ORF) on a DNA sequence into into the corresponding sequence of amino acids.
 
-You need two project files for the project, which you can download from Blackboard:
+You need two project files for the project, which you can download from the course page:
 
 - **translationproject.py** is an empty file where you must write your code.
 - **test_translationproject.py** is the test program that lets you test the code you write in translationproject.py.
 
-The file `translationproject.py` is for your code. As usual `test_translationproject.py` is the script you use to test the functions you write for this project.
+The file `translationproject.py` is for your code. The file `test_translationproject.py` is the script you use to test the functions you write for this project (see @sec:testing_your_code).
 
 In this project you will need a data structure that pairs each codon to the amino acid it encodes. This is an obvious use of a dictionary and at the top of `translationproject.py` I have defined such a dictionary you can use. Defining it outside the functions means that it is visible inside all your functions (unless you define *another* variable called `codon_map` inside a function). Defining variables globally to your program sometimes make sense if some value can be considered a *constant* in your program and is *never* changed.
 

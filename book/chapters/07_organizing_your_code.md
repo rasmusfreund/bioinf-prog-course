@@ -1,10 +1,12 @@
 # Organising your code
 
-> This chapter is about how you can organize your code into chunks that you can call upon to perform a well defined tasks in your program.
+*This chapter is about how you can organize your code into chunks that you can call upon to perform a well defined tasks in your program.*
 
 ## Functions {-}
 
-Buckle down for the most powerful and useful thing in programming. Functions! Functions serve as mini-programs that perform small well-defined tasks in your program. I have started to write a song about functions:
+Buckle down for the most powerful and useful thing in programming. Functions! Functions serve as mini-programs that perform small well-defined tasks in your program. 
+
+I have started to write a song about functions:
 
 ```python
 print("Functions are super, Functions are cool")
@@ -51,7 +53,7 @@ When Python runs this code, each line is executed one by one starting from the f
 
 To *use* the function, we "call" it by writing its name followed by parentheses: `chorus()`. When it comes to functions, "use", "call" and "run" means the same thing. As you can see, we call the function twice in the rest of the code. Each time we do, the following happens:
 
-1. When a function is called each statement in the definition is executed one after the other. If you look at the function definition, you can see that our `chorus` function has four statements.
+1. When a function is *called*, each statement in the definition is executed one after the other. If you look at the function definition, you can see that our `chorus` function has four statements.
 2. The first statement assigns a string value to the variable `line1`.
 3. The second statement assigns a string value to the variable `line2`.
 4. The third statement assigns a string value to the variable `line3`.
@@ -73,7 +75,7 @@ Now that we have a `chorus` function, that part is out of the way and we can con
 #### Exercise
 Try to delete the return-statement in the `chorus` function (the last line in the function) and run the code again. You should see something like this:
 
-```zsh
+```
 Functions are super, Functions are cool
 When writing a program they are a great tool
 None
@@ -143,7 +145,15 @@ def chorus():
     return line1 + '\n' + line2 + '\n' + line3
 ```
 
-Make sure you understand how the error you get relates to the way Python runs your script (remember oath two?).
+Make sure you understand how the error you get relates to the way Python runs your script (remember oath two?). If you still do not understand, do the next exercise and then return to this one.
+
+#### Exercise
+Which error do you get here and why? How is that similar to the the error in the previous exericse?
+
+```python
+print(x)
+x = 7
+```
 
 #### Exercise
 Consider the code below. Do all the substitution and reduction steps in your head. Remember that each function call is substituted by the value that the function returns. Then run it.
@@ -191,7 +201,7 @@ result = square(3)
 print(result)
 ```
 
-Notice how we put a variable (`number`) between parentheses in the function *definition*. This variable is assigned the value that we put between the parentheses (`3`) when we *call* the function. So when we call the function like this: `square(3)` -- then this implicitly happens: `number = 3`.
+Notice how we put a variable (`number`) between parentheses in the function *definition*. This variable is assigned the value that we put between the parentheses (`3`) when we *call* the function. So when we call the function like this: `square(3)` -- then this implicitly happens inside the function: `number = 3`.
 
 Here is another example:
 
@@ -207,12 +217,12 @@ print(division_result)
 When the function call `divide(44, 77)`, these two things implicitly happen: `numerator = 44` and `denominator = 77`.
 
 Take note of the following three important points:
-1. The *values* that we pass to the function in the function call, like `3`, `44` and `77`, are called *arguments*. It is crucial to remember that it is *values* and not variables that are passed to functions.
+1. The *values* that we pass to the function in the function call (like `3`, `44` and `77`) are called *arguments*. It is crucial to remember that it is *values* and not variables that are passed to functions.
 2. The *variables* in the definition line of a function, like `number`, `numerator` and `denominator`, are called *parameters*. They hold the *values* passed to the function when it is called (the arguments).
 3. You can define functions with any number of *parameters* as long as you use the same number of *arguments* when you call the function.
 
 #### Exercise
-Try to call your `divide` function like this `divide(77, 44)`. What does it return and what do you learn from that?
+Try to call your `divide` function like this `divide(77, 44)`. What does it return and what do you learn from that? Does the order of arguments and parameters correspond?
 
 #### Exercise
 Try to call your `divide` function like this `divide(44)`. Do you get an error, and what do you learn from that?
@@ -242,7 +252,7 @@ def assess_number(x):
         return 'quite a few'
     if x < 100:
         return 'a lot'
-    return 'really a lot'
+    return 'a whole lot'
 
 nr_apples = 2
 print(nr_apples, "apples is", assess_number(nr_apples))
@@ -253,32 +263,50 @@ What happens when x is 2, 3, 50, 200? Think about it first.
 
 ## Functions and variables {-}
 
-Now you know about functions, you know how you pass *values* into them and you know how to make them return a *value* back. It is all a little mind-boggling, but you will get used to it once you do a lot of exercises.
+A function call is temporary little world only exists from the function is *called* and until it *returns* its value. It did not exist *before* the function was called and it does not exist *after* the function returns its value. By necessity, the variables defined in your function are also temporary. 
 
-Every time we call a function, a new fresh mini-program springs into existence the way it is described in the function definition. This temporary little world only exists from the function is called and until it returns its value. It did not exist before it was called and it does not exist after it returns a value. This means that variables defined in your functions are temporary and private to the function and that they are not available to code *outside* the function. Running the following example should help you understand this:
+This means that variables defined inside a function are private to each function call. It also means that variables defined inside functions are not available to code *outside* the function. Running the following example in should help you understand this:
 
 ```python
 def make_greeting():
-    name = 'Dan'
+    greeting = 'Guten tag'
+    name = 'Heinz' 
     message = greeting + " " + name
     return message
 
-name = 'Kasper'
-greeting = 'Hello'
-print("Message:", make_greeting() )
-print(name)
+greeting = 'Buongiorno'
+name = 'Giovanni'
+print( make_greeting() )
+print(greeting + " " + name)
 ```
 
-Notice the following:
+Notice how Heinz and Giovanni are greated in their native languages. This means that the variable definitions inside the function does not overwrite the Italian versions already defined outside the function. This is because the variables defined in the function are temporary and private to the function, even if they have the same names as variables outside the function. This is why the function call `make_greeting()` in the `print` statement does not change the values of the variables that are printed in the last line.
 
-- The message produced by the function greets Dan not Kasper.
-- From the last print-statement, you can see that the `name` variable we defined in the first line of the script still has the value `'Kasper'`, no matter what happens in the temporary life of the function.
-- Python could not find the `greeting` variable in the function but found it in the main script.
+Now try to "comment out" the line `greeting = 'Guten tag'` and run the example again. All of a sudden Heinz is greeted in Italian! The reason is that now Python cannot find a definition of `greeting` inside the function. It then looks outside the function for a definition and finds the Italian version. 
 
-You should learn two rules from this example:
+Now try to "comment out" the line `greeting = 'Buongiorno'` and run the example again. You get an error, but which one? Python complains that it cannot find a definition of `greeting`. The reason is that once the last print statement is executed the small world of the function call in the previous line no longer exists.
 
-1. All variables that you assign values to in a function (including the function parameters) are *private* to the function. If a variable in a function has the same name as a variable in the main script (like `name` above) then these are two *separate* variables that just happen to have the same name.
-2. When you use variables like `greeting` and `name` in the function, then Python checks if the variables have been defined in the function. If that is not the case, then it will look in the main script too. In this case, it finds `name` in the function and `greeting` in the main script. It is good practice to make your functions "self-contained", in the sense that Python should not have to look outside the function for variables.
+You should learn two rules from the above example:
+
+1. All variables that you define inside a function are *private* to the function. If a variable in a function has the same name as a variable in the main script (like `greeting` above) then these are two *separate* variables that just happen to have the same name.
+2. When you use a variable like `greeting` in the function (E.g. `message = greeting + " " + name`), then Python checks if the variables have been defined in the function. If that is not the case, then it will look for it outside the function. In the above example, it finds `name` in the function and `greeting` outside the function. It is good practice to make your functions "self-contained", in the sense that Python should not have to look outside the function for variables.
+
+
+#### Exercise
+
+Try this version of the example above. Now `name` is defined as a function parameter, but is it still a function variable just like `greeting`.
+
+```python
+def make_greeting(name):
+    greeting = "Guten tag"
+    message = greeting + " " + name
+    return message
+
+greeting = 'Buongiorno'
+name = 'Giovanni'
+print( make_greeting("Heinz") )
+print(greeting + " " + name)
+```
 
 #### Exercise
 Consider the following example:
@@ -327,10 +355,27 @@ Try to change the value of the `x` in @sec:type_and_len to an integer or a float
 #### Exercise
 What happens if you pass an empty string (`""`) as the argument to the `len` function?
 
+#### Exercise
+
+What is printed here? Think about it first and then try it out. Remember to do the substitution and reduction steps.
+
+```python
+return_value = print("Hello world")
+print(return_value)
+```
+
+#### Exercise
+
+What is printed here? Think about it first and then try it out. Remember to do the substitution and reduction steps.
+
+```python
+print(print("Hello world"))
+```
+
 
 ## General exercises {-}
 
-The following exercises treat the areas we have worked on in this and previous chapters. They are meant to train your familiarity with if-statements and functions. Remember that the purpose of the exercises is not to answer the questions but to train the chain of thought that allows you to answer them. Play around with the code for each example and see what happens if you change it a bit.
+The following exercises treat the areas we have worked on in this and previous chapters. They are meant to train your familiarity with if-statements and functions. Remember that the purpose of the exercises is not to answer the questions but to train the chain of thought that *allows* you to answer them. Play around with the code for each example and see what happens if you change it a bit.
 
 #### Exercise
 Consider this function definition that takes a single number as the argument:
@@ -342,7 +387,7 @@ def square(n):
 
 What does it do? What does it return? What number does `square(2)` then represent?
 
-Below I have used it in some expressions that are printed. Make sure you understand what each expression evaluates to. Do the explicit substitutions and replacements on paper before you run it. Remember that we can substitute a function call (like `square(2)`) for the value it returns, just like we can substitute a variable `x` for the value it points to.
+Below I have used it in some expressions that are printed. Make sure you understand what each expression evaluates to. Do the explicit substitutions and reductions on paper before you run it. Remember that we substitute a function call (like `square(2)`) for the value it returns, just like we substitute a variable `x` for the value it points to.
 
 ```python
 print(square(3))
@@ -420,13 +465,13 @@ diff(8, 2) # should return 6
 diff(-1, 2) # should return -3
 ```
 
-Save the value returned from the function in a variable and test if the function works correctly by comparing the result to what you know is the true difference (using `==`).
+Save the value returned from the function in a variable. Then test if the function works correctly by comparing the result to what you know is the true difference (using `==`).
 
 #### Exercise
 Define a function called `all_equal` that takes five arguments and returns `True` if all five arguments have the same value and `False` otherwise. The function should work with any input, for example:
 
 ```python
-all_equal("Dan", "Dan", "Dan", "Dan", "Dan")
+all_equal("Can", "Can", "Can", "Can", "Can")
 all_equal(0, 0, 0, 0, 0)
 all_equal(0.5, 0.5, 0.5, 0.5, 0.5)
 all_equal(True, True, True, True, True)
@@ -457,7 +502,7 @@ Here is a function that should return `True` if given an uppercase (English) vow
 
 ```python
 def is_uppercase_vowel(c):
-        c == 'A' or c == 'E' or c == I or c == 'O' or c == 'U'
+    c == 'A' or c == 'E' or c == I or c == 'O' or c == 'U'
     
 char = 'A' 
 if is_uppercase_vowel(char):
@@ -489,8 +534,6 @@ is_base_pair("A", "T") # should return True
 is_base_pair("T", "A") # should return True
 is_base_pair("Preben", "A") # should return False
 ```
-
-Can you use the function you defined in @sec:is_nucleotide_symbol to complete this exercise? How? Why is that a good idea? 
 
 #### Exercise
 Did you find the bug in @sec:none_eval_false? You were supposed to find that the function did not have a return value. This makes the function return `None` by default. Do you think the `None` value is considered true or false in an if-statement?

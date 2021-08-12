@@ -1,52 +1,39 @@
 # Before you begin
 
-> This chapter serves to get the practicalities out of the way so you can start programming.
-
+*This chapter serves to get the practicalities out of the way so you can start programming.*
 ## Install Python {-}
 
 In this course, we use a distribution of Python called *Anaconda*. Anaconda is simply an easy way of installing Python on Windows, macOS (Mac), and Linux.
 
-To install Anaconda, head to [this](https://www.anaconda.com/products/individual) site. Click "Download" And select the graphical installer for your platform. Pick a 64-bit version unless you know that your computer is 32-bit.
+To install Anaconda, head to [this](https://www.anaconda.com/products/individual) site. Click "Download" And select the graphical installer for your platform. Pick a **64-bit** version, unless you know that your computer is 32-bit.
 
-When the download has completed, double-click the file you just downloaded and follow the instructions on the screen. It is important that you complete the default installation by accepting the suggested settings. 
+When the download has completed, double-click the file you just downloaded and follow the instructions on the screen. It is important that you accept all the suggested installation settings, with one exception: Say *yes* when asked to install the *Visual Studio Code text editor*.
 
-## Install the text editor {-}
+## The text editor {-}
 
-You will also need a *text editor*. A text editor is where you write your Python code. For this course, we will use one called *Sublime Text*. To install *Sublime Text*, go to
-[this](https://www.sublimetext.com/3) site. Again, you'll have to download the version of Sublime Text that fits your platform. At the top of the page, click **Windows 64 bit** if you're running Windows and **OSX** if you are on a Mac.
+You will also need a *text editor*. A text editor is where you write your Python code. For this course, we will use one called *Visual Studio Code* - or *VScode* for short, which you just installed alongside Anaconda. If you open *VScode*, you should see something like [@fig:figure0]:
 
-* **On Windows:** Double-click the `.exe` file you just downloaded and follow the instructions on the screen.
-* **On OSX:** Double click the `.dmg` file you just downloaded. A small window should open showing you two icons: *Applications* and *Sublime Text*. Drag the *Sublime Text* icon onto the *Applications* icon. You can now close the window.
-
-You should now have *Sublime Text* installed. If you open *Sublime Text*, you should see something like [@fig:figure0]:
-
-![Sublime Text, screenshot](./images/sublime.png){#fig:figure0}
+![VScode, screenshot](./images/vscode.png){#fig:figure0}
 
 ## The terminal {-}
 
+<!-- TODO: change to using  Anaconca Powershell Prompt and fix examples accordingly -->
+
 The last thing you need is a tool to make Python run the programs you write. Fortunately, that is already installed. 
 
-On OSX this is a program called *Terminal*. You can find it by typing "Terminal" in Spotlight Search.
+On **OSX** this is an application called *Terminal*. You can find it by typing "Terminal" in Spotlight Search. When you start you will see semething like @fig:terminal. You may be presented with the following text:
 
-> Heads up: You will see something like this when you will se something like this:
->
-> ```
-> The default interactive shell is now zsh.
-> To update your account to use zsh, please run `chsh -s /bin/zsh`.
-> For more details, please visit https://support.apple.com/kb/HT208050.
-> ```
-> 
-> Do *not* update your account as suggested. If you do this *after* you install Anaconda, the terminal will not be able to find the Anaconda Python you just intalled. If you did so by mistake anyway, you change back using this command:
-> 
-> ```
-> `chsh -s /bin/bash`
-> ```
+```
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+```
+ 
+**NB:** Do *not* update your account *after* you install Anaconda (see below). If you do, *Terminal* will not be able to find the Anaconda Python (If you did so by mistake anyway, you change back using this command: `chsh -s /bin/bash`.
 
-On Windows the tool you need is called the *Anaconda Prompt* and was installed along with Anaconda Python. You should be able to find it from Start menu.
+On **Windows** the tool you need is called the *Anaconda Prompt* and was installed along with Anaconda Python. You should be able to find it from Start menu. If you open *Anaconda Prompt* you should see something like @fig:powershell.
 
-What is *Anaconda Prompt* and this *Terminal* thing, you ask! Both programs are what we call *terminal emulators*. They are programs used to run other programs, such as the ones you are going to write. I will informally refer to both *Terminal* and *Anaconda Prompt* as "the terminal" So if I write something like "open the terminal" later in the book you should open *Anaconda Prompt* if you are running Windows. If you are running OS X, you should open the *Terminal* application.
-
-If you open *Anaconda Prompt* you should see something like @fig:powershell. The OSX Terminal looks like @fig:terminal, possibly with a different background color.
+What is *Anaconda Prompt* and this *Terminal* thing, you ask. Both programs are what we call *terminal emulators*. They are programs used to run other programs, like  the ones you are going to write yourself. I will informally refer to both *Terminal* and *Anaconda Prompt* as "the terminal" So if I write something like "open the terminal", you should open *Anaconda Prompt* if you are running Windows and the *Terminal* application if you are running OS X.
 
 ![Anaconda Prompt](./images/anaconda_prompt.jpg){#fig:prompt width=80%}
 
@@ -68,14 +55,14 @@ $ cd
 C:\Users\kasper\programming
 ```
 
-So right now I am in the folder `programming`. `/Users/kasper/programming` is the path or "full address" of the folder with dashes (or backslashes on windows) separating folders. So `programming` is a subfolder of `kasper` which is a subfolder of `Users`. That way you not only know which folder you are in but also where that folder is. Let us see what is in this folder. On OSX you type the `ls` command (l as in Lima and s as in Sierra). On windows you type `dir`. When I do that and press `Enter` I get:
+So right now I am in the folder `programming`. `/Users/kasper/programming` is the path or "full address" of the folder with dashes (or backslashes on windows) separating nested folders. So `programming` is a subfolder of `kasper` which is a subfolder of `Users`. That way you not only know which folder you are in but also where that folder is. Let us see what is in this folder. On OSX you type the `ls` command (l as in Lima and s as in Sierra). On windows you type `dir`. When I do that and press `Enter` I get:
 
 ```
 $ ls
 notes projects
 ```
 
-It seems that there are two other folders, one called `notes` and another called `projects`. If you are curious about what's inside `notes` you can "walk" into the folder with the `cd` command. To use this command you must specify which folder we want to walk into (in this case `notes`). We do this by typing `cd`, then a space and the then name of the folder. This is the same OSX and Windows. When I press enter I get:
+It seems that there are two other folders, one called `notes` and another called `projects`. If you are curious about what is inside the `notes` folder, you can "walk" into the folder with the `cd` command. To use this command you must specify which folder you want to walk into (in this case `notes`). We do this by typing `cd`, then a space and the then name of the folder. This is the same OSX and Windows. When I press enter I get:
 
 ```
 $ cd notes
@@ -96,8 +83,7 @@ $ ls
 $
 ```
 
-Again it seems like nothing happened. Well, `ls` and `dir` do not show anything if the folder we are in is empty. So `notes` must be empty. Let us go back to where we came from. To
-walk "back" or "up" to `/Users/kasper/programming` we again use the `cd` command, but this time we do not tell it to go to a specific folder. Instead, we use the special name `..` to say that we wish to go to the parent folder called `programming`, i.e. the folder we just came from:
+Again it seems like nothing happened. Well, `ls` and `dir` do not show anything if the folder we are in is empty. So `notes` must be empty. Let us go back to where we came from. To walk "back" or "up" to `/Users/kasper/programming` we again use the `cd` command, but this time we do not need to name a folder. Instead, we use the special name `..` to say that we wish to go to the parent folder called `programming`, i.e. the folder we just came from:
 
 ```
 $ cd ..
@@ -126,9 +112,9 @@ Hopefully, you are now able to use navigate your folders and see what is in them
 
 ## You are all set {-}
 
-Well done! You are all set to start the course. Have a cup of coffee and look forward to your first program. While you sip your coffee I need to you take an oath (one of three you will take during this course). Raise your right hand! (put the coffee in your left).
+Well done! You are all set to start the course. Have a cup of coffee and look forward to your first program. While you sip your coffee, I need to you take an oath (one of three you will take during this course). Raise your right hand! (put the coffee in your left).
 
-> **Oath 1:** I swear *never* to copy and paste examples from this book into *Sublime Text*. I will *always* read the examples in the book and and *type* them into my editor.
+> **Oath 1:** I swear *never* to copy and paste code examples from this book into my text editor. I will always *read* the examples in then *type* them into my editor.
 
 This serves three purposes (as if one was not enough):
 

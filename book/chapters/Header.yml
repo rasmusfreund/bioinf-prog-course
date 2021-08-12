@@ -1,9 +1,11 @@
 ---
-title:
-  Programming and Bioinformatics
+title: |
+  ![](images/wordcloud.png){width=6in} \
+  Lecture notes\
+  Bioinformatics and Programming
 
 author:
-  - Rory Jansen
+  - Kasper Munch
 
 bibliography:
   chapters/bibliography.bib

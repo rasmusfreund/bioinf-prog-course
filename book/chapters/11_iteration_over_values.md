@@ -1,6 +1,6 @@
 # Iteration over values
 
-> This chapter is about how you repeat the same code for many different values -- and the many reasons why this is useful.
+*This chapter is about how you repeat the same code for many different values -- and the many reasons why this is useful.*
 
 ## The for-loop {-}
 

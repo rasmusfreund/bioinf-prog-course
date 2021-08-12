@@ -1,16 +1,37 @@
+# TODO:
+- Exercises:
+	- [ ] Parkinson GWAS and UCSC
+	- [ ] Influenza virus trains (pw alignment)
+	- [ ] Protein alignment and virulence factors
+	- [ ] Horizontal gene transfer (blast)
+	- [ ] Archaea in the tree of life (clustering)
+	- [ ] Evolution of the Whale (phylogenetics)
+	- [ ] Gene finding (ORF on plasmid and genscan)
+	- [ ] RNA folding
+	- [ ] eDNA barcoding?
+- Programming projects:
+	- [ ] Put projects in individual PDFs
+	- [ ] Adjust programming projects to fit progression
+	- [ ] Pam project (with matrix multiplication)
+	- [ ] eDNA BioPython project or Robinson-Foulds distance (based on old exam set) 
+	- [ ] Primer project from old exam set
+- Curriculum:
+	- [ ] 
+
 
 # Masterplan
 
+- Ny kursusplan
 - Ny eksamensform:
     1. programmeringsopgaver
     2. multiplechoice
     3. noget med nogen praktiske øvelser/beregninger på laptop med software de har installeret til øvelserne (data skal så downloades via Digital Eksamen)
     4. En enkelt eller to fritekst opgaver: """ Blast er ... """ (jeg kan lave et script er printer hver studerendes svar pænt og prompter for en karakte som så bliver skrevrt ned i en fil til sidst.)
-- Nye bioinformatikøvelser
-- Ny kursusplan
+- Afskriv/tilpas bioinformatikøvelser
+- Update programmeringsnoter
+- Evt. nye projekter (PAM and Robinson-Foulds)
 - Nyt pensum: kompendium af reviews / NCBI resources / lette artikler / Durbin udklip / Expl. Bioinf. udklip
 - Nye kapitler i noter hvor jeg ikke kan finde noget godt. Evt. bare lidt supplerende/støttende tekst til at starte med.
-- Update programmeringsnoter
 
 
 # New course plan
@@ -33,6 +54,7 @@
 - Maybe split main HMM lecture and only do Viterbi in the first one (with some applications) and then do posterior decoding in another lecture (e.g. when you do TMHMM).
 - Clustering lecture can be made to fill two lectures (with a small project introduction at the end.) As it is the lecture takes an hour and 15, at a relative high pace.
 - Maybe use Laurits Archaic HMM as HMM example (simple two state with higher probability of emitting "difference" in archaic.)
+- Make a Menti poll every week about workload, exercises, etc.
 
 # Course plan
 - Maybe do HMMs before multiple alignments (like in the book) so I can talk about profile HMMs and aligning profiles before I talk about progressive alignment.

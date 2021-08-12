@@ -1,6 +1,6 @@
 # The order of events
 
-> This chapter is about how Python interprets (or evaluates) the code you write. It has a few fancy long words that may seem foreign to you. Do not let that throw you off. They are all just fancy names for something quite simple.
+*This chapter is about how Python interprets (or evaluates) the code you write. It has a few fancy long words that may seem foreign to you. Do not let that throw you off. They are all just fancy names for something very simple.*
 
 ## Precedence of Operators {-}
 
@@ -8,7 +8,7 @@ Fear not. Precedence is just a nasty word for something we have already talked a
 
 $$ 1 + 3 * 2 $$
 
-First, 3 * 2 reduces to 6 and then 1 + 6 reduces to 7. If we wanted to add 1 and 3 first we would need to enforce this by adding parentheses:
+First, $3 * 2$ reduces to 6 and then $1 + 6$ reduces to 7. If we wanted to add 1 and 3 first we would need to enforce this by adding parentheses:
 
 $$ (1 + 3) * 2 $$
 
@@ -25,18 +25,19 @@ This is because the multiplication operator (`*`) has higher precedence than the
 |         | logical             | `and`                            |
 | Lowest  | logical             | `or`                             |
 
-Sometimes a statement contains adjacent operators with the same precedence. In this case Python evaluates the expression left to right. I.e. This expression evaluates to `1.0`:
+Sometimes a statement contains adjacent operators with the same precedence. In this case Python evaluates the expression left to right. I.e. This following expression first reduces to $0.5 * 2$ and then to $1$
 
 ```python
 2 / 4 * 2
 ```
 
-and this evaluates to `4.0`:
+The following one first reduces to $1 * 4$ and then to $4$:
 
 ```python
 2 / 2 * 4
 ```
 
+If you want Python order the oprations in any other way, you need to use perentheses (E.g. `2 / (2 * 4)`).
 
 #### Exercise
 Look at each expression in the exercises below and use the table above to decide if it evaluates to `True` or `False`. Then write the code and test if you were right. If not figure out why.
@@ -69,7 +70,7 @@ Does this reduce to `True` or `False`?
 
 ## Statements and Expressions {-}
 
-To be able to talk concisely about programming (and to receive more useful help from your instructors) you need a bit of vocabulary. Statements and expressions are two such words that you need to know. Distinguishing between statements and expressions will help us talk about the code we write.
+To be able to talk concisely about programming (and to receive more useful help from your instructors) you need a bit of vocabulary. *Statements* and *expressions* are two such words that you need to know. Distinguishing between statements and expressions will help us talk about the code we write.
 
 - A **statement** is a line of code that performs an action. Python evaluates each statement in turn until it reaches the end of the file (remember oath 2?). `print(y * 7)` is a statement and so is `x = 14`. They each represent a full line of code and they each perform an action.
  
@@ -92,7 +93,7 @@ h = 2 * x - 9 * 48
 print(h)
 ```
 
-Write down the code on a piece of paper. Now mark all statements and all expressions. Remember that expression are often made up of smaller expressions, so you can find a *lot* of them. E.g. `(x + y)`, `2 + 20`, and `(x + y) / 2 + 20` are all expressions. In fact, a single variable (like `x`) is also a small expressoin. Discuss with a fellow student. Do you agree on what find?
+Write down the code on a piece of paper. Now mark all statements and all expressions. Remember that expression are often made up of smaller expressions, so you can find a *lot* of them. E.g. `(x + y)`, `2 + 20`, and `(x + y) / 2 + 20` are all expressions. In fact, a single variable (like `x`) is also a small expression. Discuss with a fellow student. Do you agree on what find?
 
 #### Exercise
 Consider the following code:
@@ -107,7 +108,7 @@ How many statements are there in this piece of code? How many expressions?
 
 ## Substitution and Reduction {-}
 
-Although *substitution* and *reduction* may not sound like your new best friends, they truly are! If you remember to think about your Python code in terms of substitution and reduction, then programming will make a lot of sense. Understanding and using these simple rules you will allow to read and understand any expression. If you do not, you may get by for a while -- only to find yourself in big big trouble later when things start to become more complicated. 
+Although *substitution* and *reduction* may not sound like your new best friends, they truly are! If you remember to think about your Python code in terms of substitution and reduction, then programming will make a lot of sense. Understanding and using these simple rules you will allow to read and understand any code. If you do not, you may get by for a while - only to find yourself in big big trouble later when things start to become more complicated. 
 
 You should remember, from the section on variables in the previous chapter, that variables in Python in are *either* assigned a value *or* substituted for the value they represent.
 
@@ -127,9 +128,9 @@ Now raise your right hand and read the third and last oath out loud:
 
 > **Oath 3:** I hereby solemnly swear to consciously consider every single substitution and reduction in every Python expression that I read or write from this moment on.
 
-This was the last of the three oaths but it is by far the most important one. You can take your hand down now.
+This was the last of the three oaths but it is *by far* the most important one. You can take your hand down now.
 
-> **Heads up!** You may not realize at this point, but the last two subsections are the most important ones in the book. Go back and read them many times as you proceed through the course. If you explicitly think in terms of substitution and reduction you will have no trouble. If you do not, you are entering a mine field with snowshoes on.
+**NB:** You may not realize at this point, but the last two subsections are the most important ones in the book. Go back and read them many times as you proceed through the course. If you explicitly think in terms of substitution and reduction you will have no trouble. If you do not, you are entering a mine field with snowshoes on.
 
 #### Exercise
 Do the substitution and reduction steps with pen and paper, then run it to check yourself by inserting a `print` statement at the end.
@@ -164,6 +165,8 @@ Do the substitution and reduction steps with pen and paper, then run it to check
 ```python
 microsatellite = "GTC" * 41
 ```
+
+Surprised?
 
 #### Exercise
 Do the substitution and reduction steps with pen and paper, then run it to check yourself by iserting a `print` statement at the end.
@@ -232,7 +235,7 @@ Consider this code:
 1.2 * 3 + 4 / 5.2
 ```
 
-What does that expression evaluate to? Try to explicitly make all the substitutions and reductions on a piece of paper before you write and run the code.
+What does that expression evaluate to? Try to explicitly make all the reductions on a piece of paper before you write and run the code.
 
 #### Exercise
 Consider this code:
@@ -241,7 +244,7 @@ Consider this code:
 1.2 * (3 + 4) / 5.2
 ```
 
-What does that expression evaluate to? Try to explicitly make all the substitutions and reductions on a piece of paper before you write and run the code.
+What does that expression evaluate to? Try to explicitly make all the reductions on a piece of paper before you write and run the code.
 
 #### Exercise
 Consider this code:
@@ -250,7 +253,7 @@ Consider this code:
 10 % 3 - 2
 ```
 
-What does that expression evaluate to? Try to explicitly make all the substitutions and reductions on a piece of paper before you write and run the code.
+What does that expression evaluate to? Try to explicitly make all the reductions on a piece of paper before you write and run the code.
 
 #### Exercise
 Consider this code:
@@ -259,7 +262,7 @@ Consider this code:
 11 % (7 - 5)**2
 ```
 
-What does that expression evaluate to? Try to explicitly make all the substitutions and reductions on a piece of paper before you write and run the code.
+What does that expression evaluate to? Try to explicitly make all the reductions on a piece of paper before you write and run the code.
 
 #### Exercise
 Consider this code:
@@ -296,7 +299,7 @@ bar = 10
 print(baz)
 ```
 
-There are two print statements. The first print statement prints `80`. But what about the second print statement? Does that print `80` or `40`? Find out and make sure you understand why it prints what it prints. If not, you probably do not understand substitution properly. 
+There are two print statements. The first print statement prints `80`. But what about the second print statement? Does that print `80` or `40`? Find out and make sure you understand why it prints what it prints. If not, reread the section on subsitution.
 
 #### Exercise
 Consider this code:
@@ -376,12 +379,14 @@ y = (x + y) * 2
 ```
 
 #### Exercise
+Make a puzzle exericise, like the two previous ones, for a fellow student.
 
+#### Exercise
 Remind yourself of the different types of Python values you know. E.g. one of them is integer (`int`). Make a list.
 
 #### Exercise {#sec:type_coercion}
 
-You already know about several types of data values in Python. Two of them are integers called `int`, and decimal numbers (or floating points) called `float`. When you use an operator like `+` or `>` it produces a value. No matter what you put on either side of `>` in it produces a boolean value (`bool`), `True` or `False`. For other operators what type of value that is produced depends on which values the operator work on. Try this and see if you print an integer or a float (`8` or `8.0`):
+You already know about several types of data values in Python. Two of them are integers called `int`, and decimal numbers (or floating points) called `float`. When you use an operator like `+` or `>` it produces a value. No matter what you put on either side of `>` in it produces a boolean value (`bool`), `True` or `False`. For other operators the type of value produced depends on which values the operator works on. Try this and see if you print an integer or a float (`8` or `8.0`):
 
 ```python
 x = 4
@@ -402,7 +407,7 @@ Make a list of all the operators you know so far in order of precedence (without
 
 #### Exercise
 
-What does his expression reduce to?
+What does his expression reduce to and what type of value is it?
 
 ```python
 3 > 2
@@ -410,15 +415,15 @@ What does his expression reduce to?
 
 #### Exercise
 
-What does his expression reduce to? Do all the reduction steps in your head. 
+What does his expression reduce to and what type of value is it? Do all the reduction steps in your head. 
 
 ```python
-2 - 4 * 5 - 2 * 9
+2 - 4 * 5 - 2 * 1/3
 ```
 
 #### Exercise
 
-What does his expression reduce to? Do all the reduction steps in your head. 
+What does his expression reduce to and what type of value is it? Do all the reduction steps in your head. 
 
 ```python
 3 > 2 and 2 - 4 * 5 - 2 * 9

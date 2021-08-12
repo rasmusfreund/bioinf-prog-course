@@ -10,7 +10,8 @@
 
 \usepackage{tcolorbox}
 
-\newtcolorbox{myquote}{colback=black!10!white, colframe=black!40!white}
+%\newtcolorbox{myquote}{colback=black!10!white, colframe=black!40!white}
+\newtcolorbox{myquote}{colback=Goldenrod!20!white, colframe=Goldenrod!60!white, arc=1.0mm, boxrule=0.5mm}
 % redefine the 'quote' environment to use this 'myquote' environment
 \renewenvironment{quote}{\begin{myquote}}{\end{myquote}}
 
@@ -21,20 +22,24 @@
 \usepackage{inconsolata}
 % \usepackage{ascii}
 
-\definecolor{myshade}{rgb}{1.0 1.0 1.0}
-\newtcolorbox{mybox}{colback=myshade!100!white, colframe=myshade!100!white, arc=0.3mm, boxrule=0.1mm, left=1mm}
+% \definecolor{myshade}{rgb}{1.0 1.0 1.0}
+% % \definecolor{myshade}{rgb}{0.655, 0.498, 0.161}
+% \newtcolorbox{mybox}{colback=myshade!100!white, colframe=myshade!100!white, arc=0.3mm, boxrule=0.1mm, left=1mm}
+
+% % \newtcolorbox{mybox}{colback=myshade!100!white, colframe=myshade!100!white, arc=0.3mm, boxrule=0.1mm, left=1mm}
+% \newtcolorbox{mybox}{colback=\textcolor[rgb]{0.655, 0.498, 0.161}, colframe=\textcolor[rgb]{0.655, 0.498, 0.161}, arc=0.3mm, boxrule=0.1mm, left=1mm}
 
 % I have to only define Shaded if it is already defined.
 % The reason is that pandoc does not define the macro if there are not code blocks in the a markdown file.
 \ifx \@Shaded \@empty
 
-\renewenvironment{Shaded}{\begin{mybox}}{\end{mybox}}
+% \renewenvironment{Shaded}{\begin{mybox}}{\end{mybox}}
 
-\definecolor{codecolor}{RGB}{0, 0, 0}
+% \definecolor{codecolor}{RGB}{0, 0, 0}
 
-\let\OldTexttt\texttt
-%\renewcommand{\texttt}[1]{\OldTexttt{\colorbox{myshade}{\textcolor[rgb]{0.322, 0.380, 0.427}{{#1}}}}}
-\renewcommand{\texttt}[1]{\OldTexttt{\colorbox{myshade}{\textcolor[rgb]{0, 0, 0}{{\small #1}}}}}
+% % background color for code blocks
+% \let\OldTexttt\texttt
+% \renewcommand{\texttt}[1]{\OldTexttt{\colorbox{myshade}{\textcolor[rgb]{0, 0, 0}{{\small #1}}}}}
 
 \renewcommand{\KeywordTok}[1]{\textcolor[rgb]{0, 0, 0}{\textbf{{#1}}}} % def and or not reg
 \renewcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.373, 0.298, 0.580}{\textbf{{#1}}}} % print open 
