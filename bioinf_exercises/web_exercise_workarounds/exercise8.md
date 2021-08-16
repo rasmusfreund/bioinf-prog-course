@@ -1,5 +1,7 @@
 ## Notes for chapter 8 {-}
 
+For a description of the web exercise see the attached PDF file, which is from Exploring Bioinformatics: A Project-Based Approach 2nd, Caroline St. Clair; Jonathan Visick, Jones & Bartlett Learning, 2013, ISBN: 978-1-284-03424-0. A few things have changed since the book was published: 
+
 ### Part I: DNA Sequence Traces and Base-Calling
 
 1. Access the Trace Archive database: As described in the book. However, if you do the direct search in Google, you might end up somewhere else. To make sure that you are on the right web site, go to https://trace.ncbi.nlm.nih.gov/Traces/trace.cgi .

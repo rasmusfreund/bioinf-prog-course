@@ -1,5 +1,7 @@
 ## Notes for chapter 10 {-}
 
+For a description of the web exercise see the attached PDF file, which is from Exploring Bioinformatics: A Project-Based Approach 2nd, Caroline St. Clair; Jonathan Visick, Jones & Bartlett Learning, 2013, ISBN: 978-1-284-03424-0. A few things have changed since the book was published: 
+
 The sequence for the Influenza resistance region can be found in the Dropbox folder.
 
 Links to the tools used in the exercise can be found in the list of links at the beginning of this chapter.

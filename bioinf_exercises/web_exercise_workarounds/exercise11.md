@@ -1,5 +1,7 @@
 ## Notes for chapter 11 {-}
 
+For a description of the web exercise see the attached PDF file, which is from Exploring Bioinformatics: A Project-Based Approach 2nd, Caroline St. Clair; Jonathan Visick, Jones & Bartlett Learning, 2013, ISBN: 978-1-284-03424-0. A few things have changed since the book was published: 
+
 **Notes for part I:** Under the “Display Files” drop-down menu click “PDB Format” Go to [first glance](https://bioinformatics.org/firstglance/fgij/index.htm) to get to Jmol First Glance Click on the "View" tab to see the different options for displaying the protein. If the right-click menus do not do anything right-click and choose Select>All.
 
 **Notes for part II:** Go to [SWISS-MODEL](https://swissmodel.expasy.org). Click "Start Modeling". On the right side of the page under "Supported Inputs" click "User Template". The HIV sequence and the template can be found in the Dropbox folder. Use the HIV sequence as target sequence and upload the `1odw.pdb` file as template file. Download the result as a PDB file by clicking "Model 01>PDB Format" under "Model Results".
