@@ -49,7 +49,15 @@ CHAPTERS := Header.yml \
 11_iteration_over_values.md \
 12_testing_your_code.md \
 13_working_with_files.md \
-your_own_types_of_objects.md \
+14_your_own_types_of_objects.md \
+translation_project.md \
+assembly_project.md \
+alignment_project.md \
+codonbias_project.md \
+hiv_project.md \
+seqdist_project.md \
+orf_project.md \
+folding_project.md \
 references.md
 
 # pairwise_alignment.md \
@@ -87,8 +95,6 @@ translation_project.pdf: chapters/translation_project.md Makefile header_extra.t
 assembly_project.pdf: chapters/assembly_project.md Makefile header_extra.tex
 	$(PANDOC) $(PANDOC_PDF_OPTS) -o $@ chapters/assembly_project.md
 
-	$(PANDOC) $(PANDOC_PDF_OPTS) -o $@ chapters/pairwise_alignment.md
-
 alignment_project.pdf: chapters/alignment_project.md Makefile header_extra.tex
 	$(PANDOC) $(PANDOC_PDF_OPTS) -o $@ chapters/alignment_project.md
 
@@ -108,7 +114,7 @@ codonbias_project.pdf: chapters/codonbias_project.md Makefile header_extra.tex
 	$(PANDOC) $(PANDOC_PDF_OPTS) -o $@ chapters/codonbias_project.md
 
 PROJECT_PDFS := translation_project.pdf assembly_project.pdf alignment_project.pdf hiv_project.pdf \
-	seqdist_project.pdf seqdist_project.pdf orf_project.pdf folding_project.pdf codonbias_project.pdf
+	seqdist_project.pdf orf_project.pdf folding_project.pdf codonbias_project.pdf
 
 projects: $(PROJECT_PDFS)
 
