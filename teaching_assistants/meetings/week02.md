@@ -1,10 +1,7 @@
-# Corona issues
-- Students swapping AP classes?
-- "Irregular" students in MO and MM classes?
-- Masks?
-- Student feedback on corona teaching
 
 # Python installation problems
+
+- make sure they are in the `base` environment.
 - zsh vs bash
 - virus protection software
 
@@ -24,9 +21,13 @@ And on Mac
 
 	which python
 
+# VScode extensions
+
+- Python/Pylance
+
 # Next/this weeks exercises
 
-[precedence and associativity in Python](https://www.programiz.com/python-programming/precedence-associativity)
+Corner-cases with operators: [precedence and associativity in Python](https://www.programiz.com/python-programming/precedence-associativity)
 
 If students has questions, try not to provide them with an answer. Instead you can do some of the following to make them realise what they do wrong:
 

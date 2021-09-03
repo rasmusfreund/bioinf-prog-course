@@ -112,11 +112,7 @@ The topics for this week are iteration and files. You are meant to complete all 
 
 ### Reading Material
 
-I will cover the following chapters from the lecture notes:
-
-- Your own types of objects
-
-Also read:
+I will cover:
 
 - [The Theory and Practice of Genome Sequence Assembly](https://www.annualreviews.org/doi/10.1146/annurev-genom-090314-050032)
 
