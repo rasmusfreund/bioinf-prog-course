@@ -1,4 +1,16 @@
 
+# Classes
+
+| Class		| Day		| Time	| Room 	   |
+| ----------|-----------|-------|----------|
+| MO2		| Tuesday	| 10-13	| 1510-213 |
+| 1			| Tuesday 	| 14-17	| 1532-218 |
+| MO3		| Wednesday	| 9-12	| 1532-214 |
+| MM2		| Wednesday | 12-15	| 1510-213 |
+| MO1		| Thursday	| 12-15	| 1170-240 |
+| MM1		| Friday 	| 0-13 	| 1532-218 |
+
+
 # Python installation problems
 
 - make sure they are in the `base` environment.
