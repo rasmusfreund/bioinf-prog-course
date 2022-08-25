@@ -47,9 +47,10 @@ CHAPTERS := Header.yml \
 09_structuring_data.md \
 10_gluing_values_in_sequence.md \
 11_iteration_over_values.md \
-12_testing_your_code.md \
-13_working_with_files.md \
-14_your_own_types_of_objects.md \
+12_using_code_from_other_files.md \
+13_testing_your_code.md \
+14_working_with_data_files.md \
+15_your_own_types_of_objects.md \
 translation_project.md \
 assembly_project.md \
 alignment_project.md \
@@ -59,6 +60,8 @@ seqdist_project.md \
 orf_project.md \
 folding_project.md \
 references.md
+
+# 14_your_own_types_of_objects.md \
 
 # pairwise_alignment.md \
 # models_of_dna_evolution.md \
@@ -87,6 +90,11 @@ pymol.pdf: chapters/pymol.md Makefile header_extra.tex
 	$(PANDOC) $(PANDOC_PDF_OPTS) -o $@ chapters/pymol.md
 
 pymol: pymol.pdf
+
+master_in_bioinformatics.pdf: chapters/master_in_bioinformatics.md Makefile header_extra.tex
+	$(PANDOC) $(PANDOC_PDF_OPTS) -o $@ chapters/master_in_bioinformatics.md
+
+master: master_in_bioinformatics.pdf
 
 # Individually compiled programming projects
 translation_project.pdf: chapters/translation_project.md Makefile header_extra.tex

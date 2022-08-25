@@ -4,9 +4,13 @@ kaspermunch@birc.au.dk
 Mobile: 30138342
 
 # TA emails:
-Johan Lassen <johanlassen@live.dk>, Erik Fogh Sørensen <eriks@cs.au.dk>, 
-Nanna Raslow <n-raslow-n@hotmail.com>, Anne Mathiesen <anne.mathiesen@live.dk>, Marie Vestergaard <marievv@hotmail.com>, Bakhtawar Noor <au560049@cs.au.dk>,
-"Jens Brogård Stenbye" <201505646@post.au.dk>
+Anna Vincent <Anna.vincent@mbg.au.dk>,
+Aysevilpektas <aysevilpektas@mbg.au.dk>,
+Adrian Gomez <adrian.gomez@mbg.au.dk>,
+Erik Fogh Sørensen <eriks@birc.au.dk>,
+Petersoerud <petersoerud@gmail.com>,
+Andreas <au606887@uni.au.dk>,
+Laura Skak <201805553@post.au.dk>
 
 # Facebook group 
 We (one of you) will set up a facebook group so we/you can easily share information/experiences about the teaching/exercises.
@@ -19,19 +23,39 @@ We use English in emails and in the facebook group.
 
 # The TA job
 - Prepare exercises and teach a class
-- Correct 3 mandatory assignments
+- Correct of a mandatory assignment
 - If some of your students do not hand in their mandatory assignments on time, you will have to spend a bit of time on that even after your classes end.
 - Possibly a bit of creating/vetting the exam assignment.
 - Vetting/testing of "new" bioinformatics exercises will be distributed among BP TAs.
 
+# Lectures
+- Monday 9-11
+- Friday 10-11
+
 # Distribution of TAs among classes
 
-- **AP:** Marie, Anne
-- **BP:**, Nanna, Erik, Johan, Noor
+| Class | Day | TA |
+|:--|:--|:--|
+| 1-BIOPRO-E22 | Tuesday 8-11 | Peter |
+| MO2-BIOPRO-E22 | Tuesday 11-14 | Anna |
+| MO1-BIOPRO-E22 | Wednesday 9-12 | Aysevil |
+| MO3-BIOPRO-E22 | Wednesday 12-15 | Erik |
+| MM1-BIOPRO-E22 | Thursday 11-14 | Adrian |
+| MM2-BIOPRO-E22 | Friday 11-14 | Andreas |
+
+# Study cafe
+
+| Class | Day | TA |
+|:--|:--|:--|
+| Study cafe | Monday 15-17 | Laura |
+
+
+# Teaching rooms
+https://timetable.au.dk, Click "overview", "Modules', Search and find Bioinformatics and programming, "View timetable", top right corner click icon with arrows to connect your calendar.
 
 # Curriculum
-- First seven weeks: Lecture notes (I will finish a new version this week with more exercises).
-- Last seven weeks: Understanding Bioinformatics (I will buy some copies if need be). I will list the exact curriculum in the coming weeks.
+- First seven weeks: Mostly lecture notes
+- Last seven weeks: Excerpts from Understanding Bioinformatics and other sources (on Brightspace)
 
 # Exercises
 - First seven weeks: Exercises in lecture notes and programming projects.
@@ -43,26 +67,16 @@ We use English in emails and in the facebook group.
 - Students do remaining exercises and/or programming project related to the material from the previous week. By treating last weeks curriculum in the exercise we are not sensitive to a situation where some classes have exercises before the second lecture. It also lets the students work on each topic for longer time.
 
 # Mandatory exercises
-Applied programming:
-
-- Translation project
-- Assembly project
-- Codon bias project
-
-Bioinformatics and programming:
-
 - Translation project
 - Assembly project
 
-# Blackboard
-- On Blackboard you will all be registered as Instructors with full editing rights. So please do not edit anything other than what we agree.
-- Weekly notes the left menu.
-- Left menu also have link to BLACKBOARD Dropbox folder
-- Students download assignment files from the Assignment page.
-- Assignments for correcting are downloaded from Blackboard and graded (passed/not passed) on Blackboard too.
+I will download and autocorrect assignments. You need to handle those that do not pass, and you need to grade (fail/pass) each student on Brightspace (I will show you how when we get to that). 
+
+# Brightspace
+On Brightspace you are all be registered as Instructors with full editing rights. So please do not edit anything other than what we agree.
 
 # Weekly TA meeting
-We will have a short weekly TA meeting that you must attend every time. At TA meetings we will evaluate the previous exercise and prepare the next one. Among other things, we will talk about:
+We will have a short weekly TA meeting on Zoom that you must attend every time. You are also aways welcome to stop by my office (but send me an email first to make sure I am there). At TA meetings we will evaluate the previous exercise and prepare the next one. Among other things, we will talk about:
 
 - How to outline the programming projects.
 - How to help with programming questions.
@@ -72,6 +86,7 @@ We will have a short weekly TA meeting that you must attend every time. At TA me
 - Correction of mandatory assignments.
 
 # First week
-First week's exercises serve mainly to get the students up and running. They install Python and Sublime Text and do exercises. For this exercise you should mainly circulate among the students and help them setting up and solve the initial basic exercises. Please take note of how many of the exercises the students have done by the end of the session.
+
+First week's exercises serve mainly to get the students up and running. They install Python and VScode and do exercises. For this exercise you should mainly circulate among the students and help them setting up and solve the initial basic exercises. Please take note of how many of the exercises the students have done by the end of the session.
 
 
