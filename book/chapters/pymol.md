@@ -1,19 +1,21 @@
 # Installation instructions {-}
 
+<!-- TODO: Figure  out whether to tell students from Gregers class to call their environment something different, og whether the environment for both Gregers and Ditlevs classes should both be called "pymol". -->
+
+<!-- TODO: Add note to students that had Gregers class, that they have already installed Anaconda and Pymol, and that they only need to install VScode (if they don't alrady have it). -->
+
+
 In this course, we use a distribution of Python called *Anaconda*. Anaconda is simply an easy way of installing Python on and PyMol.
 
 ## Install Python {-}
 
-To install Anaconda, head to [this](https://www.anaconda.com/download) site. Scroll down a bit and click the big green Download button where it says **Python 3.7 version** (do *not* download version 2.7).
+To install Anaconda, head to [this](https://www.anaconda.com/download) site. Click the big green Download button.
 
-When the download has completed, you should follow the platform specific instructions:
-
-* **For Windows:** Double-click the `.exe` file you just downloaded and follow the instructions on the screen. Make a default installation. The installer will also ask you if you want to download and install a program called Visual Studio Code. Do that too.
-* **For OSX:** Double-click the `.pkg` file you just downloaded and follow the instructions on the screen. Make a default installation. The installer will also ask you if you want to download and install a program called Visual Studio Code. Do that too.
+When the download has completed, you should follow the platform specific instructions. It is important accept the default installation settings.
 
 ## Install PyMol {-}
 
-If you are on a Windows machine, find the program called "Anaconda Prompt". If you are on a Mac, find the program called "Terminal". These are both programs where you can type commands to run other programs. When you open *Anaconda Prompt* you should see something like @fig:powershell. The OSX Terminal looks like @fig:terminal, possibly with a different background color.
+If you are on a Windows machine, find the program called "Anaconda Prompt". If you are on a Mac, find the program called "Terminal". These are both programs where you can type commands to run other programs. When you open *Anaconda Prompt* you should see something like @fig:prompt. The OSX Terminal looks like @fig:terminal, possibly with a different background color.
 
 ![Screenshot of Anaconda Prompt](./images/anaconda_prompt.jpg){#fig:prompt}
 
@@ -22,7 +24,7 @@ If you are on a Windows machine, find the program called "Anaconda Prompt". If y
 Now paste this into Anaconda Prompt (or Terminal).
 
 ```
-conda create -n BSF19 -c schrodinger pymol python=3.7
+conda create -n BSF -c schrodinger pymol python=3
 ```
 
 Then hit enter. Now the program works for some time and then writes a long list of packages. These are all the packages and dependencies required by python and PyMol in versions that all fit together. It looks something like this:
@@ -57,7 +59,7 @@ Executing transaction: done
 #
 # To activate this environment, use
 #
-#     $ conda activate BSF19
+#     $ conda activate BSF
 #
 # To deactivate an active environment, use
 #
@@ -69,7 +71,7 @@ Executing transaction: done
 From now on, you can start PyMol by typing these commands in Anaconda Prompt if you are on windows, or Terminal if you are on Mac:
 
 ```
-conda activate BSF19
+conda activate BSF
 ```
 
 (hit enter)

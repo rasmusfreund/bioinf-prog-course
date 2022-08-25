@@ -17,9 +17,9 @@ Your editor will color your code a little differently, but that is not important
 1. Open the terminal and navigate to the folder (directory) where you saved `hello.py`. Use the `cd` command to do so. If you do not remember how, go back and read the previous chapter again.
 2. Type `python hello.py` in the terminal and hit Enter.
 
-You should see something like [@fig:figure0].
+You should see something like [@fig:hello_world].
 
-![Hello world, first program](./images/helloworld.png){#fig:figure1}
+![Hello world](./images/helloworld.png){#fig:hello_world}
 
 This is where you shout "it's alive!", toss your head back and do the insane scientist laugh.
 

@@ -1,6 +1,6 @@
 # Project: Identifying the subtype of an HIV sequence
 
-> This chapter is a programming project where you will put your new programming skills to use analyzing an HIV DNA sequences.
+*This chapter is a programming project where you will put your new programming skills to use analyzing an HIV DNA sequences.*
 
 You have now been introduced to all the programming rules you will see in this course. You now know all the building blocks required to write *any* program -- literally *any*. The reason why computer geeks are good at what they do is not that they know some incomprehensible secrets. It is because they practiced, a lot. With practice, the simple rules you know now will let you write anything from first-person shooter games over jumbo jet autopilots to scripts for simple problems in bioinformatics. In the last three chapters, we will train your ability to solve bioinformatics problems by putting together all the things you have learned. 
 

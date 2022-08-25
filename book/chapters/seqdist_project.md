@@ -1,6 +1,6 @@
 # Project: Clustering sequences based on distance
 
-> This chapter is about clustering sequence based on the evolutionary distance between them. 
+*This chapter is about clustering sequence based on the evolutionary distance between them.*
 
 On the course page you can download the files you need for this project:
 
@@ -180,9 +180,9 @@ Now that you have the distance matrix you are ready for the actual clustering. T
 
 Depending on how you choose which pair to join and how you compute the new distances for the joined pair determines what kind of clustering you do. Here we will try a centroid-like linkage called WPGMA. It does not work as well as UPGMA but is a bit easier to implement (you can look up WPGMA on wikipedia).
 
-### Find the smallest cell {-}
+### Find the pair to join {-}
 
-So you need to be able to find the pair with the smallest distance. To do that we identify the cell in the matrix with the smallest value:
+Here you want to be able to find the pair with the smallest distance. To do that we identify the cell in the matrix with the smallest value:
 
 *Write a function*, `find_lowest_cell`, which takes one argument:
 
@@ -235,7 +235,40 @@ Should return:
 
 The three functions that do the actual clustering are complicated but you should be able to follow what they do. The first one updates the table to reflect that you join a pair. The second updates the list of sequence names (labels) to reflect that you joined a pair. The last one uses the two other functions to cluster pair until there is only one cluster left.
 
-Your task is to faithfully copy the code for each function and to read and understand how they work.
+Your task is to carefully type the code for each function and to understand what every line of code does.
+
+### Updating labels {-}
+
+The function `update_labels` takes three arguments:
+
+1. A list of strings representing sequence names.
+2. An integer representing the index of a sequence name.
+3. An integer representing the index of another sequence name.
+
+The function does not return anything, but it updates the list of names to reflect that you joined a pair. If your  list looks like this *before* you call the function:
+
+```python
+labels = ['A', 'B', 'C', 'D']
+```
+
+Then *after* you call the function like this `update_labels(labels, 1, 0)`, the list will look like this:
+
+```python
+['(A,B)', 'C', 'D']
+```
+
+Here is the function:
+
+```python
+def update_labels(labels, i, j):
+
+    # turn the label at first index into a combination of both labels
+    labels[j] = "({},{})".format(labels[j], labels[i])
+
+    # Remove the (now redundant) label in the first index
+    del labels[i]
+```
+
 
 ### Updating the matrix {-}
 
@@ -285,38 +318,6 @@ def update_table(table, a, b):
 ```
 
 The colors refer to cell colors on the slide you I showed you at the lecture.
-
-### Updating labels {-}
-
-The function `update_labels` takes three arguments:
-
-1. A list of strings representing sequence names.
-2. An integer representing the index of a sequence name.
-3. An integer representing the index of another sequence name.
-
-The function does not return anything, but it updates the list of names to reflect that you joined a pair. If your  list looks like this *before* you call the function:
-
-```python
-labels = ['A', 'B', 'C', 'D']
-```
-
-Then *after* you call the function like this `update_labels(labels, 1, 0)`, the list will look like this:
-
-```python
-['(A,B)', 'C', 'D']
-```
-
-Here is the function:
-
-```python
-def update_labels(labels, i, j):
-
-    # turn the label at first index into a combination of both labels
-    labels[j] = "({},{})".format(labels[j], labels[i])
-
-    # Remove the (now redundant) label in the first index
-    del labels[i]
-```
 
 
 ### Do the clustering {-}

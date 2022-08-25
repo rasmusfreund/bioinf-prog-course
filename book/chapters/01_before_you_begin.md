@@ -1,27 +1,22 @@
 # Before you begin
 
-*This chapter serves to get the practicalities out of the way so you can start programming.*
+*This chapter serves to get the practicalities out of the way so you can start programming. Read the whole chapter once carefully before you install anything*
+
 ## Install Python {-}
 
-In this course, we use a distribution of Python called *Anaconda*. Anaconda is simply an easy way of installing Python on Windows, macOS (Mac), and Linux.
-
-To install Anaconda, head to [this](https://www.anaconda.com/products/individual) site. Click "Download" And select the graphical installer for your platform. Pick a **64-bit** version, unless you know that your computer is 32-bit.
-
-When the download has completed, double-click the file you just downloaded and follow the instructions on the screen. It is important that you accept all the suggested installation settings, with one exception: Say *yes* when asked to install the *Visual Studio Code text editor*.
+In this course, we use the Python programming language, and we need the Python program to run the code we will  write. We will use a distribution of Python called *Anaconda*. Anaconda is the easiest way of installing Python on Windows, macOS (Mac), and Linux. To install Anaconda, head to [this](https://www.anaconda.com/products/individual) site. Click "Download". When the download has completed, double-click the file you just downloaded and follow the instructions on the screen. It is important that you accept all the suggested installation settings.
 
 ## The text editor {-}
 
-You will also need a *text editor*. A text editor is where you write your Python code. For this course, we will use one called *Visual Studio Code* - or *VScode* for short, which you just installed alongside Anaconda. If you open *VScode*, you should see something like [@fig:figure0]:
+You will also need a *text editor*. A text editor is where you write your Python code. For this course, we will use *Visual Studio Code* - or *VScode* for short. You can download it from [this page](https://code.visualstudio.com/download). If you open *VScode*, you should see something like [@fig:figure0]. You may wonder why we cannot just Word to create and edit files with programming code. The reason is that a text editor made for programming, such as VScode, only saves the actual characters you type. So unlike, Word, it does not silently save all kinds of formatting, like margins, bold face text, headers, etc. With VScode, what you type is *exactly* what ends up in the file when you save it. In addition, where Word is made for prose, VScode is made for programming and has a lot of features that you will make your programming life easier. 
 
-![VScode, screenshot](./images/vscode.png){#fig:figure0}
+![Visual Studio Code (VScode)](./images/vscode.png){#fig:figure0 width=80%}
 
 ## The terminal {-}
 
-<!-- TODO: change to using  Anaconca Powershell Prompt and fix examples accordingly -->
+<!-- TODO: change to using Anaconca Powershell Prompt and fix examples accordingly -->
 
-The last thing you need is a tool to make Python run the programs you write. Fortunately, that is already installed. 
-
-On **OSX** this is an application called *Terminal*. You can find it by typing "Terminal" in Spotlight Search. When you start you will see semething like @fig:terminal. You may be presented with the following text:
+The last thing you need is a tool to make Python run the programs you write. Fortunately, that is already installed. On **OSX** this is an application called *Terminal*. You can find it by typing "Terminal" in Spotlight Search. When you start you will see semething like @fig:terminal. You may be presented with the following text:
 
 ```
 The default interactive shell is now zsh.
@@ -29,19 +24,17 @@ To update your account to use zsh, please run `chsh -s /bin/zsh`.
 For more details, please visit https://support.apple.com/kb/HT208050.
 ```
  
-**NB:** Do *not* update your account *after* you install Anaconda (see below). If you do, *Terminal* will not be able to find the Anaconda Python (If you did so by mistake anyway, you change back using this command: `chsh -s /bin/bash`.
+![The Terminal app on Mac](./images/terminal.png){#fig:terminal width=85%} 
 
-On **Windows** the tool you need is called the *Anaconda Prompt* and was installed along with Anaconda Python. You should be able to find it from Start menu. If you open *Anaconda Prompt* you should see something like @fig:powershell.
+![Anaconda Prompt app on Windows](./images/anaconda_prompt.jpg){#fig:anacondaprompt width=75%}
+
+Do __*not*__ update your account __*after*__ you install Anaconda (see below). If you do, *Terminal* will not be able to find the Anaconda Python (If you did so by mistake anyway, you change back using this command: `chsh -s /bin/bash`.
+
+On **Windows** the tool you need is called the *Anaconda Prompt* and was installed along with Anaconda Python. You should be able to find it from Start menu. If you open *Anaconda Prompt* you should see something like @fig:anacondaprompt.
 
 What is *Anaconda Prompt* and this *Terminal* thing, you ask. Both programs are what we call *terminal emulators*. They are programs used to run other programs, like  the ones you are going to write yourself. I will informally refer to both *Terminal* and *Anaconda Prompt* as "the terminal" So if I write something like "open the terminal", you should open *Anaconda Prompt* if you are running Windows and the *Terminal* application if you are running OS X.
 
-![Anaconda Prompt](./images/anaconda_prompt.jpg){#fig:prompt width=80%}
-
-![Terminal](./images/terminal.png){#fig:terminal width=80%} 
-
-The terminal is a very useful tool. To use it, howevever, you need to know a few basics. First of all, a terminal lets you execute commands on your computer. You simply type the command you want and then hit enter. The place where you type is called a prompt (or command promt) and it may look a little different depending on which terminal emulator you use. In this book we represent the prompt with the character `$`.
-
-When you open the terminal you'll be located in a folder. You can see which folder you are in by typing `pwd` on OSX and `cd` on windows, and then press `Enter` on the keyboard. When you press `Enter` you tell the terminal to execute the command you just wrote. In this case, the command you typed simply tells you the path to the folder we are in. If I do it I get:
+The terminal is a very useful tool. To use it, howevever, you need to know a few basics. First of all, a terminal lets you execute commands on your computer. You simply type the command you want and then hit enter. The place where you type is called a prompt (or command promt) and it may look a little different depending on which terminal emulator you use. In this book we represent the prompt with the character `$`. So a command in the examples below is the line of text to the left of the `$`. When you open the terminal you'll be located in a folder. You can see which folder you are in by typing `pwd` on OSX and `cd` on windows, and then press `Enter` on the keyboard. When you press `Enter` you tell the terminal to execute the command you just wrote. In this case, the command you typed simply tells you the path to the folder we are in. If I do it I get:
 
 ```
 $ pwd

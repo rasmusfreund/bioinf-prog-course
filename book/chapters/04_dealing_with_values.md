@@ -16,9 +16,7 @@ Much programming is done to compute stuff. In Python the usual math operations a
 | `**`     | exponentiation     |
 | `%`      | modulo (remainder) |
 
-You are probably quite familiar with these - except perhaps for integer division, exponentiation and modulo. Let us take some of the operators for a spin. Remember to carefully write the whole thing in an empty file in *VScode*. Do *not* copy-paste. Then save the file as `mathandlogic.py` and run it from the terminal.
-
-> Note! Do not call your file `math.py`. It may bite you later. Just trust me on that one. 
+You are probably quite familiar with these - except perhaps for integer division, exponentiation and modulo. Let us take some of the operators for a spin. Remember to carefully write the whole thing in an empty file in *VScode*. Do *not* copy-paste. Then save the file as `mathandlogic.py` and run it from the terminal.Do not call your file `math.py`. It may bite you later. Just trust me on that one. 
 
 ```python
 print("Four times two is",  4 * 2)
@@ -114,7 +112,7 @@ We mentioned a special operator called *modulo*. Google it you do not remember w
 You obviously cannot go buy 4.3 chocolate bars in a store. You will have to settle for 4. Can you change the program you made in @sec:chocolatebars to print the number of bars you can actually buy, and the change you then have left? Use the modulo and integer division operators. Somthing like:
 
 ```
-I can buy 4 chocolate bars leaving me with 4 kr in change
+I can buy 4 chocolate bars leaving me with 2 kr in change
 ```
 
 #### Exercise
@@ -127,7 +125,7 @@ print( 1 / 0 )
 If you get an error? What kind of error? Why do you think you get that error? Does it make sense?
 
 #### Exercise {#sec:pythagoras}
-You have probably know the Pythagorean theorem for computing the hypotenuse (the longest side) of a right-angled triangle. The Pythagorean theorem looks like this: $a^2 + b^2 = c^2$. Here $a$ is the length of the hypotenuse and $b$ and $c$ are the lengths of the two legs of the triangle. So if we have a triangle where $a = 5$ and $b = 2$ and we want to find $c^2$ we can do this in Python:
+You have probably know the Pythagorean theorem for computing the hypotenuse (the longest side) of a right-angled triangle. The Pythagorean theorem looks like this: $a^2 + b^2 = c^2$. Here $c$ is the length of the hypotenuse and $a$ and $b$ are the lengths of the two legs of the triangle. So if we have a triangle where $a = 5$ and $b = 2$ and we want to find $c^2$ we can do this in Python:
 
 ```python
 print("The squared length of the hypotenuse is:", 5**2 + 2**2)
@@ -243,7 +241,7 @@ Recall the `in` operator from @sec:in_operator? There is also an operator called
 
 ## Variables {-}
 
-> **Heads up:** By now you probably feel the first signs of brain-overload. If you do not take breaks, your brain may overheat and explode - we have seen that happen. One of the nice things about the brain is that it works when you rest. Archiving and understanding a lot of new information takes time, and force-feeding your brain will not help. The last part of this chapter is very important so now might be a good time for a good long break.
+> By now you probably feel the first signs of brain-overload. If you do not take breaks, your brain may overheat and explode - we have seen that happen. One of the nice things about the brain is that it works when you rest. Archiving and understanding a lot of new information takes time, and force-feeding your brain will not help. The last part of this chapter is very important so now might be a good time for a good long break.
 
 This section is about *variables* and this is where the fun begins. A variable is basically a way of assigning a name to a value. `8700000` is just a value, but if we assign a name to it then it gets a special meaning:
 
@@ -352,7 +350,7 @@ So the different *types* of values we know so far are:
 | Boolean        | `bool`         | `True`, `False`    |             
 | None           | `NoneType`     | `None`             |         
 
-> In case you did not notice, I added a special type at the end that can only have the value `None`. I may sound a little weird, but in programming, we sometimes need a value that represents nothing, or `None`. For now, just make a mental note that `None` is also a Python value.
+In case you did not notice, I added a special type at the end that can only have the value `None`. I may sound a little weird, but in programming, we sometimes need a value that represents nothing, or `None`. For now, just make a mental note that `None` is also a Python value.
 
 When you do computations in Python it is no problem to mix integers and floating-point numbers. Try this:
 

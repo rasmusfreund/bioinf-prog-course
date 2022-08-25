@@ -76,7 +76,7 @@ if 4 > 2:
 print('Hi!')
 ```
 
-> **Tech note:** by now you have probably know that your text editor is intelligent when it comes to indentation. If you hit Enter after a statement ending with `:`, it will indent the next line with four spaces. Also, if you use the tab in python code, it will produce four spaces for you.
+> By now you have probably know that your text editor is intelligent when it comes to indentation. If you hit Enter after a statement ending with `:`, it will indent the next line with four spaces. Also, if you use the tab in python code, it will produce four spaces for you.
 
 ### FAQ {-}
 

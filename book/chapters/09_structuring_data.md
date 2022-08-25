@@ -437,7 +437,7 @@ print("{} encodes {}".format(codon, amino_acids[codon]))
 ```
 
 
-> **Bonus info:** For each type of value the interpretation of length is different. In a string it is the number of characters, in a list is the number of values in the list and in a dictionary, it is the number of key-value pairs. How do you think Python knows which interpretation of length to use when the `len` function is called? This is where objects shine. `len(x)` just returns the value that `x.__len__()` returns. So the `len` function is defined roughly like this:
+> You have probably noticed that, for each type of value, the interpretation of length is different. In a string it is the number of characters, in a list is the number of values in the list and in a dictionary, it is the number of key-value pairs. How do you think Python knows which interpretation of length to use when the `len` function is called? This is where objects shine. `len(x)` just returns the value that `x.__len__()` returns. So the `len` function is defined roughly like this:
 > ```
 > def len(x):
 >     return x.__len__()

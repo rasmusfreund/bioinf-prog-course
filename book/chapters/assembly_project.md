@@ -1,6 +1,6 @@
 # Project: Genome assembly
 
-> This chapter is a programming project where you will assemble a small genomic sequence from a set of short sequencing reads. 
+*This chapter is a programming project where you will assemble a small genomic sequence from a set of short sequencing reads.*
 
 In genome assembly, many short sequences (reads) from a sequencing machine are assembled into long sequences -- ultimately chromosomes. This is done by ordering overlapping reads so that they together represent genomic sequences. For example given these three reads: `AGGTCGTAG`, `CGTAGAGCTGGGAG`, `GGGAGGTTGAAA` ordering them based on their overlap like this
 
@@ -111,6 +111,8 @@ def read_data(file_name):
     
 ```
 
+The `line` variable in the for loop holds each line in the file including the `\n` newline character at the end. To split each line into the name of the read and the read sequence, you can use the `split` method of strings. You can see the documentation for that method by typing `pydoc str.split` in your terminal.
+
 ### Compute the mean length of reads {-}
 
 Having written that function we would like to get some idea about how long the reads are. More often than not there are too many reads to look at them manually, so we need to make a function that computes the mean length of the reads.
@@ -122,6 +124,23 @@ Having written that function we would like to get some idea about how long the r
 The function must return
 
 * A float, which is the average length of the sequence reads.
+
+One way to do this is to loop over the keys in the dictionary like this:
+
+```python
+def mean_length(reads):
+    count = 0
+    total = 0
+    for name in reads:
+        seq = reads[name]
+        # ...
+        # ...
+    # ...
+    return total / count
+
+```
+
+Remember that you can use the `len` function to find the length of a read.
 
 ## Compute overlaps between reads {-}
 
@@ -163,6 +182,14 @@ should return the string
 ```
 
 From these two examples it seems that `s1` and `s2` overlap and that `s1` is the left one and `s2` is the right one. Treating `s2` as the left one and `s1` as the right one only gives an overlap of one base (we expect a few bases of overlap even for unrelated sequences).
+
+<!-- 
+```
+GGGTTTTTT  ->  GGGTTTTTT  ->  GGGTTTTTT   -> ... -> GGGTTTTTT
+TTTTTTAAAA      TTTTTTAAAA      TTTTTTAAAA             TTTTTTAAAA
+```
+ -->
+
 
 ### Compute all read overlaps {-}
 

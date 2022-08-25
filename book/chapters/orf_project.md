@@ -1,7 +1,7 @@
 
 # Project: Finding genes in bacteria
 
-> This chapter is a programming project where you will find open  reading frames in the genome of a particularly virulent strain of *E. coli*.
+_This chapter is a programming project where you will find open  reading frames in the genome of a particularly virulent strain of *E. coli*._
 
 In this project, you will analyze DNA to identify the open reading frames (ORFs) and the proteins they encode. 
 

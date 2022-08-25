@@ -84,20 +84,18 @@ They are not so strange that your head will explode
 None
 ```
 
-It seems that the function call (`chorus()`) is now substituted with `None`. How can that be when we did not return anything? The reason is that when you do not specify a `return` statement the function returns `None` by default. This is to honour the rule that variables and a function calls are substituted by a value, and `None` is simply the value that Python uses to represent "nothing". 
+It seems that the function call (`chorus()`) is now substituted with `None`. How can that be when we did not return anything? The reason is that when you do not specify a `return` statement the function returns `None` by default. This is to honour the rule that variables and a function calls are substituted by a value, and `None` is simply the value that Python uses to represent "nothing". `None` is basically a value denoting the lack of value. As you just saw it is used to represent that no value is returned from a function. It can also be assigned to a variable as a placeholder value until another value is assigned:
 
-> **A short history about nothing:** None is basically a value denoting the lack of value. As you just saw it is used to represent that no value is returned from a function. It can also be assigned to a variable as a placeholder value until another value is assigned:
->
-> ```python
-> x = None
-> x = 4
-> ```
-> Also, `None` is considered false in a logical context:
->
-> ```python
-> print(not None)
-> ```
-> 
+```python
+x = None
+x = 4
+```
+Also, `None` is considered false in a logical context:
+
+```python
+print(not None)
+```
+ 
 
 #### Exercise
 Try this variant to the chorus function. Go through the code *slowly* and repeat all the steps in the breakdown of what happens when a function is called. Remember to also do each substitution and reduction carefully.
@@ -539,11 +537,9 @@ is_base_pair("Preben", "A") # should return False
 Did you find the bug in @sec:none_eval_false? You were supposed to find that the function did not have a return value. This makes the function return `None` by default. Do you think the `None` value is considered true or false in an if-statement?
 
 #### Exercise
-Define a function called `celcius2fahrenheit` that converts from celsius to Fahrenheit. You can do this because you know the linear relationship between the two. On the figure below you can see that the slope is `9 / 5` and the intercept is `32`. The function should have one parameter `celsius`. Inside the function, you should define the variables `slope` and `intercept` and give them the appropriate values. Then you can calculate the conversion to Celcius using these variables and return the result.
+Define a function called `celcius2fahrenheit` that converts from celsius to Fahrenheit. You can do this because you know the linear relationship between the two. On @fig:figureX you can see that the slope is `9 / 5` and the intercept is `32`. The function should have one parameter `celsius`. Inside the function, you should define the variables `slope` and `intercept` and give them the appropriate values. Then you can calculate the conversion to Celcius using these variables and return the result.
 
-![Temperature conversion](./images/temperature.png){#fig:figureX}
-
-<img src="img/temperature.png" style="width: 400px; display: block; margin-left: auto; margin-right: auto" />
+![Temperature conversion](./images/temperature.png){#fig:figureX width=75%}
 
 #### Exercise
 Try to change your conversion function so it takes three arguments, corresponding to celsius, slope and intercept so you can call it like this to convert 27 degrees celsius: `conversion(37, 9 / 5, 32)`. Now you have a function that can do any linear conversion that you can put inside another function like this:

@@ -1,6 +1,6 @@
 # Project: Translating open reading frames
 
-> This chapter is about translating DNA into protein. If bacteria can do it, so can you.
+*This chapter is about translating DNA into protein. If bacteria can do it, so can you.*
 
 In this project you will write the code needed to translate an open reading frame (ORF) on a DNA sequence into into the corresponding sequence of amino acids.
 
@@ -13,7 +13,7 @@ The file `translationproject.py` is for your code. The file `test_translationpro
 
 In this project you will need a data structure that pairs each codon to the amino acid it encodes. This is an obvious use of a dictionary and at the top of `translationproject.py` I have defined such a dictionary you can use. Defining it outside the functions means that it is visible inside all your functions (unless you define *another* variable called `codon_map` inside a function). Defining variables globally to your program sometimes make sense if some value can be considered a *constant* in your program and is *never* changed.
 
-> **Heads up:** It is normally very bad programming style to access variables outside functions in this way because it may have all kinds of unexpected side effects across function calls. So make it a rule for yourself that code *inside* a function should never to access variables *outside* the function. The reason we define `codon_map` globally in this project is to help you understand that when Python cannot find a variable inside a function, it looks outside the function to find it. In this project functions will find `codon_map` in this way. However, as I already said, you should *never* do this yourself. The chance that you make an unexpected mistake is overwhelming. 
+> It is normally very bad programming style to access variables outside functions in this way because it may have all kinds of unexpected side effects across function calls. So make it a rule for yourself that code *inside* a function should never to access variables *outside* the function. The reason we define `codon_map` globally in this project is to help you understand that when Python cannot find a variable inside a function, it looks outside the function to find it. In this project functions will find `codon_map` in this way. However, as I already said, you should *never* do this yourself. The chance that you make an unexpected mistake is overwhelming. 
 
 ## Translating a single codon {-}
 
