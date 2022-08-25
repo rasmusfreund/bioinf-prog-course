@@ -491,6 +491,17 @@ class TestExercise3(AnvProgTestCase):
     def test_get_overlap_2(self):
         self.assertEqualNice("", project.get_overlap, "TTTTTTTTTT", "AAAAATTTTT")
 
+    def test_get_overlap_3(self):
+        self.assertEqualNice("CTTTACCCGGAAGAGC", project.get_overlap, "TGCGAGGGAAGTGAAGTATTTGACCCTTTACCCGGAAGAGC", "CTTTACCCGGAAGAGCGGGACGCTGCCCTGCGCGATTCCAGGCTCCCCACGGG")
+
+    def test_get_overlap_4(self):
+        self.assertEqualNice("CGATTCCAGGCTCCCCACGGG", project.get_overlap, "CTTTACCCGGAAGAGCGGGACGCTGCCCTGCGCGATTCCAGGCTCCCCACGGG", "CGATTCCAGGCTCCCCACGGGGTACCCATAACTTGACAGTAGATCT")
+
+    def test_get_overlap_5(self):
+        self.assertEqualNice("", project.get_overlap, "CTTTACCCGGAAGAGCGGGACGCTGCCCTGCGCGATTCCAGGCTCCCCACGGG", "TGCGAGGGAAGTGAAGTATTTGACCCTTTACCCGGAAGAGC")
+
+    def test_get_overlap_6(self):
+        self.assertEqualNice("CG", project.get_overlap, "TGCGAGGGAAGTGAAGTATTTGACCCTTTACCCGGAAGAGCG", "CGATTCCAGGCTCCCCACGGGGTACCCATAACTTGACAGTAGATCTC")
 
 @unittest.skipIf(function_not_defined(project, 'get_all_overlaps'), 'get_all_overlaps')
 class TestExercise4(AnvProgTestCase):
@@ -546,7 +557,7 @@ class TestFindOrderOfReads(AnvProgTestCase):
     
     def test_find_order_of_reads_1(self):
         self.assertEqualNice(['A', 'B', 'C'], 
-            project.find_order_of_reads, 'A', {'C': {'A': 0, 'C': 2}, 'A': {'B': 15, 'C': 1}, 'B': {'A': 0, 'C': 11}})
+            project.find_order_of_reads, 'A', {'C': {'A': 0, 'B': 2}, 'A': {'B': 15, 'C': 1}, 'B': {'A': 0, 'C': 11}})
 
     def test_find_order_of_reads_2(self):
         self.assertEqualNice(['Read4', 'Read2', 'Read5', 'Read1', 'Read6', 'Read3'], 

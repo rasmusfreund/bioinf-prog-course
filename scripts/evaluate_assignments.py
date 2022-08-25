@@ -97,15 +97,24 @@ def check_project(wd, failed_dir, student_name, student_file, project_name, over
         print('ERROR: Did not find assignment file in', project_dir)
         sys.exit()
 
-    if assignment_file is not None and (not project_dir.exists() or overwrite):
+    if assignment_file is not None: 
 
         project_dir.mkdir(exist_ok=True)
-
         assignment_file_orig = project_dir / Path('original').with_suffix(assignment_file.suffix)
+        
+        if not assignment_file_orig.exists() or overwrite:
 
-        copy_file(assignment_file, assignment_file_orig)
-        move_or_unpack_assignment_file(assignment_file, project_dir, project_name)
+            copy_file(assignment_file, assignment_file_orig)
+            move_or_unpack_assignment_file(assignment_file, project_dir, project_name)
 
+    # if assignment_file is not None and (not project_dir.exists() or overwrite):
+
+    #     project_dir.mkdir(exist_ok=True)
+
+    #     assignment_file_orig = project_dir / Path('original').with_suffix(assignment_file.suffix)
+
+    #     copy_file(assignment_file, assignment_file_orig)
+    #     move_or_unpack_assignment_file(assignment_file, project_dir, project_name)
 
 
     for from_path, to_path in project['files'].items():
@@ -121,7 +130,8 @@ def check_project(wd, failed_dir, student_name, student_file, project_name, over
 
     if script_return_status == 99: # error during import of student code
         # print('IMPORTERROR', ta_suffix, student_name, "\n\t", str(project_dir / "{}.py".format(project_name)).translate(ESC_TRANS))
-        print('IMPORTERROR', ta_suffix, student_name, "\n\t", str(project_dir).translate(ESC_TRANS))
+        # print('IMPORTERROR', ta_suffix, student_name, "\n\t", str(project_dir).translate(ESC_TRANS))
+        print(ta_suffix, 'IMPORTERROR', student_name, "\n\t", str(project_dir).translate(ESC_TRANS))
         import_error_file = project_dir / 'import_error.txt'        
         with open(str(import_error_file), 'w') as f:
             print(script_output, file=f)
@@ -131,31 +141,33 @@ def check_project(wd, failed_dir, student_name, student_file, project_name, over
             ta_failed_dir.mkdir(exist_ok=True)
             copy_tree(project_dir, ta_failed_dir / project_dir.name)
             copy_file(ta_note_file, ta_failed_dir / ta_note_file.name)
-            copy_file(student_file, ta_failed_dir / student_file.name)
+            # copy_file(student_file, ta_failed_dir / student_file.name)
             copy_file(import_error_file, ta_failed_dir / import_error_file.name)
         else:
             copy_tree(project_dir, failed_dir / project_dir.name)
             copy_file(ta_note_file, failed_dir / ta_note_file.name)
-            copy_file(student_file, failed_dir / student_file.name)
+            # copy_file(student_file, failed_dir / student_file.name)
             copy_file(import_error_file, failed_dir / import_error_file.name)
 
 
     elif script_return_status or 'skipped' in script_stderr:
-        print('FAILED', ta_suffix, student_name)
+        # print('FAILED', ta_suffix, student_name)
+        print(f'{ta_suffix:<25}',  f'{"FAILED":<7}', student_name)
 
         if ta_suffix:
             ta_failed_dir = failed_dir / ta_suffix
             ta_failed_dir.mkdir(exist_ok=True)
             copy_tree(project_dir, ta_failed_dir / project_dir.name)
             copy_file(ta_note_file, ta_failed_dir / ta_note_file.name)
-            copy_file(student_file, ta_failed_dir / student_file.name)
+            # copy_file(student_file, ta_failed_dir / student_file.name)
         else:
             copy_tree(project_dir, failed_dir / project_dir.name)
             copy_file(ta_note_file, failed_dir / ta_note_file.name)
-            copy_file(student_file, failed_dir / student_file.name)
+            # copy_file(student_file, failed_dir / student_file.name)
 
     else:
-        print('PASSED', ta_suffix, student_name)
+        # print('PASSED', ta_suffix, student_name)
+        print(f'{ta_suffix:<25}', f'{"OK":<7}', student_name)
 
     return project_dir / 'test_progexam.csv'
 
@@ -358,8 +370,8 @@ bioinformatics assignments (see README.md in exam_evaluation for details).
                        type=Path,
                        help='Path to yaml file with students divided in to classes.')
     parser.add_argument('--data',
-                        choices=['blackboard', 'digitalexam'],
-                        default='blackboard',
+                        choices=['brightspace', 'blackboard', 'digitalexam'],
+                        default='brightspace',
                         help='Type of data to parse')
     parser.add_argument('assignment_dir', 
                         type=Path,
@@ -378,6 +390,17 @@ bioinformatics assignments (see README.md in exam_evaluation for details).
 
     if args.ta_classes:
         ta_classes = yaml.load(open(str(args.ta_classes)), Loader=yaml.FullLoader)
+
+        # to accomodate new format with info pasted from groups on Brightspace:
+        for ta_class in ta_classes:
+            name_list = []
+            id_list = []
+            for student_info in ta_classes[ta_class]:
+                last, first, auid, rawauid = student_info.split(', ')
+                name_list.append(f'{first} {last}')
+                id_list.append(auid)
+            ta_classes[ta_class] = dict(zip(id_list, name_list))
+
     else:
         ta_classes = None
 
@@ -414,6 +437,49 @@ bioinformatics assignments (see README.md in exam_evaluation for details).
             ta_suffix = get_ta_suffix(ta_classes, student_name)
             check_project(args.assignment_dir, failed_dir, student_name, student_file, 
                 args.project_name, args.overwrite, ta_suffix=ta_suffix)
+
+
+    elif args.data == 'brightspace':
+
+        student_files = []
+        for path in args.assignment_dir.glob('[0-9]*'):
+            if not path.is_dir():
+                continue
+            student_name = re.search(r'- (.+) -', path.name).group(1)
+            student_files.append((student_name, path.with_suffix('.txt')))
+
+            # Hack to make the file structure the same as blackboard:
+            copy_from = path / f'{args.project_name}.py'
+            copy_to = path.parent / f'{path.stem}_{args.project_name}.py'
+            if copy_from.exists():
+                copy_file(copy_from, copy_to)
+
+        for student_name, student_file in sorted(student_files):
+            project_dir = student_file.with_suffix('')
+            assignment_file = find_assignment_file(args.assignment_dir, project_dir)
+            file_structure_ok = True
+            # if assignment_file is None:
+            #     with open(str(student_file)) as f:
+            #         if 'No files were attached to this submission' in f.read():
+            #             student_files.remove((student_name, student_file))
+            #         else:
+            #             print('No student file for {} in {}'.format(student_name, project_dir))
+            #             file_structure_ok = False
+            # if not file_structure_ok:
+            #     print('FIX FILE STRUCTURE AND RERUN')
+            #     sys.exit()
+
+        for student_name, student_file in sorted(student_files):
+            ta_suffix = get_ta_suffix(ta_classes, student_name)
+            try:
+                check_project(args.assignment_dir, failed_dir, student_name, student_file, 
+                    args.project_name, args.overwrite, ta_suffix=ta_suffix)                
+            except KeyboardInterrupt:
+                print()
+                print(student_file)
+                print()
+                raise
+
     else:
         # digital exam
 
@@ -439,12 +505,23 @@ bioinformatics assignments (see README.md in exam_evaluation for details).
                 student_id = get_student_id_from_pdf(str(path))
 
                 student_name, student_exam_id, hand_in_id, _cover_page, _suf = path.name.split('_')
-                assert _cover_page == 'Cover page'
+                assert _cover_page == 'Forside'
+
+                # compile stud regex to solve stupid problem:
+                # There are unicode characters in the student names that are
+                # sometimes one unicode character and sometimes two:
+                # >>> len('Å')
+                # 2
+                # >>> len('Å')
+                # 1
+                # >>>
+                stud_regex = re.compile(''.join(x if x.isascii() else '..?' for x in student_name) + f'_{student_exam_id}')
 
                 student_row = [student_id, student_name] 
 
                 # get prog exam file
-                lst = list(args.assignment_dir.glob('{}_{}*{}.py'.format(student_name, student_exam_id, args.project_name)))
+                lst = [f for f in args.assignment_dir.glob('*progexam.py') if stud_regex.search(str(f))]
+                # lst = list(args.assignment_dir.glob('{}_{}*{}.py'.format(student_name, student_exam_id, args.project_name)))
                 assert len(lst) <= 1, lst
                 if len(lst) == 1:
                     progexam_file = lst[0]
@@ -460,7 +537,9 @@ bioinformatics assignments (see README.md in exam_evaluation for details).
                     student_row.extend(['missing', None])
 
                 # get bioinf exam file
-                lst = list(args.assignment_dir.glob('{}_{}*bioinfexam.py'.format(student_name, student_exam_id)))
+
+                lst = [f for f in args.assignment_dir.glob('*bioinfexam.py') if stud_regex.search(str(f))]
+                # lst = list(args.assignment_dir.glob('{}_{}*bioinfexam.py'.format(student_name, student_exam_id)))
                 assert len(lst) <= 1, lst
                 if len(lst) == 1:
                     bioinfexam_file = lst[0]
