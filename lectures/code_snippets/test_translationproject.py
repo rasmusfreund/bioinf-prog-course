@@ -11,7 +11,7 @@ import re
 
 GRADE_MODE = os.getenv('GRADE_MODE')
 
-PROJECT_NAME = 'translationproject'
+PROJECT_NAME = os.path.splitext(os.path.basename(__file__))[0].replace('test_', '')
 
 class NullDevice:
 
@@ -25,9 +25,9 @@ try:
         # import progexam as project
        project = __import__(PROJECT_NAME)
 except:
-    print("Python cannot run your code:\n")
+    print("YOUR CODE CANNOT BE RUN:\n\nHere is the error:\n")
     traceback.print_exc(file=sys.stdout)
-    print("\nFix that first before you use test script")
+    print("\nFIX THAT FIRST BEFORE YOU USE THE TEST SCRIPT")
     sys.exit(99)
 
 
@@ -45,6 +45,27 @@ However, it should return:
 """
 
 
+def suiteFactory(*testcases):
+
+    ln    = lambda f: getattr(tc, f).__code__.co_firstlineno
+    lncmp = lambda a, b: ln(a) - ln(b)
+
+    test_suite = unittest.TestSuite()
+    for tc in testcases:
+        test_suite.addTest(unittest.makeSuite(tc, sortUsing=lncmp))
+
+    return test_suite
+
+
+def caseFactory():
+    from inspect import findsource
+    
+    g = globals().copy()
+    cases = [g[obj] for obj in g if obj.startswith("Test") and issubclass(g[obj], unittest.TestCase)]
+    ordered_cases = sorted(cases, key=lambda f: findsource(f)[1])
+    return ordered_cases
+
+
 def function_not_defined(module, func_name):
     return not (hasattr(module, func_name) and callable(getattr(module, func_name)))
 
@@ -56,8 +77,11 @@ def indent(text, indent=4):
 def skip_initial_nonlocal(tb):
     if tb is None:
         return tb
-    if os.path.isabs(tb.tb_frame.f_code.co_filename):
+    if tb.tb_frame.f_code.co_filename.startswith('test_'):
         return skip_initial_nonlocal(tb.tb_next)
+    if 'unittest' in tb.tb_frame.f_code.co_filename:
+        return skip_initial_nonlocal(tb.tb_next)
+
     return tb
 
 ######################################################
@@ -150,8 +174,12 @@ class AnvProgTestResult(TestResult):
             self.file.write('{},{},{},{}\n'.format(self.student_id, test.__class__.__name__, test._testMethodName, 'error'))
             self.file.flush()
 
+        # self.stream.writeln(
+        #     'ERROR DURING TEST CASE: {}'.format(test._testMethodName))
         self.stream.writeln(
-            'ERROR DURING TEST CASE: {}'.format(test._testMethodName))
+            'YOUR CODE FAILED WHILE RUNNING A TEST ({})'.format(test._testMethodName))
+        self.stream.writeln()
+        self.stream.writeln('It means that your function could not be run the way specified in the assignment.')
         self.stream.writeln()
         self.stream.writeln('MESSAGE:')
         self.stream.writeln(indent('{}'.format(errobj)))
@@ -164,8 +192,15 @@ class AnvProgTestResult(TestResult):
         self.stream.writeln(indent(
             'most useful to read this description from the bottom and up.'))
         self.stream.writeln()
+
+        # self.stream.writeln(
+        #     indent('\n'.join(traceback.format_tb(new_tb))))
         self.stream.writeln(
-            indent('\n'.join(traceback.format_tb(new_tb))))
+            indent("...Skipped frames not relevant to your code..."))
+        self.stream.writeln()
+        self.stream.writeln(
+            indent(''.join(traceback.format_exception(errcls, errobj, new_tb))))
+
         self.stream.writeln()
         self.stream.writeln(self.separator)
         self.stream.flush()
@@ -458,7 +493,15 @@ class TestExercise7(AnvProgTestCase):
 
 
 if __name__ == '__main__':
+    # if GRADE_MODE:
+    #    unittest.main(failfast=False, testRunner=AnvProgTestRunner)
+    # else:
+    #    unittest.main(failfast=True, testRunner=AnvProgTestRunner)
+    cases = suiteFactory(*caseFactory())
     if GRADE_MODE:
-       unittest.main(failfast=False, testRunner=AnvProgTestRunner)
+       failfast=False
     else:
-       unittest.main(failfast=True, testRunner=AnvProgTestRunner)
+       failfast=True
+    runner = AnvProgTestRunner(failfast=failfast)
+    test_result = runner.run(cases)
+    sys.exit(int(not test_result.wasSuccessful()))

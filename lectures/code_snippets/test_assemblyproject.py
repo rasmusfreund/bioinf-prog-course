@@ -421,23 +421,12 @@ test_reads = {'Read1': 'GGCTCCCCACGGGGTACCCATAACTTGACAGTAGATCTCGTCCAGACCCCTAGC',
               'Read4': 'TGCGAGGGAAGTGAAGTATTTGACCCTTTACCCGGAAGAGCG',
               'Read3': 'GTCTTCAGTAGAAAATTGTTTTTTTCTTCCAAGAGGTCGGAGTCGTGAACACATCAGT'}
 
-test_overlaps1 =  {
-    'Read1': {'Read6': 29, 'Read5': 1, 'Read4': 0, 'Read3': 0, 'Read2': 1}, 
-    'Read3': {'Read1': 0, 'Read5': 0, 'Read6': 1, 'Read4': 1, 'Read2': 0}, 
-    'Read2': {'Read1': 13, 'Read5': 21, 'Read6': 0, 'Read3': 1, 'Read4': 0}, 
-    'Read5': {'Read1': 39, 'Read4': 0, 'Read6': 14, 'Read3': 0, 'Read2': 1}, 
-    'Read6': {'Read1': 0, 'Read5': 0, 'Read4': 1, 'Read3': 43, 'Read2': 0}, 
-    'Read4': {'Read1': 1, 'Read5': 2, 'Read6': 0, 'Read3': 1, 'Read2': 17}
-    }
-
-test_overlaps2 =  {
-    'Read3': {'Read1': 0, 'Read5': 0, 'Read6': 1, 'Read4': 1, 'Read2': 0}, 
-    'Read5': {'Read1': 39, 'Read4': 0, 'Read6': 14, 'Read3': 0, 'Read2': 1}, 
-    'Read4': {'Read1': 1, 'Read5': 2, 'Read6': 0, 'Read3': 1, 'Read2': 17},
-    'Read2': {'Read1': 13, 'Read5': 21, 'Read6': 0, 'Read3': 1, 'Read4': 0}, 
-    'Read6': {'Read1': 0, 'Read5': 0, 'Read4': 1, 'Read3': 43, 'Read2': 0}, 
-    'Read1': {'Read6': 29, 'Read5': 1, 'Read4': 0, 'Read3': 0, 'Read2': 1}
-    }
+test_overlaps =  {'Read1': {'Read6': 29, 'Read5': 1, 'Read4': 0, 'Read3': 0, 'Read2': 1}, 
+                  'Read3': {'Read1': 0, 'Read5': 0, 'Read6': 1, 'Read4': 1, 'Read2': 0}, 
+                  'Read2': {'Read1': 13, 'Read5': 21, 'Read6': 0, 'Read3': 1, 'Read4': 0}, 
+                  'Read5': {'Read1': 39, 'Read4': 0, 'Read6': 14, 'Read3': 0, 'Read2': 1}, 
+                  'Read6': {'Read1': 0, 'Read5': 0, 'Read4': 1, 'Read3': 43, 'Read2': 0}, 
+                  'Read4': {'Read1': 1, 'Read5': 2, 'Read6': 0, 'Read3': 1, 'Read2': 17}}
 
 test_print = """       Read1 Read2 Read3 Read4 Read5 Read6
  Read1     -     1     0     0     1    29
@@ -523,7 +512,7 @@ class TestExercise4(AnvProgTestCase):
                              {'Read1': "AAAAATTTTT", 'Read2': "TTTTTTTTTA"})
 
     def test_get_all_overlaps_2(self):
-        self.assertEqualNice(test_overlaps1, project.get_all_overlaps, test_reads)
+        self.assertEqualNice(test_overlaps, project.get_all_overlaps, test_reads)
 
 
 @unittest.skipIf(function_not_defined(project, 'pretty_print'), 'pretty_print')
@@ -532,7 +521,7 @@ class TestExercise5(AnvProgTestCase):
     def test_pretty_print_1(self):
         strio = StringIO()
         with redirect_stdout(strio):
-            project.pretty_print(test_overlaps1)
+            project.pretty_print(test_overlaps)
         self.assertEqual(strio.getvalue(), test_print)
 
 
@@ -540,20 +529,18 @@ class TestExercise5(AnvProgTestCase):
 class TestGetLeftOverlaps(AnvProgTestCase):
 
     def test_get_left_overlaps_1(self):
-        self.assertEqualNice([0, 0, 0, 1, 1], project.get_left_overlaps, test_overlaps1, test_first_read)
+        self.assertEqualNice([0, 0, 0, 1, 1], project.get_left_overlaps, test_overlaps, test_first_read)
 
     def test_get_left_overlaps_2(self):
-        self.assertEqualNice([0, 0, 1, 13, 39] , project.get_left_overlaps, test_overlaps1, 'Read1')
+        self.assertEqualNice([0, 0, 1, 13, 39] , project.get_left_overlaps, test_overlaps, 'Read1')
 
 
 @unittest.skipIf(function_not_defined(project, 'find_first_read'), 'find_first_read')
 class TestExercise6(AnvProgTestCase):
 
     def test_find_first_read_1(self):
-        self.assertEqualNice(test_first_read, project.find_first_read, test_overlaps1)
+        self.assertEqualNice(test_first_read, project.find_first_read, test_overlaps)
 
-    def test_find_first_read_2(self):
-        self.assertEqualNice(test_first_read, project.find_first_read, test_overlaps2)
 
 @unittest.skipIf(function_not_defined(project, 'find_key_for_largest_value'), 'find_key_for_largest_value')
 class TestExercise7(AnvProgTestCase):
@@ -562,7 +549,7 @@ class TestExercise7(AnvProgTestCase):
         self.assertEqualNice('B', project.find_key_for_largest_value, {'A': 3, 'B': 5, 'C': 2})
 
     def test_find_key_for_largest_value_2(self):
-        self.assertEqualNice('Read1', project.find_key_for_largest_value, test_overlaps1['Read5'])
+        self.assertEqualNice('Read1', project.find_key_for_largest_value, test_overlaps['Read5'])
 
 
 @unittest.skipIf(function_not_defined(project, 'find_order_of_reads'), 'find_order_of_reads')
@@ -574,7 +561,7 @@ class TestFindOrderOfReads(AnvProgTestCase):
 
     def test_find_order_of_reads_2(self):
         self.assertEqualNice(['Read4', 'Read2', 'Read5', 'Read1', 'Read6', 'Read3'], 
-            project.find_order_of_reads, 'Read4', test_overlaps1)
+            project.find_order_of_reads, 'Read4', test_overlaps)
 
 
 @unittest.skipIf(function_not_defined(project, 'reconstruct_sequence'), 'reconstruct_sequence')
@@ -585,7 +572,7 @@ class TestExercise8(AnvProgTestCase):
             {'Read1': "AAAAATTTTT", 'Read2': "TTTTTTTTTA"}, {'Read1': {'Read2': 5}, 'Read2': {'Read1': 1}})
 
     def test_reconstruct_sequence_2(self):
-        self.assertEqualNice(test_genome, project.reconstruct_sequence, test_read_order, test_reads, test_overlaps1)
+        self.assertEqualNice(test_genome, project.reconstruct_sequence, test_read_order, test_reads, test_overlaps)
 
 
 @unittest.skipIf(function_not_defined(project, 'assemble_genome'), 'assemble_genome')

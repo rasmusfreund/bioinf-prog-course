@@ -282,7 +282,7 @@ For digital exam assignments the script works much the same way, but also parses
 bioinformatics assignments (see README.md in exam_evaluation for details).
 """
 
-    repo_dir = '/Users/kmt/Dropbox/Teaching/Courses/BoP/bioinf-prog-course'
+    repo_dir = '/Users/kmt/google_drive/teaching/bop/bioinf-prog-course'
 
     global PROJECTS
     # The keys in PROJECTS must be the basenames of the files that the students produce.
@@ -476,7 +476,7 @@ bioinformatics assignments (see README.md in exam_evaluation for details).
                     args.project_name, args.overwrite, ta_suffix=ta_suffix)                
             except KeyboardInterrupt:
                 print()
-                print(student_file)
+                print(os.path.dirname(student_file))
                 print()
                 raise
 
@@ -491,7 +491,8 @@ bioinformatics assignments (see README.md in exam_evaluation for details).
             #pdfReader.numPages
             pageObj = pdfReader.getPage(0)          #'9' is the page number
             text = pageObj.extractText()
-            student_id = re.search(r'(\d+)@post.au.dk', text).group(1)
+            # student_id = re.search(r'(\d+)@post.au.dk', text).group(1)
+            student_id = re.search(r'Besvarelsen afleveres af\n(\d+)', text).group(1)
             assert student_id
             return student_id
 

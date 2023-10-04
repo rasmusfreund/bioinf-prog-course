@@ -1,17 +1,17 @@
 
+
 def n50(lengths):
-	sorted_lengths = sorted(lengths)
-	total = sum(lengths)
-
-	cum_tot = 0
-	for l in sorted_lengths:
-		cum_tot += l
-		if cum_tot > total/2:
-			return l
-
+    total = sum(lengths)
+    sorted_lengths = sorted(lengths, reverse=True)
+    running_sum = 0
+    for l in sorted_lengths:
+        running_sum += l
+        if running_sum >= total/2:
+            return l
 
 
-contigs = [1, 3,  8, 12, 20, 1, 5]
 
-n50_stat = n50(contigs)
-print(n50_stat)
+
+contig_lengths = [12, 20, 1, 5, 8, 3, 1]
+
+print(n50(contig_lengths))

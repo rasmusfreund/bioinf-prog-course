@@ -6,6 +6,8 @@ import os
 from contextlib import redirect_stdout
 import argparse
 import subprocess
+import random
+random.seed(999)
 
 
 ###########################################################
@@ -148,7 +150,7 @@ problem_tmpl = r"""
 
 """
 
-MAXCHARS = 300
+MAXCHARS = 200
 
 def markdown2latex(s):
     """
@@ -204,10 +206,12 @@ def format_answer_form(question, nr):
     for n in subquestion_numbers:
         if 'S' in question[key]['statements'][n]:
             answer_form += "emne_{}_del_{} = None    # True/False \n".format(nr, n)
+            assert question[key]['statements'][n]['A'] != 'str', 'question label not F'
         elif 'Q' in question[key]['statements'][n]:
             answer_form += "emne_{}_del_{} = None    # Talværdi\n".format(nr, n)
+            assert question[key]['statements'][n]['A'] != 'str', 'question label not F'
         elif 'F' in question[key]['statements'][n]:
-            assert question[key]['statements'][n]['A'] == 'str'
+            assert question[key]['statements'][n]['A'] == 'str', 'answer for free text not "str"'
             answer_form += 'emne_{}_del_{} = \' \'     # Tekst streng (max {} karakterer incl. mellemrum)\n'.format(nr, n,  MAXCHARS)
         else:
             assert 0
@@ -246,6 +250,9 @@ if __name__ == '__main__':
                         dest='programming_assingments',
                         default='None',
                         help="Markdown file with programming assignments")
+    parser.add_argument("-r", "--shuffle-bioinf", 
+                        action="store_true",
+                        help="Shuffle order of bioinf topics")
     parser.add_argument("-m", "--mult-choice-questions", 
                         type=str,
                         dest='mult_choice_questions',
@@ -321,6 +328,10 @@ if __name__ == '__main__':
             nr = 1
             with open(args.mult_choice_questions) as f:
                 all_yaml = yaml.load(f, Loader=yaml.FullLoader)
+
+                if args.shuffle_bioinf:
+                    random.shuffle(all_yaml)
+
                 for question in all_yaml: # get a list of dictionaries
                     for key in question: # there is only one key
                         assert key not in question_keys, ("Duplicate key", key)

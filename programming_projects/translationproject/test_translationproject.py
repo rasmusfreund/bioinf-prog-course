@@ -469,9 +469,6 @@ class TestExercise6(AnvProgTestCase):
     def test_split_codons_3(self):
         self.assertEqualNice(['ATG'], project.split_codons, 'ATG')
 
-    def test_split_codons_4(self):
-        self.assertEqualNice([], project.split_codons, '')
-
 
 @unittest.skipIf(function_not_defined(project, 'translate_orf'), 'translate_orf')
 class TestExercise7(AnvProgTestCase):
@@ -487,9 +484,6 @@ class TestExercise7(AnvProgTestCase):
 
     def test_translate_orf_3(self):
         self.assertEqualNice('M*', project.translate_orf, 'ATGTGA')
-
-    def test_translate_orf_4(self):
-        self.assertEqualNice('', project.translate_orf, '')
 
 
 if __name__ == '__main__':

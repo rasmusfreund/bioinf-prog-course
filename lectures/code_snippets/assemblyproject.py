@@ -17,17 +17,21 @@ def mean_length(reads):
         tot += 1
     return s/float(tot)
 
-# TODO: remove 'get_' and 'find_' prefixes from functions
 
-# TODO: make get_overlap return the length of the overlap instead
+# def get_overlap(left, right):
+#     max_overlap = min(len(left), len(right))
+#     for i in range(max_overlap, 0, -1):
+#         if left[-i:] == right[:i]:
+#             return left[-i:]
+#     return ''
+
 def get_overlap(left, right):
-    max_overlap = min(len(left), len(right))
-    for i in range(max_overlap, 0, -1):
-        if left[-i:] == right[:i]:
-            return left[-i:]
-    return ''
+    størst_overlap = min(len(left), len(right))
+    for i in range(størst_overlap):
+        if left[0+i:størst_overlap] == right[0:størst_overlap-i]:
+            return left[0+i:]
+    return ''    
 
-# TODO: add get_right_overlaps_for_read function
 # def get_right_overlaps_for_read(name, reads):
 #     read = reads[name]
 #     right_overlaps = {}
