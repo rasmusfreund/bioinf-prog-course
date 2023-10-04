@@ -1,11 +1,5 @@
 
 
-<!-- TODO: laksj dlaskd -->
-
-- Add an overview/intro chapter about bioinformatics
-- Add easy first chapters on bioinf topics that does not take focus away from programming.
-- Move dictionaries and tuples to some weeks later (when needed in programming projects) to quicly move to iteration and programming projects
-- Move programmign projects to earlier
 
 
 - Make some exercises where they get an bit of code and an error message and have to figure otu what the problem is : eg. 

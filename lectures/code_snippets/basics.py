@@ -1,0 +1,6 @@
+print(7 * 6 >= 7)
+print(1 * 2 != 1 + 1)
+print(2 == "2")
+print("A" < "a")
+print("2" < "A")
+print(2 < "2")

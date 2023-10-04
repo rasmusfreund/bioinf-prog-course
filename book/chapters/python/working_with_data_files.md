@@ -87,7 +87,7 @@ f.close()
 
 Lets break down what happened:
 
-1. You used the `open` builtin function to open a file called workfile.txt in *reading* mode using the `'r'` as the second argument.
+1. You used the `open` builtin function to open a file called "workfile.txt in *reading* mode using the `'r'` as the second argument.
 2. You then read the content of the file using the `read` method, which return the contents as a string.
 3. You printed the string. 
 4. You closed the file using the `close` method of the file object.

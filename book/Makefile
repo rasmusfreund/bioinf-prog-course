@@ -35,66 +35,41 @@ PANDOC_EPUB_OPTS := $(PANDOC_OPTS_ALL) \
 
 # Programming notes
 CHAPTERS := Header.yml \
-1.md \
-preface.md \
-python/before_you_begin.md \
-python/appendix_conda_and_pymol.md \
-python/writing_a_program.md \
-python/dealing_with_values.md \
-2.md \
-python/the_order_of_events.md \
-python/do_the_steps.md \
-bioinf/bioinf_resources.md \
-python/controlling_behavior.md \
-3.md \
-python/organizing_your_code.md \
-python/testing_your_code.md \
-bioinf/gwas.md \
-python/python_values_are_objects.md \
-4.md \
-python/iteration_over_values.md \
-bioinf/assembly_and_mapping.md \
-python/working_with_data_files.md \
-project/some_new_project_without_iteration.md \
-5.md \
-python/lists.md \
-bioinf/procaryote_gene_fiding.md \
-project/folding_project.md \
-6.md \
-python/gluing_values_in_sequence.md \
-python/using_code_from_other_files.md \
-python/on_the_shoulders_of_giants.md \
-project/orf_project.md \
-7.md \
-python/dictionaries.md \
-bioinf/pairwise_alignment.md \
-python/your_own_types_of_objects.md \
-project/translation_project.md \
-8.md \
-bioinf/protein_substitution_matrices.md \
-bioinf/database_searching.md \
-project/alignment_project.md \
-9.md \
-python/unleash_your_functions.md \
-bioinf/multiple_alignment.md \
-bioinf/models_of_dna_evolution.md \
-project/hiv_project.md \
-10.md \
-bioinf/clustering.md \
-bioinf/phylogenetics.md \
-project/seqdist_project.md \
-11.md \
-bioinf/hidden_markov_models.md \
-bioinf/neural_networks.md \
-12.md \
-bioinf/sequence_annnotation.md \
-13.md \
-project/assembly_project.md \
-14.md \
-bioinf/rna_structure.md \
+00_preface.md \
+01_before_you_begin.md \
+02_appendix_conda_and_pymol.md \
+03_writing_a_program.md \
+04_dealing_with_values.md \
+05_the_order_of_events.md \
+06_controlling_behavior.md \
+07_organizing_your_code.md \
+08_python_values_are_objects.md \
+09_structuring_data.md \
+10_gluing_values_in_sequence.md \
+11_iteration_over_values.md \
+12_using_code_from_other_files.md \
+13_testing_your_code.md \
+14_working_with_data_files.md \
+15_your_own_types_of_objects.md \
+translation_project.md \
+assembly_project.md \
+alignment_project.md \
+codonbias_project.md \
+hiv_project.md \
+seqdist_project.md \
+orf_project.md \
+folding_project.md \
 references.md
 
+# 14_your_own_types_of_objects.md \
 
+# pairwise_alignment.md \
+# models_of_dna_evolution.md \
+# protein_substitution_matrices.md \
+# clustering.md \
+# unleash_your_functions.md \
+# phylogenetics.md \
+# hidden_markov_models.md \
 
 SOURCE_CHAPTERS := $(foreach chapter,$(CHAPTERS),chapters/$(chapter))
 

@@ -1,5 +1,5 @@
 
-# Models of DNA evolution ★
+# Theory: Models of DNA evolution
 
 
 ## Jukes-Cantor model {-}

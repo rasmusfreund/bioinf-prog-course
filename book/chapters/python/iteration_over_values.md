@@ -313,28 +313,6 @@ for fruit in names:
 
 Compare the solution to that in @sec:build_lists_fixed. How is it different? Is it more genetic? How does the difference relate to the difference between @sec:dict_count_fixed and @sec:dict_count?
 
-#### Exercise {#sec:mult_greetings}
-Look at this code and figure make up your mind about what will be printed. Do we first greet one person in three languages or do we first greet all people in one language? Then try it out to see if you were right.
-
-```python
-greetings = ['Hi', 'Hola', 'Ciao']
-names = ['Mogens', 'Preben', 'Henning']
-for greeting in greetings:
-    for name in names:
-        print(greeting, name)
-```
-
-#### Exercise
-Now consider the code below. How is it different from the code in @sec:mult_greetings? How does that alter the order of what is printed?
-
-```python
-greetings = ['Hi', 'Hola', 'Ciao']
-names = ['Mogens', 'Preben', 'Henning']
-for name in names:
-    for greeting in greetings:
-        print(greeting, name)
-```
-
 #### Exercise {#sec:pairs}
 Decide what you think the code below does and why you think so. Do *every* step in your head including all the substitutions and reductions. Then write the code carefully and run it. 
 

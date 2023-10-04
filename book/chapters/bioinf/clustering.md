@@ -1,5 +1,5 @@
 
-# Clustering of sequences ★
+# Theory: Clustering of sequences
 
 
 ## UPGMA {-}

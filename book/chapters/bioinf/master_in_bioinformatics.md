@@ -1,5 +1,5 @@
 
-# Master in Bioinformatics at Aarhus University ★
+# Master in Bioinformatics at Aarhus University
 
 *Much of the text here is copied from [the official AU page](https://kandidat.au.dk/en/bioinformatics/) about the Master's degree programme in Bioinformatics.*
   

@@ -2,66 +2,10 @@
 
 ## Genetic disease association {-}
 
-## Common disease common variant hypothesis
-
-The common disease common variant (CDCV) hypothesis is a concept in human genetics that seeks to explain the genetic basis of common complex diseases by focusing on the prevalence of common genetic variants in the population. This hypothesis contrasts with the "rare variant" hypothesis, which suggests that rare genetic variants with larger effects play a significant role in disease susceptibility.
-
-Hypothesis Explanation:
-
-The CDCV hypothesis suggests that the genetic susceptibility to many common complex diseases, such as diabetes, heart disease, and certain types of cancer, is primarily influenced by common genetic variants that are present at relatively high frequencies in the population. Common genetic variants are those that occur in more than 1% of the population. These variants are typically single nucleotide polymorphisms (SNPs), where a single DNA base is substituted with another.
-
-According to this hypothesis, multiple common genetic variants, each with a small effect size, collectively contribute to an individual's risk of developing a specific disease. The idea is that these common variants, which are widely distributed in the population, are responsible for a significant portion of the genetic susceptibility to a given disease.
-
-Key Points of the CDCV Hypothesis:
-
-Polygenic Nature: Common complex diseases are often influenced by multiple genetic factors, each with a modest effect size. This polygenic nature suggests that no single genetic variant has a large impact on disease risk.
-
-Complex Inheritance: Common variants contribute to disease risk in a complex manner, influenced by interactions between genes and the environment. This complexity makes it challenging to predict disease risk solely based on genetic information.
-
-Quantitative Trait Loci (QTLs): Common variants associated with disease risk are also often associated with variations in quantitative traits, such as blood pressure or cholesterol levels, which are risk factors for certain diseases.
-
-Genome-Wide Association Studies (GWAS): The CDCV hypothesis has been supported by the findings of genome-wide association studies (GWAS). These studies scan the entire genome for associations between common genetic variants and specific diseases or traits. Many common variants have been identified as having modest effects on disease risk through GWAS.
-
-Statistical Significance: Given the small effect sizes of individual variants, large sample sizes are often required in GWAS to achieve statistical significance. This emphasizes the cumulative impact of multiple variants on disease risk.
-
-Heritability Estimates: The CDCV hypothesis aligns with estimates of heritability for common complex diseases, which suggest that a significant portion of the variation in disease risk can be attributed to genetic factors.
-
-Critiques and Challenges:
-
-While the CDCV hypothesis has provided valuable insights into the genetic basis of common complex diseases, it is not without its criticisms and challenges. Some researchers argue that rare genetic variants with larger effect sizes could also contribute to disease risk and might have been overlooked by traditional GWAS approaches.
-
-In recent years, advancements in sequencing technologies and analysis methods have allowed researchers to explore the role of rare variants in disease susceptibility, blurring the distinction between the CDCV hypothesis and the "rare variant" hypothesis. It's increasingly recognized that both common and rare variants contribute to the overall genetic architecture of complex diseases, and a comprehensive understanding of disease risk requires considering both types of variants.
-
 ## Testing association {-}
 
 ## Genome-wide association {-}
 
-Introduction to Methods Used in Genome-Wide Association Studies
-
-Genome-wide association studies (GWAS) have revolutionized the field of genetics and genomics by enabling researchers to uncover the genetic underpinnings of complex traits and diseases. GWAS involve analyzing a vast number of genetic markers across the entire genome to identify associations between specific genetic variants and traits of interest. This introduction provides an overview of the methods used in GWAS and their significance in unraveling the genetic basis of various traits and conditions.
-
-Genetic Variation and Disease Risk:
-Human genetic variation plays a crucial role in determining an individual's susceptibility to various diseases and traits, ranging from common disorders like diabetes and heart disease to more intricate traits such as height or cognitive abilities. GWAS aims to identify the specific genetic variants that contribute to these traits and understand how they influence disease risk or trait expression.
-
-Marker Selection and Genotyping:
-In a GWAS, a comprehensive set of genetic markers, typically single nucleotide polymorphisms (SNPs), are selected from across the genome. SNPs are single-letter variations in the DNA sequence that can influence traits. High-throughput genotyping technologies allow researchers to determine the genetic variants present in thousands of individuals simultaneously.
-
-Case-Control or Cohort Design:
-GWAS often follow either a case-control or cohort design. In a case-control design, individuals with a specific trait or disease (cases) are compared to individuals without the trait or disease (controls) to identify genetic variants associated with the trait. In a cohort design, a large group of individuals is followed over time to observe the relationship between genetic variants and the development of traits or diseases.
-
-Statistical Analysis:
-GWAS involves rigorous statistical analysis to identify associations between genetic variants and traits. The basic approach is to compare the frequency of each genetic variant between cases and controls. Variants that show significantly different frequencies are considered potentially associated with the trait. Various statistical tests, such as chi-square tests or logistic regression, are employed to assess the strength and significance of these associations.
-
-Population Stratification and Confounding:
-One challenge in GWAS is population stratification, where differences in genetic ancestry among study participants can lead to false positive associations. To mitigate this, researchers use methods to correct for population structure and confounding factors that might influence the results.
-
-Multiple Testing Correction:
-Due to the large number of genetic markers tested, there's a risk of identifying false positives by chance alone. Multiple testing correction methods, such as the Bonferroni correction or false discovery rate control, are employed to account for the increased likelihood of false positives and to determine statistical significance thresholds.
-
-Linkage Disequilibrium and Fine-Mapping:
-Genetic variants in close proximity on the same chromosome often exhibit linkage disequilibrium (LD), meaning they are inherited together more frequently than expected by chance. This property allows researchers to pinpoint the region of the genome where the causal variant likely resides. Fine-mapping techniques aim to narrow down the location of the true causal variant within an associated region.
-
-In conclusion, GWAS represent a powerful approach to uncovering the genetic factors influencing traits and diseases. By combining advanced genotyping technologies, robust statistical methods, and meticulous study designs, researchers can identify key genetic variants associated with various conditions, shedding light on the underlying biological mechanisms and paving the way for more personalized approaches to healthcare and disease prevention.
 ## Do it yourself: Exploring an association with Parkinsons disease {-}
 
 The purpose of this exercise is to expose you to the different kinds of information that are stored in databases relevant to bioinformatics. It takes experience and skill to navigate the user interface of these databases. Here you will see a few of the important ones, but there are many more. I have put a list at the end of this exercise with some additional relevant ones. Browse them at your harts content.

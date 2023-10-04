@@ -1,5 +1,5 @@
 
-# Hidden Markov models ★
+# Theory: Hidden Markov models
 
 ## What it is {-}
 

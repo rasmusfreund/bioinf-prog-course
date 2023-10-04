@@ -190,21 +190,6 @@ TTTTTTAAAA      TTTTTTAAAA      TTTTTTAAAA             TTTTTTAAAA
 ```
  -->
 
-<!-- TODO Split get_all_overlaps into two functions: 
-
-def get_right_overlaps_for_read(name, reads):
-    read = reads[name]
-    right_overlaps = {}
-    for other_name in reads:
-        right_overlaps[name] = get_overlap(reads[name], reads[other_name])
-    return right_overlaps
-
-def get_all_overlaps(reads):
-    overlaps = {}
-    for name in reads:
-        overlaps[name] = get_right_overlaps_for_read(name, reads)
-    return overlaps
- -->
 
 ### Compute all read overlaps {-}
 

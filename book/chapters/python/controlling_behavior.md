@@ -247,7 +247,7 @@ Assign values to two variables `x` and `y`. Then write some code that prints `OK
 
 ```python
 x = 3 # or someting else
-y = 7 # or someting else
+x = 7 # or someting else
 
 # rest of code here...
 ```
@@ -259,7 +259,7 @@ Assign values to two variables `x` and `y`. Then write some code that prints `OK
 
 ```python
 x = 3 # or someting else
-7 = 7 # or someting else
+x = 7 # or someting else
 
 # rest of code here...
 ```
@@ -271,7 +271,7 @@ Assign values to two variables `x` and `y`. Then write some code that prints `OK
 
 ```python
 x = 3 # or someting else
-y = 7 # or someting else
+x = 7 # or someting else
 
 # rest of code here...
 ```
