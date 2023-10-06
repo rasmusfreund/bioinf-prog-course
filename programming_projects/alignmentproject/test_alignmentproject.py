@@ -3,7 +3,7 @@ import os
 import sys
 import os.path
 import unittest
-from unittest import TestResult, TextTestRunner
+from unittest import TestResult, TextTestRunner, TestLoader
 from contextlib import redirect_stdout
 from io import StringIO
 import traceback
@@ -51,8 +51,10 @@ def suiteFactory(*testcases):
     lncmp = lambda a, b: ln(a) - ln(b)
 
     test_suite = unittest.TestSuite()
+    test_loader = TestLoader()
+    test_loader.sortTestMethodsUsing = lncmp
     for tc in testcases:
-        test_suite.addTest(unittest.makeSuite(tc, sortUsing=lncmp))
+        test_suite.addTest(test_loader.loadTestsFromTestCase(tc))
 
     return test_suite
 
