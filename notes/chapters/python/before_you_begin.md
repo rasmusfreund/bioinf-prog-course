@@ -15,7 +15,7 @@ You will also need a *text editor*. A text editor is where you write your Python
 
 ## The terminal {-}
 
-The last thing you need is a tool to make Python run the programs you write. Fortunately, that is already installed. On **OSX** this is an application called *Terminal*. You can find it by typing "Terminal" in Spotlight Search. When you start you will see semething like @fig:terminal. You may be presented with the following text:
+The last thing you need is a tool to make Python run the programs you write. Fortunately, that is already installed. On **OSX** this is an application called *Terminal*. You can find it by typing "Terminal" in Spotlight Search. When you start you will see something like @fig:terminal. You may be presented with the following text:
 
 ```
 The default interactive shell is now zsh.
@@ -29,11 +29,11 @@ For more details, please visit https://support.apple.com/kb/HT208050.
 
 Do __*not*__ update your account __*after*__ you install Anaconda (see below). If you do, *Terminal* will not be able to find the Anaconda Python (If you did so by mistake anyway, you change back using this command: `chsh -s /bin/bash`.
 
-On **Windows** the tool you need is called the *Anaconda Powershell Prompt* and was installed along with Anaconda Python. You should be able to find it from Start menu. Make sure you open *Anaconda Powershell Prompt* and **not** *Anaconda Powershell Prompt*. They are different programs. If you open *Anaconda Powershell Prompt* you should see something like @fig:anacondaprompt.
+On **Windows** the tool you need is called the *Anaconda Powershell Prompt* and was installed along with Anaconda Python. You should be able to find it from Start menu. Make sure you open *Anaconda Powershell Prompt* and **not** *Anaconda Prompt*. They are different programs. If you open *Anaconda Powershell Prompt* you should see something like @fig:anacondaprompt.
 
 What is *Anaconda Powershell Prompt* and this *Terminal* thing, you ask. Both programs are what we call *terminal emulators*. They are programs used to run other programs, like  the ones you are going to write yourself. I will informally refer to both *Terminal* and *Anaconda Powershell Prompt* as "the terminal" So if I write something like "open the terminal", you should open *Anaconda Powershell Prompt* if you are running Windows and the *Terminal* application if you are running OS X.
 
-The terminal is a very useful tool. To use it, howevever, you need to know a few basics. First of all, a terminal lets you execute commands on your computer. You simply type the command you want and then hit enter. The place where you type is called a prompt (or command promt) and it may look a little different depending on which terminal emulator you use. In this book we represent the prompt with the character `$`. So a command in the examples below is the line of text to the left of the `$`. When you open the terminal you'll be located in a folder. You can see which folder you are in by typing `pwd`, and then press `Enter` on the keyboard. When you press `Enter` you tell the terminal to execute the command you just wrote. In this case, the command you typed simply tells you the path to the folder we are in. If I do it I get:
+The terminal is a very useful tool. To use it, however, you need to know a few basics. First of all, a terminal lets you execute commands on your computer. You simply type the command you want and then hit enter. The place where you type is called a prompt (or command prompt) and it may look a little different depending on which terminal emulator you use. In this book we represent the prompt with the character `$`. So a command in the examples below is the line of text to the left of the `$`. When you open the terminal you'll be located in a folder. You can see which folder you are in by typing `pwd`, and then press `Enter` on the keyboard. When you press `Enter` you tell the terminal to execute the command you just wrote. In this case, the command you typed simply tells you the path to the folder we are in. If I do it I get:
 
 ```
 $ pwd
@@ -192,7 +192,7 @@ conda install -y 'python=3.9' pygments textual rich art bp-help
 
 This commands run the Conda program and tells it to create a new environment with name "bioprog" and to install the packages we need in that environment. Once you hit enter on the last command, Conda works for some time and then writes a long list of packages in your terminal. These are all the packages and dependencies required in versions that all fit together. 
 
-Notice how the command prompt changed from "(base)" to "(bioprog)" to show that you are now in the bioprog environment. Looks like nothing changed, but now you have access to terminal commands not available in the base envirionment. You will learn about these later. Try this command:
+Notice how the command prompt changed from "(base)" to "(bioprog)" to show that you are now in the bioprog environment. Looks like nothing changed, but now you have access to terminal commands not available in the base environment. You will learn about these later. Try this command:
 
 ```
 conda deactivate
